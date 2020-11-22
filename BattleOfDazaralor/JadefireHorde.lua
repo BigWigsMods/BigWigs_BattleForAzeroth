@@ -192,8 +192,6 @@ function mod:RisingFlamesApplied(args)
 	self:TargetBar(args.spellId, 15, args.destName)
 	local amount = args.amount or 1
 	if self:Me(args.destGUID) then
-		--self:CancelSayCountdown(args.spellId) -- XXX See if we need this, was spammy
-		--self:SayCountdown(args.spellId, 6, nil, 2)
 		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
 		if amount % 2 == 1 then
 			self:PlaySound(args.spellId, "alarm")
@@ -208,9 +206,6 @@ end
 
 function mod:RisingFlamesRemoved(args)
 	self:StopBar(args.spellId, args.destName)
-	if self:Me(args.destGUID) then
-		--self:CancelSayCountdown(args.spellId)
-	end
 end
 
 do
