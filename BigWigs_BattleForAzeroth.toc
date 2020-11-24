@@ -1,8 +1,8 @@
 ## Interface: 90002
 
 ## Title: BigWigs [|cffeda55fBattle for Azeroth|r]
-## Title-zhCN: BigWigs [|cffeda55fBattle for Azeroth|r]
-## Title-zhTW: BigWigs [|cffeda55fBattle for Azeroth|r]
+## Title-zhCN: BigWigs [|cffeda55f争霸艾泽拉斯|r]
+## Title-zhTW: BigWigs [|cffeda55f決戰艾澤拉斯|r]
 ## Title-deDE: BigWigs [|cffeda55fBattle for Azeroth|r]
 ## Title-frFR: BigWigs [|cffeda55fBattle for Azeroth|r]
 ## Title-itIT: BigWigs [|cffeda55fBattle for Azeroth|r]
@@ -12,8 +12,8 @@
 ## Title-esES: BigWigs [|cffeda55fBattle for Azeroth|r]
 ## Title-esMX: BigWigs [|cffeda55fBattle for Azeroth|r]
 ## Notes: A collection of BigWigs modules from the Battle for Azeroth era.
-## Notes-zhCN: A collection of BigWigs modules from the Battle for Azeroth era.
-## Notes-zhTW: A collection of BigWigs modules from the Battle for Azeroth era.
+## Notes-zhCN: BigWigs 争霸艾泽拉斯模块。
+## Notes-zhTW: BigWigs 決戰艾澤拉斯模組。
 ## Notes-deDE: A collection of BigWigs modules from the Battle for Azeroth era.
 ## Notes-frFR: A collection of BigWigs modules from the Battle for Azeroth era.
 ## Notes-itIT: A collection of BigWigs modules from the Battle for Azeroth era.
