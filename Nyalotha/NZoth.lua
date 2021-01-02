@@ -528,14 +528,14 @@ do
 			firstParanoiaTargetGUID = args.destGUID
 			lastParanoiaName = args.destName
 			if self:Me(args.destGUID) then -- fallback if the last event is missing
-				paranoiaFallbackTimer = self:ScheduleTimer("Message", 0.1, 315927, "blue", CL.link:format("|cffff0000???"))
+				paranoiaFallbackTimer = self:ScheduleTimer("Message", 0.1, 315927, "blue", CL.link_with:format("|cffff0000???"))
 			end
 		elseif args.spellId == 316541 and firstParanoiaTargetGUID then -- Paranoia 2
 			if self:Me(args.destGUID) then -- We got 2nd debuff, so print last name
-				self:Message(315927, "blue", CL.link:format(self:ColorName(lastParanoiaName)))
+				self:Message(315927, "blue", CL.link_with:format(self:ColorName(lastParanoiaName)))
 				mateName = lastParanoiaName
 			elseif self:Me(firstParanoiaTargetGUID) then -- We got 1st debuff so this is our mate
-				self:Message(315927, "blue", CL.link:format(self:ColorName(args.destName)))
+				self:Message(315927, "blue", CL.link_with:format(self:ColorName(args.destName)))
 				mateName = args.destName
 			end
 			firstParanoiaTargetGUID = nil
@@ -545,7 +545,7 @@ do
 			end
 		else -- One of them immuned, so no proper linked message
 			if self:Me(args.destGUID) or self:Me(firstParanoiaTargetGUID) then
-				self:Message(315927, "blue", CL.link:format("|cffff00ff???"))
+				self:Message(315927, "blue", CL.link_with:format("|cffff00ff???"))
 				if paranoiaFallbackTimer then -- We printed above, so cancel this
 					self:CancelTimer(paranoiaFallbackTimer)
 					paranoiaFallbackTimer = nil

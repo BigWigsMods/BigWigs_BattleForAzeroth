@@ -177,7 +177,7 @@ end
 
 function mod:MindTetherApplied(args) -- XXX Make it better perhaps? this is very simple atm.
 	if self:Me(args.destGUID) then
-		self:Message(295444, "blue", CL.link:format(args.sourceName))
+		self:Message(295444, "blue", CL.link_with:format(args.sourceName))
 		self:PlaySound(295444, "alert")
 	end
 end

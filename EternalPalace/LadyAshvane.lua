@@ -202,7 +202,7 @@ do
 					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListGreen[i][2]))
 				end
 			end
-			self:PersonalMessage(-20096, false, CL.link:format(linkedPlayer), 296938)
+			self:PersonalMessage(-20096, false, CL.link_with:format(linkedPlayer), 296938)
 			self:PlaySound(-20096, "warning")
 			self:Flash(-20096, 296938)
 		elseif isOnMe == 2 then -- Orange
@@ -216,7 +216,7 @@ do
 					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListOrange[i][2]))
 				end
 			end
-			self:PersonalMessage(-20096, false, CL.link:format(linkedPlayer), 296939)
+			self:PersonalMessage(-20096, false, CL.link_with:format(linkedPlayer), 296939)
 			self:PlaySound(-20096, "warning")
 			self:Flash(-20096, 296939)
 		elseif isOnMe == 3 then -- Purple
@@ -230,7 +230,7 @@ do
 					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListPurple[i][2]))
 				end
 			end
-			self:PersonalMessage(-20096, false, CL.link:format(linkedPlayer), 296940)
+			self:PersonalMessage(-20096, false, CL.link_with:format(linkedPlayer), 296940)
 			self:PlaySound(-20096, "warning")
 			self:Flash(-20096, 296940)
 		elseif not self:CheckOption(-20096, "ME_ONLY") then
