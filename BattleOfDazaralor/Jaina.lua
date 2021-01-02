@@ -239,7 +239,7 @@ do
 	end
 
 	function mod:BarCreated(_, _, bar, _, key, text)
-		if self:GetOption("custom_on_stop_timers") and abilitysToPause[key] and not text:match(castPattern) and text ~= L.touch_impact then
+		if self:GetOption("custom_on_stop_timers") and abilitysToPause[key] and not text:match(castPattern) then
 			bar:AddUpdateFunction(stopAtZeroSec)
 		end
 	end
