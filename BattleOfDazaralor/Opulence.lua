@@ -294,14 +294,10 @@ function mod:UpdateGemRoomInfoBox()
 
 	local noDebuffList = {}
 
-	local _, _, _, myMapId = UnitPosition("player")
 	for unit in self:IterateGroup() do
 		local name = self:UnitName(unit)
 		if name and not UnitIsDead(unit) and not jewelTracker[name] then
-			local _, _, _, tarMapId = UnitPosition(unit)
-			if tarMapId == myMapId then
-				noDebuffList[#noDebuffList+1] = self:ColorName(name)
-			end
+			noDebuffList[#noDebuffList+1] = self:ColorName(name)
 		end
 	end
 

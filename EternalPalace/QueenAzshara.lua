@@ -127,9 +127,8 @@ do
 	local function initInfoBox(self)
 		soulDuration = self:LFR() and 60 or 110
 		for unit in self:IterateGroup() do
-			local _, _, _, tarInstanceId = UnitPosition(unit)
 			local name = self:UnitName(unit)
-			if name and tarInstanceId == 2164 and not self:Tank(unit) then
+			if name and not self:Tank(unit) then
 				drainedSoulList[name] = {0, 0, soulDuration}
 			end
 		end
