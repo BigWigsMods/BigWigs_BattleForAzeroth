@@ -117,7 +117,7 @@ do
 	function mod:INSTANCE_ENCOUNTER_ENGAGE_UNIT(event)
 		for i = 1, 5 do
 			local unit = ("boss%d"):format(i)
-			local guid = UnitGUID(unit)
+			local guid = self:UnitGUID(unit)
 			--local mobId = self:MobId(guid) -- They both have the same mob ID of 157255
 			if guid then
 				if guid == ravagerGUID then -- Aqir Ravager

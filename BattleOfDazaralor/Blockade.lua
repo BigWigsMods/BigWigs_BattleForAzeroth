@@ -111,7 +111,7 @@ function mod:OnEngage()
 	stormsWailCount = 1
 	cracklingLightningCount = 1
 	sirenCount = 1
-	wipe(mobCollector)
+	mobCollector = {}
 
 	self:CDBar(284362, 7) -- Sea Storm
 	self:CDBar(288205, 10.5) -- Crackling Lightning

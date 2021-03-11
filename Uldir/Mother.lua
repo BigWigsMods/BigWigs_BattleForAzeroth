@@ -89,7 +89,7 @@ end
 
 function mod:UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellId)
 	if spellId == 269051 then -- Cleansing Purge
-		local sourceGUID = UnitGUID(unit)
+		local sourceGUID = self:UnitGUID(unit)
 		local room = 0
 		if self:MobId(sourceGUID) == 136429 then -- Room 1
 			room = 1

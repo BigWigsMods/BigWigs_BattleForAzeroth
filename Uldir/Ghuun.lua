@@ -185,7 +185,7 @@ do
 end
 
 function mod:UNIT_POWER_FREQUENT(event, unit)
-	if self:MobId(UnitGUID(unit)) == 134118 then
+	if self:MobId(self:UnitGUID(unit)) == 134118 then
 		local power = UnitPower(unit)
 		local seconds = math.floor((GetTime() - orbDunkTime) * 100)/100
 		if power == 100 and orbsCounter < 3 then

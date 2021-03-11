@@ -154,9 +154,9 @@ function mod:OnEngage()
 	bulwarkRoomCount = 1
 	bulwarkCrushCount = 1
 	hexCounter = 0
-	wipe(jewelTracker)
-	wipe(topazStackTracker)
-	wipe(critBuffTracker)
+	jewelTracker = {}
+	topazStackTracker = {}
+	critBuffTracker = {}
 	gemInfoBoxOpen = nil
 	if self:Mythic() then
 		self:Bar(289383, 30, self:SpellName(L.swap), 289383) -- Chaotic Displacement

@@ -226,7 +226,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellId)
 		self:PlaySound("stages", "info")
 
 		-- Stop bars
-		local mobId = self:MobId(UnitGUID(unit))
+		local mobId = self:MobId(self:UnitGUID(unit))
 		if mobId == 144747 then -- Pa'ku's Aspect
 			self:StopBar(282098) -- Gift of Wind
 		elseif mobId == 144767 then -- Gonk's Aspect
@@ -284,7 +284,7 @@ do
 	local playerList, isOnMe, proxList = mod:NewTargetList(), false, {}
 
 	function mod:CrawlingHexSuccess()
-		wipe(proxList)
+		proxList = {}
 		isOnMe = false
 		self:Bar(282135, 25.5)
 	end
@@ -297,7 +297,7 @@ do
 				mod:PlaySound(282135, "alarm", nil, playerList)
 			end
 		else
-			wipe(playerList)
+			playerList = mod:NewTargetList()
 		end
 	end
 

@@ -226,7 +226,7 @@ do
 	end
 
 	function mod:UNIT_HEALTH(event, unit)
-		local guid = UnitGUID(unit)
+		local guid = self:UnitGUID(unit)
 		if self:MobId(guid) == 145491 then -- Ocean Rune
 			shieldActive = true
 			maxShield = UnitHealthMax(unit)

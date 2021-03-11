@@ -194,9 +194,9 @@ end
 function mod:OnEngage()
 	self:RegisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT")
 	self:OpenAltPower("altpower", -21056, "ZA") -- Sanity
-	wipe(mobCollector)
-	wipe(corruptedMindCount)
-	wipe(harvesterList)
+	mobCollector = {}
+	corruptedMindCount = {}
+	harvesterList = {}
 
 	stage = 1
 	outside = true
@@ -260,7 +260,7 @@ do
 	function mod:INSTANCE_ENCOUNTER_ENGAGE_UNIT()
 		for i = 1, 5 do
 			local unit = ("boss%d"):format(i)
-			local guid = UnitGUID(unit)
+			local guid = self:UnitGUID(unit)
 			local mobId = self:MobId(guid)
 			if mobId == 158376 and not mobCollector[guid] then -- Psychus
 				mobCollector[guid] = true
@@ -490,7 +490,7 @@ do
 
 	function mod:Paranoia(args)
 		self:Message(args.spellId, "orange", CL.casting:format(CL.count:format(args.spellName, paranoiaCount)))
-		wipe(proxList)
+		proxList = {}
 		isOnMe = nil
 		mateName = nil
 		isCasting = true

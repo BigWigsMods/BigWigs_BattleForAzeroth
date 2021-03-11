@@ -316,7 +316,7 @@ do
 				end
 			end
 		else -- check for Shield
-			local guid = UnitGUID(unit)
+			local guid = self:UnitGUID(unit)
 			if self:MobId(guid) == 146642 then -- Ocean Rune
 				shieldActive = true
 				maxShield = UnitHealthMax(unit)

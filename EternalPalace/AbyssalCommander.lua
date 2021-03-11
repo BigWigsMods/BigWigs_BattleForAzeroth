@@ -180,7 +180,7 @@ function mod:CHAT_MSG_RAID_BOSS_EMOTE(_, msg, _, _, _, destName)
 		spellId = 295606
 	end
 	self:TargetMessage(295601, "orange", destName, spellId, spellId)
-	local guid = UnitGUID(destName)
+	local guid = self:UnitGUID(destName)
 	if self:Me(guid) then
 		self:PlaySound(295601, "alarm")
 		self:Say(295601, spellId)

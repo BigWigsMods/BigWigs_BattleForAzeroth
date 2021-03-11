@@ -233,7 +233,7 @@ do
 	function mod:UNIT_TARGET(event, unit)
 		self:UnregisterUnitEvent(event, unit)
 		local id = unit.."target"
-		printTarget(self, self:UnitName(id), UnitGUID(id))
+		printTarget(self, self:UnitName(id), self:UnitGUID(id))
 	end
 	function mod:EyeBeam(args)
 		local unit = self:GetBossId(args.sourceGUID)

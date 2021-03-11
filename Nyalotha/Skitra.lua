@@ -138,7 +138,7 @@ function mod:IllusionaryProjectionSuccess()
 end
 
 function mod:INSTANCE_ENCOUNTER_ENGAGE_UNIT()
-	local guid = UnitGUID("boss1")
+	local guid = self:UnitGUID("boss1")
 	if guid then -- Boss 1 can only be Skitra, so the boss has returned
 		self:UnregisterEvent("INSTANCE_ENCOUNTER_ENGAGE_UNIT")
 		self:Message(307725, "green", CL.over:format(self:SpellName(307725))) -- Illusionary Projection

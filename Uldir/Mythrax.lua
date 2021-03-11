@@ -121,7 +121,7 @@ end
 --
 
 function mod:UNIT_TARGETABLE_CHANGED(_, unit)
-	if self:MobId(UnitGUID(unit)) == 138324 and not UnitCanAttack("player", unit) then -- Xalzaix
+	if self:MobId(self:UnitGUID(unit)) == 138324 and not UnitCanAttack("player", unit) then -- Xalzaix
 		self:Message(276922, "green", L.xalzaix_returned, false)
 		self:StopBar(L.add_blast)
 		self:StopBar(CL.count:format(self:SpellName(279157), voidEchoesCount))
@@ -328,7 +328,7 @@ do
 			self:Bar(args.spellId, self:Mythic() and 30 or 20)
 		end
 		if self:GetOption(visionMarker) then
-			wipe(visionAddMarks)
+			visionAddMarks = {}
 			self:RegisterTargetEvents("visionAddMark")
 			self:ScheduleTimer("UnregisterTargetEvents", 10)
 		end
