@@ -331,14 +331,14 @@ do
 			self:PlaySound(args.spellId, "alarm")
 		end
 		if self:GetOption(searingEmbersMarker) then
-			SetRaidTarget(args.destName, playerIconsCount)
+			self:CustomIcon(false, args.destName, playerIconsCount)
 		end
 		self:TargetsMessage(args.spellId, "orange", playerList, self:Easy() and 3 or 4, nil, nil, nil, playerIcons)
 	end
 
 	function mod:SearingEmbersRemoved(args)
 		if self:GetOption(searingEmbersMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end

@@ -588,7 +588,7 @@ do
 			for k, v in pairs(mindbenderList) do
 				local unit = self:GetUnitIdByGUID(k)
 				if unit then
-					SetRaidTarget(unit, mindbenderList[k])
+					self:CustomIcon(false, unit, mindbenderList[k])
 					mindbenderList[k] = nil
 				end
 			end
@@ -604,7 +604,7 @@ end
 
 function mod:MinderbenderMarker(event, unit, guid)
 	if self:MobId(guid) == 146940 and mindbenderList[guid] then -- Primordial Mindbender
-		SetRaidTarget(unit, mindbenderList[guid])
+		self:CustomIcon(false, unit, mindbenderList[guid])
 		mindbenderList[guid] = nil
 	end
 end
@@ -666,15 +666,15 @@ do
 		if self:GetOption(relicMarker) then
 			local void = self:GetBossId(146581)
 			if void then
-				SetRaidTarget(void, 3)
+				self:CustomIcon(false, void, 3)
 			end
 			local tempest = self:GetBossId(146496)
 			if tempest then
-				SetRaidTarget(tempest, 6)
+				self:CustomIcon(false, tempest, 6)
 			end
 			local trident = self:GetBossId(146582)
 			if trident then
-				SetRaidTarget(trident, 5)
+				self:CustomIcon(false, trident, 5)
 			end
 		end
 	end
@@ -686,8 +686,8 @@ do
 			self:PlaySound(293653, "alarm")
 			if self:GetOption("custom_off_repeating_resonance_say") then
 				local sayText = "{rt"..debuffMarks[args.spellId].."}"
-				SendChatMessage(sayText, "SAY")
-				sayTimer = self:ScheduleRepeatingTimer(SendChatMessage, 1.5, sayText, "SAY")
+				self:Say(false, sayText, true)
+				sayTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, sayText, true)
 			end
 		end
 	end
@@ -696,33 +696,33 @@ do
 		if self:GetOption("custom_on_repeating_resonance_yell") then
 			if buffOnMe == 284684 then -- Void
 				local sayText = "{rt3} "..L.void.." {rt3}"
-				SendChatMessage(sayText, "YELL")
-				sayTimer = self:ScheduleRepeatingTimer(SendChatMessage, 1.5, sayText, "YELL")
+				self:Yell(false, sayText, true)
+				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true)
 				self:ScheduleTimer("CancelTimer", 15, sayTimer)
 			elseif buffOnMe == 284768 then -- Trident
 				local sayText = "{rt5} "..L.ocean.." {rt5}"
-				SendChatMessage(sayText, "YELL")
-				sayTimer = self:ScheduleRepeatingTimer(SendChatMessage, 1.5, sayText, "YELL")
+				self:Yell(false, sayText, true)
+				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true)
 				self:ScheduleTimer("CancelTimer", 15, sayTimer)
 			elseif buffOnMe == 284569 then -- Tempest
 				local sayText = "{rt6} "..L.storm.." {rt6}"
-				SendChatMessage(sayText, "YELL")
-				sayTimer = self:ScheduleRepeatingTimer(SendChatMessage, 1.5, sayText, "YELL")
+				self:Yell(false, sayText, true)
+				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true)
 				self:ScheduleTimer("CancelTimer", 15, sayTimer)
 			end
 		end
 		if self:GetOption(relicMarker) then
 			local void = self:GetBossId(146581)
 			if void then
-				SetRaidTarget(void, 3)
+				self:CustomIcon(false, void, 3)
 			end
 			local tempest = self:GetBossId(146496)
 			if tempest then
-				SetRaidTarget(tempest, 6)
+				self:CustomIcon(false, tempest, 6)
 			end
 			local trident = self:GetBossId(146582)
 			if trident then
-				SetRaidTarget(trident, 5)
+				self:CustomIcon(false, trident, 5)
 			end
 		end
 	end
@@ -743,7 +743,7 @@ do
 			buffOnMe = args.spellId
 		end
 		if self:GetOption(relicMarker) then
-			SetRaidTarget(args.destName, 3) -- 3 for Diamond
+			self:CustomIcon(false, args.destName, 3) -- 3 for Diamond
 		end
 	end
 
@@ -752,7 +752,7 @@ do
 			buffOnMe = nil
 		end
 		if self:GetOption(relicMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 
@@ -761,7 +761,7 @@ do
 			buffOnMe = args.spellId
 		end
 		if self:GetOption(relicMarker) then
-			SetRaidTarget(args.destName, 6) -- 6 for Square
+			self:CustomIcon(false, args.destName, 6) -- 6 for Square
 		end
 	end
 
@@ -770,7 +770,7 @@ do
 			buffOnMe = nil
 		end
 		if self:GetOption(relicMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 
@@ -779,7 +779,7 @@ do
 			buffOnMe = args.spellId
 		end
 		if self:GetOption(relicMarker) then
-			SetRaidTarget(args.destName, 5) -- 5 for Moon
+			self:CustomIcon(false, args.destName, 5) -- 5 for Moon
 		end
 	end
 
@@ -788,7 +788,7 @@ do
 			buffOnMe = nil
 		end
 		if self:GetOption(relicMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end

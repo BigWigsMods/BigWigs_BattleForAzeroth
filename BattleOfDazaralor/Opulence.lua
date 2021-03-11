@@ -446,6 +446,9 @@ end
 
 do
 	local playerList = mod:NewTargetList()
+	local function wipe()
+		playerList = mod:NewTargetList()
+	end
 	function mod:VolatileChargeApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
@@ -459,7 +462,7 @@ do
 		if (self:GetOption("custom_on_hand_timers") and self:IsHandOnPlatform()) or self:Me(args.destGUID) then
 			self:TargetsMessage(283507, "yellow", playerList)
 		end
-		self:ScheduleTimer(wipe, 0.5, playerList)
+		self:ScheduleTimer(wipe, 0.5)
 	end
 
 	function mod:VolatileChargeRemoved(args)
@@ -509,7 +512,7 @@ do
 			self:PlaySound(args.spellId, "alarm")
 		end
 		if self:GetOption(hexOfLethargyMarker) then
-			SetRaidTarget(args.destName, hexCounter)
+			self:CustomIcon(false, args.destName, hexCounter)
 		end
 		self:TargetsMessage(args.spellId, "orange", playerList, 2, nil, nil, nil, playerIcons)
 	end
@@ -519,7 +522,7 @@ do
 			self:Message(args.spellId, "green", CL.removed:format(args.spellName))
 		end
 		if self:GetOption(hexOfLethargyMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end

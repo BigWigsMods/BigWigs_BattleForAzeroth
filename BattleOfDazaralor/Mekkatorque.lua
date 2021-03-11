@@ -286,7 +286,7 @@ do
 			self:TargetBar(args.spellId, 15, args.destName, L.gigavolt_alt_text)
 		end
 		if self:GetOption(gigavoltChargeMarker) then
-			SetRaidTarget(args.destName, playerListCount)
+			self:CustomIcon(false, args.destName, playerListCount)
 		end
 		self:TargetsMessage(args.spellId, "yellow", playerList, 3, L.gigavolt_alt_text, nil, nil, playerIcons)
 	end
@@ -300,7 +300,7 @@ do
 			self:StopBar(L.gigavolt_alt_text, args.destName)
 		end
 		if self:GetOption(gigavoltChargeMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end
@@ -322,7 +322,7 @@ end
 function mod:sparkBotMark(event, unit, guid)
 	if self:MobId(guid) == 144942 and not mobCollector[guid] then
 		botMarkCount = botMarkCount + 1
-		SetRaidTarget(unit, (botMarkCount % 5)+4)
+		self:CustomIcon(false, unit, (botMarkCount % 5)+4)
 		mobCollector[guid] = true
 	end
 end
@@ -381,8 +381,8 @@ do
 			self:TargetMessage(args.spellId, "blue", args.destName)
 			self:PlaySound(args.spellId, "alert")
 			if not shrunkTimer and self:GetOption("custom_on_repeating_shrunk_say") and not self:LFR() then
-				SendChatMessage(args.spellName, "SAY")
-				shrunkTimer = self:ScheduleRepeatingTimer(SendChatMessage, 1.5, args.spellName, "SAY")
+				self:Say(false, args.spellName, true)
+				shrunkTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.spellName, true)
 			end
 		end
 
@@ -407,8 +407,8 @@ do
 	function mod:TamperingApplied(args)
 		if self:Me(args.destGUID) then
 			if not tamperTimer and self:GetOption("custom_off_repeating_tampering_say") then
-				SendChatMessage(args.destName, "SAY")
-				tamperTimer = self:ScheduleRepeatingTimer(SendChatMessage, 1.5, args.destName, "SAY")
+				self:Say(false, args.destName, true)
+				tamperTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.destName, true)
 			end
 		end
 		tamperCount = tamperCount + 1

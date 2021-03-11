@@ -429,7 +429,7 @@ do
 			self:Bar(args.spellId, self:Mythic() and 46.5 or 60.5, CL.count:format(args.spellName, crushingDoubtCount))
 		end
 		if self:GetOption(crushingDoubtMarker) and #playerList < 3 then
-			SetRaidTarget(args.destName, #playerList)
+			self:CustomIcon(false, args.destName, #playerList)
 		end
 		if self:Me(args.destGUID) then
 			self:Say(args.spellId, CL.count_rticon:format(args.spellName, #playerList, #playerList))
@@ -446,7 +446,7 @@ function mod:CrushingDoubtRemoved(args)
 		self:CancelSayCountdown(args.spellId)
 	end
 	if self:GetOption(crushingDoubtMarker) then
-		SetRaidTarget(args.destName, 0)
+		self:CustomIcon(false, args.destName)
 	end
 end
 
@@ -462,7 +462,7 @@ function mod:WitnesstheEnd(args)
 		for k, v in pairs(eldritchList) do
 			local unit = self:GetUnitIdByGUID(k)
 			if unit then
-				SetRaidTarget(unit, eldritchList[k])
+				self:CustomIcon(false, unit, eldritchList[k])
 				eldritchList[k] = nil
 			end
 		end
@@ -471,7 +471,7 @@ end
 
 function mod:EldritchMarker(event, unit, guid)
 	if self:MobId(guid) == 145053 and eldritchList[guid] then -- Eldritch Abomination
-		SetRaidTarget(unit, eldritchList[guid])
+		self:CustomIcon(false, unit, eldritchList[guid])
 		eldritchList[guid] = nil
 	end
 end

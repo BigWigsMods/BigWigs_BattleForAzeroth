@@ -127,7 +127,7 @@ function mod:DecayingFleshApplied(args)
 	if self:GetOption("custom_off_decaying_flesh_marker") then
 		local unit = self:GetUnitIdByGUID(args.destGUID)
 		if unit then
-			SetRaidTarget(unit, 8)
+			self:CustomIcon(false, unit, 8)
 		else
 			decayingFleshMonster = args.destGUID
 			self:RegisterTargetEvents("DecayingFleshMark")
@@ -138,7 +138,7 @@ function mod:DecayingFleshRemoved(args)
 	if self:GetOption("custom_off_decaying_flesh_marker") then
 		local unit = self:GetUnitIdByGUID(args.destGUID)
 		if unit then
-			SetRaidTarget(unit, 0)
+			self:CustomIcon(false, unit)
 		end
 		self:UnregisterTargetEvents()
 		decayingFleshMonster = nil
@@ -147,7 +147,7 @@ end
 
 function mod:DecayingFleshMark(_, unit, guid)
 	if decayingFleshMonster == guid then
-		SetRaidTarget(unit, 8)
+		self:CustomIcon(false, unit, 8)
 		self:UnregisterTargetEvents()
 		decayingFleshMonster = nil
 	end
@@ -200,7 +200,7 @@ do
 			self:Bar(-18530, 10, -18530, 172884) -- Minion of Zul, spell_shadow_shadowfiend
 		end
 		if self:GetOption(darkRevelationMarker) then
-			SetRaidTarget(args.destName, playerIconsCount)
+			self:CustomIcon(false, args.destName, playerIconsCount)
 		end
 		self:TargetsMessage(args.spellId, "yellow", playerList, maxExpected, nil, nil, nil, playerIcons)
 	end
@@ -214,7 +214,7 @@ do
 			self:StopBar(args.spellName, args.destName)
 		end
 		if self:GetOption(darkRevelationMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 		local t = args.time
 		if t-prev > 1 then
@@ -340,7 +340,7 @@ do
 			self:PlaySound(args.spellId, "alarm")
 		end
 		if self:GetOption(deathwishMarker) then
-			SetRaidTarget(args.destName, playerIconsCount)
+			self:CustomIcon(false, args.destName, playerIconsCount)
 		end
 		self:TargetsMessage(args.spellId, "orange", playerList, 2, nil, nil, nil, playerIcons)
 	end
@@ -350,7 +350,7 @@ do
 	local prev = 0
 	function mod:DeathwishRemoved(args)
 		if self:GetOption(deathwishMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 		local t = args.time
 		if t-prev > 1 then

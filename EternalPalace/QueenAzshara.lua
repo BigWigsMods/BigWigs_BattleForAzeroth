@@ -592,23 +592,23 @@ do
 				self:Yell(299250, args.spellName)
 				if #debuffs == 1 then
 					if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then
-						decreeTimer = self:ScheduleRepeatingTimer(SendChatMessage, 2, L.hugSay:format(args.destName), "YELL")
+						decreeTimer = self:ScheduleRepeatingTimer("Yell", 2, false, L.hugSay:format(args.destName), true)
 					end
 				elseif debuffs[1] == L[299253] then -- Stay!
 					if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then -- Stand Together! & Stay!
 						if decreeTimer then self:CancelTimer(decreeTimer) end
-						decreeTimer = self:ScheduleRepeatingTimer(SendChatMessage, 2, L.hugNoMoveSay:format(args.destName), "YELL")
+						decreeTimer = self:ScheduleRepeatingTimer("Yell", 2, false, L.hugNoMoveSay:format(args.destName), true)
 					end
 				end
 			elseif args.spellId == 299255 then -- Stand Alone!
 				self:Say(299250, args.spellName)
 				if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then
-					decreeTimer = self:ScheduleRepeatingTimer(SendChatMessage, 2, L.avoidSay:format(args.destName), "SAY")
+					decreeTimer = self:ScheduleRepeatingTimer("Say", 2, false, L.avoidSay:format(args.destName), true)
 				end
 			elseif args.spellId == 299253 and debuffs[1] == L[299254] then -- Stay! & Stand Together!
 				if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then
 					if decreeTimer then self:CancelTimer(decreeTimer) end
-					decreeTimer = self:ScheduleRepeatingTimer(SendChatMessage, 2, L.hugNoMoveSay:format(args.destName), "YELL")
+					decreeTimer = self:ScheduleRepeatingTimer("Say", 2, false, L.hugNoMoveSay:format(args.destName), true)
 				end
 			end
 		end
@@ -699,7 +699,7 @@ do
 		end
 		self:TargetsMessage(args.spellId, "yellow", playerList)
 		if self:GetOption(arcaneBurstMarker) then
-			SetRaidTarget(args.destName, #playerList)
+			self:CustomIcon(false, args.destName, #playerList)
 		end
 	end
 
@@ -708,7 +708,7 @@ do
 			self:CancelSayCountdown(args.spellId)
 		end
 		if self:GetOption(arcaneBurstMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end

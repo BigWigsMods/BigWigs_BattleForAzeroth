@@ -110,7 +110,7 @@ end
 function mod:MarkEngineer(_, unit, guid)
 	if not castCollector[guid] and self:MobId(guid) == 137883 then -- Lion's Engineer
 		castCollector[guid] = true -- Just reuse this table
-		SetRaidTarget(unit, markerIcon)
+		self:CustomIcon(false, unit, markerIcon)
 		markerIcon = markerIcon - 1
 		if markerIcon < 7 then
 			markerIcon = 8

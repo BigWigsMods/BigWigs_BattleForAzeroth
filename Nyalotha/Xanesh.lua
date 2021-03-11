@@ -90,7 +90,7 @@ function mod:TerrorWave(args)
 		for k, v in pairs(awakenedList) do
 			local unit = self:GetUnitIdByGUID(k)
 			if unit then
-				SetRaidTarget(unit, awakenedList[k])
+				self:CustomIcon(false, unit, awakenedList[k])
 				awakenedList[k] = nil
 			end
 		end
@@ -99,7 +99,7 @@ end
 
 function mod:AwakenedMarker(event, unit, guid)
 	if self:MobId(guid) == 162432 and awakenedList[guid] then -- Eldritch Abomination
-		SetRaidTarget(unit, awakenedList[guid])
+		self:CustomIcon(false, unit, awakenedList[guid])
 		awakenedList[guid] = nil
 	end
 end

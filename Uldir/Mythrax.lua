@@ -260,7 +260,7 @@ do
 			self:PlaySound(args.spellId, "alert")
 		end
 		if self:GetOption(imminentRuinMarker) then
-			SetRaidTarget(args.destName, ruinCount)
+			self:CustomIcon(false, args.destName, ruinCount)
 		end
 	end
 end
@@ -270,7 +270,7 @@ function mod:ImminentRuinRemoved(args)
 		self:CancelSayCountdown(args.spellId)
 	end
 	if self:GetOption(imminentRuinMarker) then
-		SetRaidTarget(args.destName, 0)
+		self:CustomIcon(false, args.destName)
 	end
 end
 
@@ -308,7 +308,7 @@ do
 		if self:MobId(guid) == 139487 and not mobCollector[guid] then
 			for i = 1, 5 do
 				if not visionAddMarks[i] then
-					SetRaidTarget(unit, i)
+					self:CustomIcon(false, unit, i)
 					visionAddMarks[i] = guid
 					mobCollector[guid] = true
 					if i == 5 then

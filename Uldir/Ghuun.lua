@@ -482,7 +482,7 @@ function mod:BurstingBloodApplied(args)
 	end
 	if self:GetOption(burstingMarker) then
 		local icon = (burstingBoilIconCount % 6) + 1
-		SetRaidTarget(args.destName, icon)
+		self:CustomIcon(false, args.destName, icon)
 		burstingBoilIconCount = burstingBoilIconCount + 1
 	end
 end
@@ -492,7 +492,7 @@ function mod:BurstingBloodRemoved(args)
 		burstingOnMe = false
 	end
 	if self:GetOption(burstingMarker) then
-		SetRaidTarget(args.destName, 0)
+		self:CustomIcon(false, args.destName)
 	end
 end
 

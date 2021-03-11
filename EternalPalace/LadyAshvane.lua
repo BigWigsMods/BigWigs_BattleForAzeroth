@@ -279,23 +279,23 @@ do
 		if self:GetOption(arcingAzeriteMarker) then
 			-- Green
 			if playerListGreen[1] then
-				SetRaidTarget(playerListGreen[1][1], playerListGreen[1][2])
+				self:CustomIcon(false, playerListGreen[1][1], playerListGreen[1][2])
 				if playerListGreen[2] then
-					SetRaidTarget(playerListGreen[2][1], playerListGreen[2][2])
+					self:CustomIcon(false, playerListGreen[2][1], playerListGreen[2][2])
 				end
 			end
 			-- Orange
 			if playerListOrange[1] then
-				SetRaidTarget(playerListOrange[1][1], playerListOrange[1][2])
+				self:CustomIcon(false, playerListOrange[1][1], playerListOrange[1][2])
 				if playerListOrange[2] then
-					SetRaidTarget(playerListOrange[2][1], playerListOrange[2][2])
+					self:CustomIcon(false, playerListOrange[2][1], playerListOrange[2][2])
 				end
 			end
 			-- Purple
 			if playerListPurple[1] then
-				SetRaidTarget(playerListPurple[1][1], playerListPurple[1][2])
+				self:CustomIcon(false, playerListPurple[1][1], playerListPurple[1][2])
 				if playerListPurple[2] then
-					SetRaidTarget(playerListPurple[2][1], playerListPurple[2][2])
+					self:CustomIcon(false, playerListPurple[2][1], playerListPurple[2][2])
 				end
 			end
 		end
@@ -361,7 +361,7 @@ do
 
 	function mod:ArcingAzeriteRemoved(args)
 		if self:GetOption(arcingAzeriteMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end

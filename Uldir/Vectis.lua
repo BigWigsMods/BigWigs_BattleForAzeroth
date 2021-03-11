@@ -267,7 +267,7 @@ function mod:OmegaVectorApplied(args)
 	end
 
 	if self:GetOption(omegaVectorMarker) and icon then
-		SetRaidTarget(args.destName, icon)
+		self:CustomIcon(false, args.destName, icon)
 	end
 
 	if self:Me(args.destGUID) then
@@ -295,7 +295,7 @@ function mod:OmegaVectorRemoved(args)
 
 	if self:GetOption(omegaVectorMarker) then
 		-- Either remove the mark or update it to the next debuff
-		SetRaidTarget(args.destName, self:Mythic() and 0 or icon)
+		self:CustomIcon(false, args.destName, self:Mythic() and 0 or icon)
 	end
 
 	if self:Me(args.destGUID) and icon == 0 then

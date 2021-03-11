@@ -200,13 +200,13 @@ do
 		end
 		self:TargetsMessage(args.spellId, "yellow", playerList, CL.count:format(args.spellName, cursedBloodCount-1))
 		if self:GetOption(cursedBloodMarker) then
-			SetRaidTarget(args.destName, #playerList)
+			self:CustomIcon(false, args.destName, #playerList)
 		end
 	end
 
 	function mod:CursedBloodRemoved(args)
 		if self:GetOption(cursedBloodMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end

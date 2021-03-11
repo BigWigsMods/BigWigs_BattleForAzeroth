@@ -323,7 +323,7 @@ do
 		end
 
 		if self:GetOption(crawlingHexMarker) and count < 6 then
-			SetRaidTarget(args.destName, count)
+			self:CustomIcon(false, args.destName, count)
 		end
 	end
 
@@ -337,7 +337,7 @@ do
 		end
 
 		if self:GetOption(crawlingHexMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 
 		tDeleteItem(proxList, args.destName)
@@ -426,7 +426,7 @@ do
 		end
 		count = count + 1
 		if self:GetOption(kimbulsWrathMarker) and count < 5 then
-			SetRaidTarget(args.destName, 9-count)
+			self:CustomIcon(false, args.destName, 9-count)
 		end
 		if not scheduled then
 			scheduled = self:ScheduleTimer(leapWarn, 0.1, self)
@@ -436,7 +436,7 @@ do
 
 	function mod:KimbulsWrathRemoved(args)
 		if self:GetOption(kimbulsWrathMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end
@@ -465,7 +465,7 @@ do
 		playerList[#playerList+1] = args.destName
 
 		if self:GetOption(mindWipeMarker) and #playerList < 6 then
-			SetRaidTarget(args.destName, #playerList)
+			self:CustomIcon(false, args.destName, #playerList)
 		end
 
 		if self:Dispeller("magic", nil, args.spellId) then
@@ -480,7 +480,7 @@ do
 			self:PlaySound(args.spellId, "info")
 		end
 		if self:GetOption(mindWipeMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	end
 end

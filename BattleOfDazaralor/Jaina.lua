@@ -360,7 +360,7 @@ do
 				self:Flash(args.spellId)
 			end
 			if self:GetOption(avalanceMarker) then
-				SetRaidTarget(args.destName, count)
+				self:CustomIcon(false, args.destName, count)
 			end
 		else -- 1 target (tank)
 			self:TargetMessage(args.spellId, "yellow", args.destName)
@@ -377,7 +377,7 @@ end
 function mod:AvalancheRemoved(args)
 	if stage == 1 then
 		if self:GetOption(avalanceMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 	else
 		self:PrimaryIcon(args.spellId, args.destName)
@@ -455,7 +455,7 @@ do
 			self:PlaySound(args.spellId, "warning")
 		end
 		if self:GetOption(broadsideMarker) then
-			SetRaidTarget(args.destName, broadsideCount)
+			self:CustomIcon(false, args.destName, broadsideCount)
 		end
 	end
 end
@@ -465,7 +465,7 @@ function mod:BroadsideRemoved(args)
 		self:CancelSayCountdown(args.spellId)
 	end
 	if self:GetOption(broadsideMarker) then
-		SetRaidTarget(args.destName, 0)
+		self:CustomIcon(false, args.destName)
 	end
 end
 

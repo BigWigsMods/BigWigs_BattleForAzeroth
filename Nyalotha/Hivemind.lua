@@ -124,13 +124,13 @@ do
 					ravagerGUID = nil
 					self:UnregisterEvent(event)
 					if self:GetOption(ravagerMarker) then
-						SetRaidTarget(unit, 8)
+						self:CustomIcon(false, unit, 8)
 					end
 				elseif guid == droneGUID then -- Aqir Drone
 					droneGUID = nil
 					self:UnregisterEvent(event)
 					if self:GetOption(droneMarker) then
-						SetRaidTarget(unit, 8)
+						self:CustomIcon(false, unit, 8)
 					end
 				end
 			end

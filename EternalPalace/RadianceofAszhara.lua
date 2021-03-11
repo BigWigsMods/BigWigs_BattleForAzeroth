@@ -132,14 +132,14 @@ do
 			end
 		end
 		if self:GetOption(arcaneBombMarker) then
-			SetRaidTarget(args.destName, #playerList)
+			self:CustomIcon(false, args.destName, #playerList)
 		end
 		self:TargetsMessage(args.spellId, "yellow", playerList, 4, nil, nil, nil, playerIcons)
 	end
 
 	function mod:ArcaneBombRemoved(args)
 		if self:GetOption(arcaneBombMarker) then
-			SetRaidTarget(args.destName, 0)
+			self:CustomIcon(false, args.destName)
 		end
 		if self:Me(args.destGUID) then
 			self:CancelSayCountdown(args.spellId)

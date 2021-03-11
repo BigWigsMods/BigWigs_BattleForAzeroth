@@ -230,7 +230,7 @@ function mod:HarvesterMarker(event, unit, guid)
 	if self:MobId(guid) == 162933 and not harvesterList[guid] then -- Eldritch Abomination
 		harversterIconCount = harversterIconCount + 1
 		harvesterList[guid] = harversterIconCount % 2 == 0 and 3 or 5
-		SetRaidTarget(unit, harvesterList[guid])
+		self:CustomIcon(false, unit, harvesterList[guid])
 	end
 end
 
@@ -520,7 +520,7 @@ do
 			self:Say(315927, args.spellName, true)
 			self:PlaySound(315927, "warning")
 			if self:GetOption("custom_on_repeating_paranoia_say") then
-				sayTimer = self:ScheduleRepeatingTimer(SendChatMessage, 1.5, args.spellName, "SAY")
+				sayTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.spellName, true)
 			end
 		end
 
