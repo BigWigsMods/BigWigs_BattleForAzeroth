@@ -16,7 +16,7 @@
 ## Notes-zhTW: BigWigs 決戰艾澤拉斯模組。
 ## Notes-deDE: A collection of BigWigs modules from the Battle for Azeroth era.
 ## Notes-frFR: A collection of BigWigs modules from the Battle for Azeroth era.
-## Notes-itIT: A collection of BigWigs modules from the Battle for Azeroth era.
+## Notes-itIT: Una colleczione di moduli BigWigs dell'era di Battle for Azeroth.
 ## Notes-koKR: A collection of BigWigs modules from the Battle for Azeroth era.
 ## Notes-ruRU: A collection of BigWigs modules from the Battle for Azeroth era.
 ## Notes-ptBR: A collection of BigWigs modules from the Battle for Azeroth era.
