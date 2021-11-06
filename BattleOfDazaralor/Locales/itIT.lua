@@ -8,18 +8,18 @@ if L then
 	L.punisher = "Punitore Rastari"
 	L.vessel = "Ricettacolo di Bwonsamdi"
 
-	--L.victim = "%s stabbed YOU with %s!"
-	--L.witness = "%s stabbed %s with %s!"
+	L.victim = "%s ha pugnalato TE con %s!"
+	L.witness = "%s pugnala %s con %s!"
 end
 
 L = BigWigs:NewBossLocale("Champion of the Light Horde", "itIT")
 if L then
-	--L.disorient_desc = "Bar for the |cff71d5ff[Blinding Faith]|r cast.\nThis is probably the bar you want to have the countdown on." -- Blinding Faith = 283650
+	L.disorient_desc = "Barra per il lancio di |cff71d5ff[Fede Accecante]|r.\nQuesta è l'unica barra di cui vuoi sapere sempre il cooldown." -- Blinding Faith = 283650
 end
 
 L = BigWigs:NewBossLocale("Champion of the Light Alliance", "itIT")
 if L then
-	--L.disorient_desc = "Bar for the |cff71d5ff[Blinding Faith]|r cast.\nThis is probably the bar you want to have the countdown on." -- Blinding Faith = 283650
+	L.disorient_desc = "Barra per il lancio di |cff71d5ff[Fede Accecante]|r.\nQuesta è l'unica barra di cui vuoi sapere sempre il cooldown." -- Blinding Faith = 283650
 end
 
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "itIT")
@@ -27,12 +27,12 @@ if L then
 	--L.custom_on_fixate_plates = "Stalking icon on Enemy Nameplate"
 	--L.custom_on_fixate_plates_desc = "Show an icon on the target nameplate that is stalking on you.\nRequires the use of Enemy Nameplates. This feature is currently only supported by KuiNameplates."
 
-	--L.absorb = "Absorb"
-	--L.absorb_text = "%s (|cff%s%.0f%%|r)"
-	--L.cast = "Cast"
-	--L.cast_text = "%.1fs (|cff%s%.0f%%|r)"
+	L.absorb = "Assorbimento"
+	L.absorb_text = "%s (|cff%s%.0f%%|r)"
+	L.cast = "Lancio"
+	L.cast_text = "%.1fs (|cff%s%.0f%%|r)"
 
-	--L.interrupted_after = "%s interrupted by %s (%.1f seconds remaining)"
+	L.interrupted_after = "%s interrotto da %s (%.1f secondi al termine)"
 end
 
 L = BigWigs:NewBossLocale("Jadefire Masters Alliance", "itIT")
