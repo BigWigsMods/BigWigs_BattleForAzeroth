@@ -1,7 +1,7 @@
 local L = BigWigs:NewBossLocale("Za'qul, Herald of Ny'alotha", "itIT")
 if not L then return end
 if L then
-	--L.stage3_early = "Za'qul tears open the pathway to Delirium Realm!"  -- Yell is 14.5s before the actual cast start
+	L.stage3_early = "Gli squarci di Za'qul aprono l'ascesa per il Regno del Delirio!"  -- Yell is 14.5s before the actual cast start
 end
 
 L = BigWigs:NewBossLocale("Lady Ashvane", "itIT")
@@ -11,24 +11,24 @@ end
 
 L = BigWigs:NewBossLocale("Queen Azshara", "itIT")
 if L then
-	--L[299249] = "SOAK Orbs"
-	--L[299251] = "AVOID Orbs"
-	--L[299254] = "HUG Others"
-	--L[299255] = "Stand ALONE"
-	--L[299252] = "Keep MOVING"
-	--L[299253] = "Stand STILL"
-	--L.hugSay = "HUG %s"
-	--L.hugNoMoveSay = "HUG %s, I can't move"
-	--L.avoidSay = "AVOID %s"
-	--L.yourDecree = "Decree: %s"
-	--L.yourDecree2 = "Decree: %s & %s"
-	--L.hulk_killed = "%s killed - %.1f sec"
-	--L.fails_message = "%s (%d Sanction stack fails)"
-	--L.reversal = "Reversal"
-	--L.greater_reversal = "Reversal (Greater)"
-	--L.you_die = "You die"
-	--L.you_die_message = "You will die in %d sec"
+	L[299249] = "ASSORBI le Sfere"
+	L[299251] = "EVITA le Sfere"
+	L[299254] = "ABBRACCIA gli Altri"
+	L[299255] = "Stai DA SOLO"
+	L[299252] = "CONTINUA A MUOVERTI"
+	L[299253] = "STAI FERMO"
+	L.hugSay = "ABBRACCIA %s"
+	L.hugNoMoveSay = "ABBRACCIA %s, Non posso muovermi"
+	L.avoidSay = "EVITA %s"
+	L.yourDecree = "Decreto: %s"
+	L.yourDecree2 = "Decreto: %s & %s"
+	L.hulk_killed = "%s ucciso - %.1f sec"
+	L.fails_message = "%s (%d Accumuli di Sanzione)"
+	L.reversal = "Rovesciamento"
+	L.greater_reversal = "Rovesciamento (Superiore)"
+	L.you_die = "Tu muori"
+	L.you_die_message = "Morirai in %d secondi"
 
-	--L.custom_off_repeating_decree_chat = "Repeating Decree Chat"
-	--L.custom_off_repeating_decree_chat_desc = "Spam the words 'HUG me' in yell chat, or 'AVOID me' in say chat, while you have |cff71d5ff[Queen's Decree]|r. Maybe they'll help you if they see the chat bubble."
+	L.custom_off_repeating_decree_chat = "Ripetizione Decreti"
+	L.custom_off_repeating_decree_chat_desc = "Spamma 'ABBRACCIA me' urlando, or 'EVITA me' in chat, mentrei sei sotto l'effetto |cff71d5ff[Decreto della Regina]|r. Forse sarà utile se vedono i fumetti della chat."
 end
