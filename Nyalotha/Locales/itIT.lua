@@ -23,7 +23,7 @@ end
 L = BigWigs:NewBossLocale("Il'gynoth, Corruption Reborn", "itIT")
 if L then
 	L.custom_on_fixate_plates = "Icona Ossessione su nameplate nemico"
-	-L.custom_on_fixate_plates_desc = "Mostra un'icona sul nameplate nemico che ti sta inseguendo.\nUso dei nameplates nemici richiesto. Questa funzionalità è supportata solo da KuiNameplates."
+	L.custom_on_fixate_plates_desc = "Mostra un'icona sul nameplate nemico che ti sta inseguendo.\nUso dei nameplates nemici richiesto. Questa funzionalità è supportata solo da KuiNameplates."
 end
 
 L = BigWigs:NewBossLocale("Vexiona", "itIT")
