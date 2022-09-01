@@ -198,7 +198,7 @@ do
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, CL.count:format(args.spellName, cursedBloodCount-1))
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, CL.count:format(args.spellName, cursedBloodCount-1))
 		if self:GetOption(cursedBloodMarker) then
 			self:CustomIcon(false, args.destName, #playerList)
 		end

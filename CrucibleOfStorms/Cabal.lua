@@ -334,7 +334,7 @@ end
 -- Zaxasj the Speaker
 function mod:AphoticBlastApplied(args)
 	if self:Me(args.destGUID) then
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 		self:PlaySound(args.spellId, "alarm")
 		self:TargetBar(args.spellId, 20, args.destName)
 	end
@@ -378,7 +378,7 @@ function mod:PromisesofPower(args)
 	if self:Me(args.destGUID) then
 		local amount = args.amount or 1
 		if amount % 3 == 1 then
-			self:StackMessage(args.spellId, args.destName, args.amount, "blue")
+			self:StackMessageOld(args.spellId, args.destName, args.amount, "blue")
 			self:PlaySound(args.spellId, amount > 5 and "warning" or "info")
 		end
 	end
@@ -408,7 +408,7 @@ function mod:ShearMind(args)
 end
 
 function mod:ShearMindApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	self:PlaySound(args.spellId, "alert", nil, args.destName)
 end
 
@@ -437,7 +437,7 @@ do
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "alert")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, 2, CL.count:format(args.spellName, crushingDoubtCount-1))
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, 2, CL.count:format(args.spellName, crushingDoubtCount-1))
 	end
 end
 

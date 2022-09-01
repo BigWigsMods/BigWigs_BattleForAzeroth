@@ -289,7 +289,7 @@ end
 function mod:DeathlyWithering(args)
 	local amount = args.amount or 1
 	if inDeathRealm and self:Me(args.destGUID) and amount % 5 == 0 then
-		self:StackMessage(args.spellId, args.destName, args.amount, "blue")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "blue")
 		if amount > 5 then
 			self:PlaySound(args.spellId, "alarm")
 		end

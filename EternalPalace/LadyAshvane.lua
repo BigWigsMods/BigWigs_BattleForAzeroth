@@ -127,7 +127,7 @@ do
 				self:CDBar(297397, cd)
 			end
 		end
-		self:TargetsMessage(297397, "red", playerList)
+		self:TargetsMessageOld(297397, "red", playerList)
 	end
 
 	function mod:BrinyBubbleRemoved(args)
@@ -158,7 +158,7 @@ function mod:BarnacleBash(args)
 end
 
 function mod:BarnacleBashApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	self:PlaySound(args.spellId, "alert")
 end
 

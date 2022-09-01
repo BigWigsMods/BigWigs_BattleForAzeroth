@@ -192,12 +192,12 @@ function mod:RisingFlamesApplied(args)
 	self:TargetBar(args.spellId, 15, args.destName)
 	local amount = args.amount or 1
 	if self:Me(args.destGUID) then
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 		if amount % 2 == 1 then
 			self:PlaySound(args.spellId, "alarm")
 		end
 	elseif self:Tank() and self:Tank(args.destName) then
-		self:StackMessage(args.spellId, args.destName, amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 		if amount > 3 and amount % 2 == 0 then
 			self:PlaySound(args.spellId, "warning", nil, args.destName)
 		end
@@ -333,7 +333,7 @@ do
 		if self:GetOption(searingEmbersMarker) then
 			self:CustomIcon(false, args.destName, playerIconsCount)
 		end
-		self:TargetsMessage(args.spellId, "orange", playerList, self:Easy() and 3 or 4, nil, nil, nil, playerIcons)
+		self:TargetsMessageOld(args.spellId, "orange", playerList, self:Easy() and 3 or 4, nil, nil, nil, playerIcons)
 	end
 
 	function mod:SearingEmbersRemoved(args)

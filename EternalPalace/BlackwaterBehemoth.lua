@@ -128,7 +128,7 @@ end
 function mod:FeedingFrenzyApplied(args)
 	local amount = args.amount or 1
 	if amount % 3 == 0 or amount > 10 then
-		self:StackMessage(args.spellId, args.destName, amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 		self:PlaySound(args.spellId, "alert")
 	end
 end

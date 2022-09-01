@@ -175,7 +175,7 @@ do
 		if (self:Healer() and #playerList == 1) or (not self:Healer() and self:Me(args.destName)) then
 			self:PlaySound(args.spellId, "info")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, nil, CL.count:format(args.spellName, spitCount))
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, nil, CL.count:format(args.spellName, spitCount))
 		if #playerList == 1 then
 			self:StopBar(CL.count:format(args.spellName, spitCount))
 			spitCount = spitCount + 1
@@ -236,13 +236,13 @@ end
 
 function mod:CrushApplied(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 	self:PlaySound(args.spellId, "info")
 end
 
 function mod:DissolveApplied(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, amount, "cyan")
+	self:StackMessageOld(args.spellId, args.destName, amount, "cyan")
 	self:PlaySound(args.spellId, "info")
 end
 

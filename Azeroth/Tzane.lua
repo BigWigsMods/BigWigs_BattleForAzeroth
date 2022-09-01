@@ -84,7 +84,7 @@ end
 
 function mod:ConsumingSpirits(args)
 	playerList[#playerList+1] = args.destName
-	self:TargetsMessage(args.spellId, "orange", playerList, 2)
+	self:TargetsMessageOld(args.spellId, "orange", playerList, 2)
 	if self:Me(args.destGUID) then
 		self:PlaySound(args.spellId, "alarm")
 		self:Say(args.spellId)

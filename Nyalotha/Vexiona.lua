@@ -161,7 +161,7 @@ do
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		if #playerList == 1 then
 			self:CDBar(args.spellId, 15)
 		end

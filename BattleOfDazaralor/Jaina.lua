@@ -295,7 +295,7 @@ function mod:ChillingTouch(args)
 	if self:Me(args.destGUID) then -- Check if we have to warn for high stacks in Mythic
 		local amount = args.amount or 1
 		if amount >= 18 or amount % 5 == 0 then
-			self:StackMessage(args.spellId, args.destName, amount, "blue")
+			self:StackMessageOld(args.spellId, args.destName, amount, "blue")
 			self:PlaySound(args.spellId, "alarm")
 		end
 	end
@@ -317,7 +317,7 @@ do
 	function mod:FrozenSolid(args)
 		playerList[#playerList+1] = args.destName
 		self:PlaySound(args.spellId, "warning", nil, playerList)
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 	end
 end
 
@@ -338,7 +338,7 @@ end
 function mod:IceShard(args)
 	local amount = args.amount or 1
 	if amount % 3 == 1 then
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 		self:PlaySound(args.spellId, amount > 20 and "alarm" or "alert", nil, args.destName)
 	end
 end
@@ -353,7 +353,7 @@ do
 		if stage == 1 then -- 3 targets
 			local count = #playerList + 1
 			playerList[count] = args.destName
-			self:TargetsMessage(args.spellId, "yellow", playerList, 3)
+			self:TargetsMessageOld(args.spellId, "yellow", playerList, 3)
 			if self:Me(args.destGUID) then
 				self:Say(args.spellId, CL.count_rticon:format(args.spellName, count, count))
 				self:PlaySound(args.spellId, "warning")
@@ -398,7 +398,7 @@ do
 	function mod:GraspofFrost(args)
 		playerList[#playerList+1] = args.destName
 		self:PlaySound(args.spellId, "alert", nil, playerList)
-		self:TargetsMessage(args.spellId, "yellow", playerList, 2, nil, nil, 0.7)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, 2, nil, nil, 0.7)
 	end
 end
 
@@ -448,7 +448,7 @@ do
 	function mod:BroadsideApplied(args)
 		broadsideCount = broadsideCount + 1
 		playerList[#playerList+1] = args.destName
-		self:TargetsMessage(args.spellId, "yellow", playerList, 3)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, 3)
 		if self:Me(args.destGUID) then
 			self:Say(args.spellId, CL.count_rticon:format(args.spellName, broadsideCount, broadsideCount))
 			self:SayCountdown(args.spellId, 6)
@@ -557,7 +557,7 @@ do
 	function mod:HeartofFrost(args)
 		playerList[#playerList+1] = args.destName
 		self:PlaySound(args.spellId, "alert", nil, playerList)
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		self:CDBar(args.spellId, 8)
 		if self:Me(args.destGUID) then
 			self:Flash(args.spellId)

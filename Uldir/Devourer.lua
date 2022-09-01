@@ -106,7 +106,7 @@ function mod:MalodorousMiasmaApplied(args)
 	if amount == 1 then
 		self:TargetMessage(args.spellId, "orange", args.destName)
 	else
-		self:StackMessage(args.spellId, args.destName, args.amount, "orange")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "orange")
 	end
 	self:PlaySound(args.spellId, self:Mythic() and "warning" or "info", nil, args.destName) -- spread in Mythic
 	if self:Mythic() and self:Me(args.destGUID) then
@@ -129,7 +129,7 @@ function mod:PutridParoxysmApplied(args)
 	if amount == 1 then
 		self:TargetMessage(args.spellId, "orange", args.destName)
 	else
-		self:StackMessage(args.spellId, args.destName, args.amount, "orange")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "orange")
 	end
 	self:PlaySound(args.spellId, "warning", nil, args.destName)
 	if self:Me(args.destGUID) then

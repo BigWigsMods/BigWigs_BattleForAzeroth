@@ -122,7 +122,7 @@ do
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "alarm")
 		end
-		self:TargetsMessage(args.spellId, "cyan", playerList)
+		self:TargetsMessageOld(args.spellId, "cyan", playerList)
 	end
 end
 
@@ -138,7 +138,7 @@ function mod:AbyssalStrikeStart(args)
 end
 
 function mod:AbyssalStrikeApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	self:PlaySound(args.spellId, "alert", nil, args.destName)
 end
 

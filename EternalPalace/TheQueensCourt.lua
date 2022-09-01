@@ -213,7 +213,7 @@ end
 function mod:PashmarsTouch(args)
 	local amount = args.amount or 1
 	if amount > 7 then
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 		self:PlaySound(args.spellId, "alarm", nil, args.destName)
 	end
 end
@@ -226,7 +226,7 @@ do
 	local playerList = mod:NewTargetList()
 	function mod:FanaticalVerdictApplied(args)
 		playerList[#playerList+1] = args.destName
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "alert")
 			self:Say(args.spellId)

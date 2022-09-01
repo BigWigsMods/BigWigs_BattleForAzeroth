@@ -272,7 +272,7 @@ do
 			end
 			if not self:Mythic() then
 				playerList[#playerList+1] = args.destName
-				self:TargetsMessage(272506, "orange", playerList, 3, nil, nil, 2) -- Travel time
+				self:TargetsMessageOld(272506, "orange", playerList, 3, nil, nil, 2) -- Travel time
 			end
 		elseif self:Me(args.destGUID) then -- Secondary Target or Stage 3 initial application
 			if castOnMe == true then
@@ -372,7 +372,7 @@ end
 function mod:GrowingCorruption(args)
 	local amount = args.amount or 1
 	if amount % 2 == 1 and amount > 2 then
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 		self:PlaySound(args.spellId, "alarm", nil, args.destName)
 	end
 end

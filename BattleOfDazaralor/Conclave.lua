@@ -275,7 +275,7 @@ end
 function mod:HasteningWinds(args)
 	local amount = args.amount or 1
 	if amount % 5 == 0 and amount > 12 then
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 		self:PlaySound(args.spellId, "alarm", nil, args.destName)
 	end
 end
@@ -291,7 +291,7 @@ do
 
 	local function warn()
 		if not isOnMe then
-			mod:TargetsMessage(282135, "orange", playerList, #playerList) -- Crawling Hex
+			mod:TargetsMessageOld(282135, "orange", playerList, #playerList) -- Crawling Hex
 			mod:OpenProximity(282135, 8, proxList)
 			if mod:Dispeller("curse") then
 				mod:PlaySound(282135, "alarm", nil, playerList)
@@ -393,7 +393,7 @@ function mod:LaceratingClaws(args)
 end
 
 function mod:LaceratingClawsApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	self:PlaySound(args.spellId, "alarm", nil, args.destName)
 end
 
@@ -469,7 +469,7 @@ do
 		end
 
 		if self:Dispeller("magic", nil, args.spellId) then
-			self:TargetsMessage(args.spellId, "yellow", playerList)
+			self:TargetsMessageOld(args.spellId, "yellow", playerList)
 			self:PlaySound(args.spellId, "alert", nil, playerList)
 		end
 	end

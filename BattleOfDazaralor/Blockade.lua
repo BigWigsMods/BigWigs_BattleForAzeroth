@@ -345,7 +345,7 @@ do
 				self:Flash(284362)
 			end
 			self:PlaySound(284362, "alert", nil, playerList)
-			self:TargetsMessage(284362, "yellow", playerList, 3)
+			self:TargetsMessageOld(284362, "yellow", playerList, 3)
 		end
 	end
 end
@@ -417,10 +417,10 @@ function mod:KelpWrappedApplied(args)
 		self:CancelSayCountdown(args.spellId)
 		self:SayCountdown(args.spellId, 15, nil, 5)
 		self:PlaySound(args.spellId, "alarm")
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	elseif self:Tank() and self:Tank(args.destName) then
 		local amount = args.amount or 1
-		self:StackMessage(args.spellId, args.destName, amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 		if amount == 5 then
 			self:PlaySound(args.spellId, "warning", nil, args.destName)
 		end

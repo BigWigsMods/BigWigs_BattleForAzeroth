@@ -164,7 +164,7 @@ do
 			self:SayCountdown(args.spellId, 5)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, CL.count:format(args.spellName, muttersCount-1)) -- XX Double check if this actually triggers after the cast earlier
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, CL.count:format(args.spellName, muttersCount-1)) -- XX Double check if this actually triggers after the cast earlier
 	end
 
 	function mod:MutteringsofInsanityRemoved(args)

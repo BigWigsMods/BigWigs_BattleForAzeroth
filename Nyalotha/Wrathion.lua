@@ -105,7 +105,7 @@ end
 function mod:SearingArmorApplied(args)
 	if self:Me(args.destGUID) or (self:Tank() and self:Tank(args.destName)) then
 		local amount = args.amount or 1
-		self:StackMessage(305978, args.destName, amount, "purple", self:Tank() and (amount > 1 and "warning") or not self:Tank() and "warning") -- Warning sound for non-tanks, 2+ stacks warning for tanks
+		self:StackMessageOld(305978, args.destName, amount, "purple", self:Tank() and (amount > 1 and "warning") or not self:Tank() and "warning") -- Warning sound for non-tanks, 2+ stacks warning for tanks
 	end
 end
 
@@ -199,7 +199,7 @@ do
 				self:PlaySound(313255, "info")
 				lastWarn = stack
 			elseif (stack % 10 == 0 or (stack > 40 and stack % 3 == 1)) and stack > lastWarn then -- 10, 20, 30, 40, 43, 46, 49
-				self:StackMessage(313255, self:UnitName(unit), stack, "blue", stack > 20 and "warning")
+				self:StackMessageOld(313255, self:UnitName(unit), stack, "blue", stack > 20 and "warning")
 				if stack == 40 then
 					self:Flash(313255)
 				end

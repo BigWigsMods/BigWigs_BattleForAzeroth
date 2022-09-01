@@ -97,7 +97,7 @@ end
 function mod:SacredBladeApplied(args)
 	local amount = args.amount or 1
 	if amount > 6 then
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 		self:PlaySound(args.spellId, "alarm", nil, args.destName)
 	end
 end

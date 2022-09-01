@@ -101,7 +101,7 @@ function mod:MarkAppliedDose(args)
 	markList[args.destName] = args.amount
 	self:SetInfoByTable(294726, markList)
 	if args.amount > 2 and self:Me(args.destGUID) then
-		self:StackMessage(294726, args.destName, args.amount, "blue", nil, args.spellName, args.spellId)
+		self:StackMessageOld(294726, args.destName, args.amount, "blue", nil, args.spellName, args.spellId)
 		self:PlaySound(294726, "alarm")
 	end
 end
@@ -121,7 +121,7 @@ function mod:FrostvenomTippedApplied(args)
 	if self:Me(args.destGUID) then
 		local amount = args.amount or 1
 		if amount % 2 == 1 then
-			self:StackMessage(-20300, args.destName, amount, "purple", nil, args.spellName, args.spellId)
+			self:StackMessageOld(-20300, args.destName, amount, "purple", nil, args.spellName, args.spellId)
 		end
 		self:CancelSayCountdown(-20300)
 		self:SayCountdown(-20300, 10)
@@ -156,7 +156,7 @@ do
 		if #playerList == 1 then
 			self:CDBar(-20006, self:Mythic() and 40 or 30) -- XXX Check if this is always the case: 16.8, 33, 40, 40, 30, 30, 35, 30
 		end
-		self:TargetsMessage(-20006, "yellow", playerList)
+		self:TargetsMessageOld(-20006, "yellow", playerList)
 	end
 
 	function mod:OverflowRemoved(args)

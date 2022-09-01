@@ -120,12 +120,12 @@ function mod:BestialCombo(args)
 end
 
 function mod:CrushedApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	self:PlaySound(args.spellId, "alarm", nil, args.destName)
 end
 
 function mod:RendingBiteApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	self:PlaySound(args.spellId, "alert", nil, args.destName)
 end
 

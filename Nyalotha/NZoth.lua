@@ -310,7 +310,7 @@ do
 			self:SayCountdown(args.spellId, 20)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 	end
 
 	function mod:GiftofNzothRemoved(args)
@@ -349,7 +349,7 @@ end
 
 function mod:MindWrackApplied(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 	if amount > 2 and amount % 2 == 0 then
 		self:PlaySound(args.spellId, "warning")
 	end
@@ -368,7 +368,7 @@ function mod:SynapticShockApplied(args)
 	local amount = args.amount or 1
 	psychusName = args.destName
 	self:StopBar(CL.count:format(args.spellName, synapticShockCount), psychusName)
-	self:StackMessage(313184, args.destName, amount, "green")
+	self:StackMessageOld(313184, args.destName, amount, "green")
 	self:PlaySound(313184, "info")
 	synapticShockCount = amount
 	self:TargetBar(313184, 20, psychusName, CL.count:format(args.spellName, synapticShockCount))
@@ -817,7 +817,7 @@ do
 			self:SayCountdown(args.spellId, 8)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "orange", playerList, CL.count:format(args.spellName, annihilateCount-1))
+		self:TargetsMessageOld(args.spellId, "orange", playerList, CL.count:format(args.spellName, annihilateCount-1))
 	end
 
 	function mod:AnnihilateRemoved(args)

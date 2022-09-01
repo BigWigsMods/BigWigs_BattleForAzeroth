@@ -253,7 +253,7 @@ do
 		if #playerList == 1 then
 			self:CastBar(args.spellId, 12) -- Explosion
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, 2)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, 2)
 		if self:Me(args.destGUID) then
 			self:Say(args.spellId, CL.count_rticon:format(args.spellName, ruinCount, ruinCount))
 			self:SayCountdown(args.spellId, 12)

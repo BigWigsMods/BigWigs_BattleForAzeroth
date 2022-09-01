@@ -404,7 +404,7 @@ function mod:DrainedSoulApplied(args)
 	if self:Me(args.destGUID) then
 		local amount = args.amount or 1
 		if amount % 2 == 0 or amount > 5 then
-			self:StackMessage(args.spellId, args.destName, amount, "blue")
+			self:StackMessageOld(args.spellId, args.destName, amount, "blue")
 			if amount > 3 then
 				self:PlaySound(args.spellId, amount > 6 and "warning" or "alarm", nil, args.destName)
 			end
@@ -493,7 +493,7 @@ end
 
 function mod:ColdBlastApplied(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 	if amount == 3 then
 		self:PlaySound(args.spellId, "warning", nil, args.destName)
 	end
@@ -507,7 +507,7 @@ end
 -- Cyranus
 function mod:SerratedEdgeApplied(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 	self:PlaySound(args.spellId, "alert", nil, args.destName)
 end
 
@@ -657,7 +657,7 @@ function mod:ArcaneVulnerabilityApplied(args)
 	if self:Me(args.destGUID) then
 		local amount = args.amount or 1
 		if amount % 5 == 0 then
-			self:StackMessage(args.spellId, args.destName, amount, "blue")
+			self:StackMessageOld(args.spellId, args.destName, amount, "blue")
 			if amount > 19 then
 				self:PlaySound(args.spellId, "alarm")
 			end
@@ -697,7 +697,7 @@ do
 			self:SayCountdown(args.spellId, self:Mythic() and 15 or 30)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		if self:GetOption(arcaneBurstMarker) then
 			self:CustomIcon(false, args.destName, #playerList)
 		end
@@ -763,7 +763,7 @@ end
 
 function mod:VoidTouchedApplied(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 	self:PlaySound(args.spellId, amount > 2 and "warning" or "alert", nil, args.destName)
 end
 

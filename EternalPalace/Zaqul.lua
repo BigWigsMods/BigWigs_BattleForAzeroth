@@ -164,7 +164,7 @@ function mod:HysteriaApplied(args)
 	if self:Me(args.destGUID) then
 		local amount = args.amount or 1
 		if amount % 3 == 0 then
-			self:StackMessage(args.spellId, args.destName, args.amount, "blue")
+			self:StackMessageOld(args.spellId, args.destName, args.amount, "blue")
 			self:PlaySound(args.spellId, "alarm", nil, args.destName)
 		end
 	end
@@ -196,7 +196,7 @@ do
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "alert")
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 	end
 end
 
@@ -224,7 +224,7 @@ do
 		if #playerList == 1 then
 			self:CDBar(args.spellId, 30)
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 	end
 
 	function mod:ManifestNightmaresRemoved(args)

@@ -131,7 +131,7 @@ end
 
 function mod:NullifyingStrikeApplied(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	if amount > 1 then
 		self:PlaySound(args.spellId, "alarm", nil, args.destName)
 	end
@@ -159,7 +159,7 @@ end
 
 function mod:UnstableVitaApplied(args)
 	local _, stacks = self:UnitDebuff(args.destName, args.spellId) -- XXX No CLUE for stacks right now.
-	self:StackMessage(306273, args.destName, stacks, "cyan")
+	self:StackMessageOld(306273, args.destName, stacks, "cyan")
 	self:TargetBar(306273, 6, args.destName, CL.count:format(args.spellName, stacks))
 	if self:Me(args.destGUID) then
 		self:PlaySound(306273, "warning", nil, args.destName)
@@ -268,7 +268,7 @@ do
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "cyan", playerList)
+		self:TargetsMessageOld(args.spellId, "cyan", playerList)
 	end
 
 	function mod:ChargedBondsRemoved(args)
@@ -288,7 +288,7 @@ end
 function mod:UnstableNightmareApplied(args)
 	-- XXX Assuming there is no CLUE event for stacks here as well.
 	local _, stacks = self:UnitDebuff(args.destName, args.spellId)
-	self:StackMessage(args.spellId, args.destName, stacks, "red")
+	self:StackMessageOld(args.spellId, args.destName, stacks, "red")
 	self:TargetBar(args.spellId, 6, args.destName, CL.count:format(args.spellName, stacks))
 	if self:Me(args.destGUID) then
 		self:Say(args.spellId)
@@ -322,6 +322,6 @@ do
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "cyan", playerList)
+		self:TargetsMessageOld(args.spellId, "cyan", playerList)
 	end
 end

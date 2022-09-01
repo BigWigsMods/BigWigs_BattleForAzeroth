@@ -310,7 +310,7 @@ function mod:LingeringInfection(args)
 	if self:Mythic() and self:Me(args.destGUID) then -- Check if we have to warn for high stacks in Mythic
 		lingeringInfectionStacks = amount
 		if amount >= 6 then
-			self:StackMessage(args.spellId, args.destName, amount, "blue")
+			self:StackMessageOld(args.spellId, args.destName, amount, "blue")
 			self:PlaySound(args.spellId, "warning")
 		end
 	end
@@ -323,7 +323,7 @@ function mod:EvolvingAffliction(args)
 end
 
 function mod:EvolvingAfflictionApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	self:PlaySound(args.spellId, "alert", nil, args.destName)
 end
 

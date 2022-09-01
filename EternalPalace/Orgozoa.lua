@@ -114,7 +114,7 @@ end
 function mod:DesensitizingStingApplied(args)
 	local amount = args.amount or 1
 	if amount % 2 == 0 or amount > 7 then -- 2, 4, 6, 8, 9
-		self:StackMessage(args.spellId, args.destName, amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 		if self:Me(args.destGUID) or amount > 7 then -- Also play a sound to be ready for tank swap at 8+
 			self:PlaySound(args.spellId, amount > 7 and "warning" or "alarm", nil, args.destName)
 		end

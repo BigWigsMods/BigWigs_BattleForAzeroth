@@ -134,7 +134,7 @@ do
 		if self:GetOption(arcaneBombMarker) then
 			self:CustomIcon(false, args.destName, #playerList)
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, 4, nil, nil, nil, playerIcons)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, 4, nil, nil, nil, playerIcons)
 	end
 
 	function mod:ArcaneBombRemoved(args)

@@ -208,7 +208,7 @@ do
 	function mod:MadnessBombApplied(args)
 		if UnitIsPlayer(args.destName) then
 			playerList[#playerList+1] = args.destName
-			self:TargetsMessage(args.spellId, "yellow", playerList)
+			self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		end
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "warning")
@@ -269,7 +269,7 @@ end
 
 function mod:BlackScar(args)
 	local amount = args.amount or 1
-	self:StackMessage(args.spellId, args.destName, amount, "purple")
+	self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 	if amount > 1 then
 		self:PlaySound(args.spellId, "warning")
 	end
@@ -306,7 +306,7 @@ function mod:SynthesisRemoved(args)
 		self:PlaySound("stages", "info")
 	elseif amount % 3 == 0 or lastSynthesisMsg-amount > 3 or amount < 4 then
 		lastSynthesisMsg = amount -- Events can be skipped, so this is our fallback
-		self:StackMessage(args.spellId, args.destName, amount, "green")
+		self:StackMessageOld(args.spellId, args.destName, amount, "green")
 	end
 end
 

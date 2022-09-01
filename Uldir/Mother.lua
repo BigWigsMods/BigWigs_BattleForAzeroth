@@ -153,7 +153,7 @@ function mod:SanitizingStrike(args)
 end
 
 function mod:SanitizingStrikeApplied(args)
-	self:StackMessage(args.spellId, args.destName, args.amount, "red")
+	self:StackMessageOld(args.spellId, args.destName, args.amount, "red")
 	self:PlaySound(args.spellId, "alarm", nil, args.destName)
 end
 
@@ -241,7 +241,7 @@ do
 	function mod:EndemicVirusApplied(args)
 		playerList[#playerList+1] = args.destName
 		self:PlaySound(args.spellId, "warning", nil, playerList)
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		if self:Me(args.destGUID) then
 			self:Flash(args.spellId)
 			self:Say(args.spellId)

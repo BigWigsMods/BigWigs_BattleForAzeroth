@@ -78,7 +78,7 @@ end
 function mod:ShadowShockApplied(args)
 	local amount = args.amount or 1
 	if amount > 10 or amount % 3 == 0 then
-		self:StackMessage(args.spellId, args.destName, amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 		self:PlaySound(args.spellId, amount > 10 and "warning" or "alarm", nil, args.destName)
 	end
 end
@@ -98,7 +98,7 @@ do
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 		end
-		self:TargetsMessage(args.spellId, "orange", playerList, CL.count:format(args.spellName, phsycheCount-1))
+		self:TargetsMessageOld(args.spellId, "orange", playerList, CL.count:format(args.spellName, phsycheCount-1))
 	end
 
 	function mod:ShredPsycheRemoved(args)

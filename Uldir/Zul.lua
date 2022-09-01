@@ -202,7 +202,7 @@ do
 		if self:GetOption(darkRevelationMarker) then
 			self:CustomIcon(false, args.destName, playerIconsCount)
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, maxExpected, nil, nil, nil, playerIcons)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, maxExpected, nil, nil, nil, playerIcons)
 	end
 end
 
@@ -313,10 +313,10 @@ function mod:RupturingBloodApplied(args)
 		self:CancelSayCountdown(args.spellId)
 		self:SayCountdown(args.spellId, 20, nil, 5)
 		self:PlaySound(args.spellId, "warning")
-		self:StackMessage(args.spellId, args.destName, args.amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "purple")
 	elseif self:Tank() and self:Tank(args.destName) then
 		local amount = args.amount or 1
-		self:StackMessage(args.spellId, args.destName, amount, "purple")
+		self:StackMessageOld(args.spellId, args.destName, amount, "purple")
 		if amount > 2 then
 			self:PlaySound(args.spellId, "warning", nil, args.destName)
 		end
@@ -342,7 +342,7 @@ do
 		if self:GetOption(deathwishMarker) then
 			self:CustomIcon(false, args.destName, playerIconsCount)
 		end
-		self:TargetsMessage(args.spellId, "orange", playerList, 2, nil, nil, nil, playerIcons)
+		self:TargetsMessageOld(args.spellId, "orange", playerList, 2, nil, nil, nil, playerIcons)
 	end
 end
 

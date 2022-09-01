@@ -110,7 +110,7 @@ do
 	function mod:PlasmaDischargeApplied(args)
 		playerList[#playerList+1] = args.destName
 		self:PlaySound(271224, "warning", nil, playerList)
-		self:TargetsMessage(271224, "yellow", playerList)
+		self:TargetsMessageOld(271224, "yellow", playerList)
 		if self:Me(args.destGUID) then
 			self:Say(271224)
 			self:SayCountdown(271224, 3.5)

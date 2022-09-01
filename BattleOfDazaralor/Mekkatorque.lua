@@ -288,7 +288,7 @@ do
 		if self:GetOption(gigavoltChargeMarker) then
 			self:CustomIcon(false, args.destName, playerListCount)
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList, 3, L.gigavolt_alt_text, nil, nil, playerIcons)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList, 3, L.gigavolt_alt_text, nil, nil, playerIcons)
 	end
 end
 

@@ -95,7 +95,7 @@ end
 
 function mod:ShadowWounds(args)
 	local amount = args.amount or 1
-	self:StackMessage(310129, args.destName, amount, "purple")
+	self:StackMessageOld(310129, args.destName, amount, "purple")
 	if amount > 1 then
 		self:PlaySound(310129, "alarm", nil, args.destName)
 	end

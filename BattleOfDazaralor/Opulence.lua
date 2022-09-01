@@ -460,7 +460,7 @@ do
 			self:Bar(283507, 12.1)
 		end
 		if (self:GetOption("custom_on_hand_timers") and self:IsHandOnPlatform()) or self:Me(args.destGUID) then
-			self:TargetsMessage(283507, "yellow", playerList)
+			self:TargetsMessageOld(283507, "yellow", playerList)
 		end
 		self:ScheduleTimer(wipe, 0.5)
 	end
@@ -492,7 +492,7 @@ end
 
 function mod:QuickenedPulseApplied(args)
 	if self:Me(args.destGUID) then
-		self:StackMessage(args.spellId, args.destName, args.amount, "green")
+		self:StackMessageOld(args.spellId, args.destName, args.amount, "green")
 		self:PlaySound(args.spellId, "info")
 	end
 end
@@ -514,7 +514,7 @@ do
 		if self:GetOption(hexOfLethargyMarker) then
 			self:CustomIcon(false, args.destName, hexCounter)
 		end
-		self:TargetsMessage(args.spellId, "orange", playerList, 2, nil, nil, nil, playerIcons)
+		self:TargetsMessageOld(args.spellId, "orange", playerList, 2, nil, nil, nil, playerIcons)
 	end
 
 	function mod:HexOfLethargyRemoved(args)
@@ -612,7 +612,7 @@ do
 			self:Say(args.spellId)
 			self:SayCountdown(args.spellId, 12)
 		end
-		self:TargetsMessage(args.spellId, "yellow", playerList)
+		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 	end
 
 	function mod:LiquidGoldRemoved(args)
