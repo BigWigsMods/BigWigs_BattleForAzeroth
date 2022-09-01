@@ -658,7 +658,7 @@ end
 function mod:CorruptedMindApplied(args)
 	if self:Me(args.destGUID) or self:Dispeller("magic") then
 		self:TargetMessage(args.spellId, "orange", args.destName)
-		self:PlaySound(args.spellId, "alert", args.destName)
+		self:PlaySound(args.spellId, "alert", nil, args.destName)
 	end
 end
 
@@ -714,28 +714,33 @@ function mod:EvokeAnguish(args)
 	end
 end
 
-function mod:StartStupifyingGlareTimer(t)
-	if self:Mythic() then
-		if voidspawnKilled then -- Reversed Order
-			self:Bar(318976, t, CL.count:format(glareCount%2==1 and L.laser_right or L.laser_left, glareCount))
-			self:ScheduleTimer("Message", t, 318976, "yellow", CL.count:format(glareCount%2==1 and L.laser_right or L.laser_left, glareCount))
-		else
-			self:Bar(318976, t, CL.count:format(glareCount%2==0 and L.laser_right or L.laser_left, glareCount))
-			self:ScheduleTimer("Message", t, 318976, "yellow", CL.count:format(glareCount%2==0 and L.laser_right or L.laser_left, glareCount))
-		end
-	else
-		self:Bar(318976, t, CL.count:format(self:SpellName(318976), glareCount))
-		self:ScheduleTimer("Message", t, 318976, "yellow", CL.count:format(self:SpellName(318976), glareCount))
+do
+	local function delaySound()
+		mod:PlaySound(318976, "long")
 	end
-	self:ScheduleTimer("PlaySound", t, 318976, "long")
-	glareCount = glareCount + 1
-	if self:Mythic() then
-		if glareTimersMythic[glareCount] then
-			self:ScheduleTimer("StartStupifyingGlareTimer", t, glareTimersMythic[glareCount])
+	function mod:StartStupifyingGlareTimer(t)
+		if self:Mythic() then
+			if voidspawnKilled then -- Reversed Order
+				self:Bar(318976, t, CL.count:format(glareCount%2==1 and L.laser_right or L.laser_left, glareCount))
+				self:ScheduleTimer("Message", t, 318976, "yellow", CL.count:format(glareCount%2==1 and L.laser_right or L.laser_left, glareCount))
+			else
+				self:Bar(318976, t, CL.count:format(glareCount%2==0 and L.laser_right or L.laser_left, glareCount))
+				self:ScheduleTimer("Message", t, 318976, "yellow", CL.count:format(glareCount%2==0 and L.laser_right or L.laser_left, glareCount))
+			end
+		else
+			self:Bar(318976, t, CL.count:format(self:SpellName(318976), glareCount))
+			self:ScheduleTimer("Message", t, 318976, "yellow", CL.count:format(self:SpellName(318976), glareCount))
 		end
-	else
-		if glareTimers[glareCount] then
-			self:ScheduleTimer("StartStupifyingGlareTimer", t, glareTimers[glareCount])
+		self:ScheduleTimer(delaySound, t)
+		glareCount = glareCount + 1
+		if self:Mythic() then
+			if glareTimersMythic[glareCount] then
+				self:ScheduleTimer("StartStupifyingGlareTimer", t, glareTimersMythic[glareCount])
+			end
+		else
+			if glareTimers[glareCount] then
+				self:ScheduleTimer("StartStupifyingGlareTimer", t, glareTimers[glareCount])
+			end
 		end
 	end
 end

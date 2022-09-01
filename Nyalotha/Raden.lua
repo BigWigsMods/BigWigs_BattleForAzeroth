@@ -306,7 +306,7 @@ function mod:DreadInfernoFixate(args)
 	if self:Me(args.destGUID) then
 		self:Say(args.spellId)
 		self:PersonalMessage(args.spellId)
-		self:PlaySound(args.spellId, "alarm", args.destName)
+		self:PlaySound(args.spellId, "alarm", nil, args.destName)
 	end
 end
 

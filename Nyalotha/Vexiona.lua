@@ -251,7 +251,7 @@ end
 
 function mod:DesolationApplied(args)
 	self:TargetMessage(args.spellId, "yellow", args.destName)
-	self:PlaySound(args.spellId, "warning", args.destName)
+	self:PlaySound(args.spellId, "warning", nil, args.destName)
 	self:Bar(args.spellId, self:Mythic() and 33 or 32.5)
 	if self:Me(args.destGUID) then
 		self:Yell(args.spellId)

@@ -78,7 +78,7 @@ end
 
 function mod:TideFistApplied(args)
 	self:TargetMessage(args.spellId, "purple", args.destName)
-	self:PlaySound(args.spellId, "alert", args.destName)
+	self:PlaySound(args.spellId, "alert", nil, args.destName)
 end
 
 function mod:UNIT_SPELLCAST_SUCCEEDED(_, _, _, spellId)

@@ -128,7 +128,7 @@ end
 
 function mod:DarkAscensionApplied(args)
 	self:TargetMessage(args.spellId, "red", args.destName)
-	self:PlaySound(args.spellId, "warning", args.destName)
+	self:PlaySound(args.spellId, "warning", nil, args.destName)
 end
 
 function mod:AbyssalStrikeStart(args)
@@ -157,7 +157,7 @@ end
 function mod:SoulFlayApplied(args)
 	if self:Me(args.destGUID) then
 		self:PersonalMessage(306319)
-		self:PlaySound(306319, "alarm", args.destName)
+		self:PlaySound(306319, "alarm", nil, args.destName)
 	end
 end
 

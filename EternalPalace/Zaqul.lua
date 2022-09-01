@@ -245,7 +245,7 @@ end
 
 function mod:PuncturedDarkness(args)
 	self:TargetMessage(args.spellId, "green", args.destName)
-	self:PlaySound(args.spellId, "long", args.destName)
+	self:PlaySound(args.spellId, "long", nil, args.destName)
 	self:TargetBar(args.spellId, 20, args.destName)
 end
 
