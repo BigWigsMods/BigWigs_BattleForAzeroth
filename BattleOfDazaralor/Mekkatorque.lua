@@ -246,7 +246,7 @@ end
 --
 
 function mod:UNIT_HEALTH(event, unit)
-	local hp = UnitHealth(unit) / UnitHealthMax(unit) * 100
+	local hp = self:GetHealth(unit)
 	if hp < 43 then -- Evasive Maneuvers! at 40%
 		self:Message("stages", "green", CL.soon:format(CL.stage:format(2)), false)
 		self:UnregisterUnitEvent(event, unit)

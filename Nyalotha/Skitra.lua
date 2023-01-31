@@ -65,7 +65,7 @@ end
 --
 
 function mod:UNIT_HEALTH(event, unit)
-	local hp = UnitHealth(unit) / UnitHealthMax(unit) * 100
+	local hp = self:GetHealth(unit)
 	if hp < nextStageWarning then
 		self:Message("stages", "green", CL.soon:format(self:SpellName(307725)), false)
 		nextStageWarning = nextStageWarning - 33

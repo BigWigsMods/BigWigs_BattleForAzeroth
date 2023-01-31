@@ -307,7 +307,7 @@ do
 
 	function mod:UNIT_HEALTH(event, unit)
 		if unit == "boss1" then -- Check stage changes
-			local hp = UnitHealth(unit) / UnitHealthMax(unit) * 100
+			local hp = self:GetHealth(unit)
 			if hp < nextStageWarning then -- Intermission at 70% & 45%
 				self:Message("stages", "green", CL.soon:format(CL.intermission), false)
 				nextStageWarning = nextStageWarning - 25

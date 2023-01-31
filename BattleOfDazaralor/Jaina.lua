@@ -209,8 +209,7 @@ function mod:OnEngage()
 end
 
 function mod:VerifyEnable(unit)
-	local hp = UnitHealthMax(unit)
-	return hp > 0 and (UnitHealth(unit) / hp) > 0.1 -- 10%
+	return self:GetHealth(unit) > 10
 end
 
 --------------------------------------------------------------------------------
@@ -246,7 +245,7 @@ do
 end
 
 function mod:UNIT_HEALTH(event, unit)
-	local hp = UnitHealth(unit) / UnitHealthMax(unit) * 100
+	local hp = self:GetHealth(unit)
 	if hp < nextStageWarning then -- Intermission at 60% & 30%
 		self:Message("stages", "green", CL.soon:format(CL.intermission), false)
 		nextStageWarning = nextStageWarning - 30

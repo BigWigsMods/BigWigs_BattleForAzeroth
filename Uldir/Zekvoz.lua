@@ -130,7 +130,7 @@ end
 --
 
 function mod:UNIT_HEALTH(event, unit)
-	local hp = UnitHealth(unit) / UnitHealthMax(unit) * 100
+	local hp = self:GetHealth(unit)
 	if hp < nextStageWarning then -- Mythic: 40%, other: 65% and 30%
 		local nextStage = stage + 1
 		self:Message("stages", "green", CL.soon:format(CL.stage:format(nextStage)), false)

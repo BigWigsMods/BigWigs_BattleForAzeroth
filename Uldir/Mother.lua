@@ -49,8 +49,7 @@ function mod:GetOptions()
 end
 
 function mod:VerifyEnable(unit)
-	local hp = UnitHealthMax(unit)
-	return hp > 0 and (UnitHealth(unit) / hp) > 0.2 -- 20%
+	return self:GetHealth(unit) > 20
 end
 
 function mod:OnBossEnable()
