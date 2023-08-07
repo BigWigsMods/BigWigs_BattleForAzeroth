@@ -130,7 +130,7 @@ do
 		abyssCount = abyssCount + 1
 		if abyssCount < 4 then
 			if UnitIsDead("player") then
-				-- Nothing
+				return
 			elseif not mod:UnitDebuff("player", 307586) then -- Devoured Abyss
 				mod:Message(307586, "blue", CL.no:format(mod:SpellName(307586)))
 				mod:PlaySound(307586, "warning")

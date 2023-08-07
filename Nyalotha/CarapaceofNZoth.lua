@@ -192,7 +192,7 @@ function mod:MadnessBomb(args)
 		self:Message(306973, "yellow", CL.count:format(args.spellName, madnessBombCount))
 	end
 	madnessBombCount = madnessBombCount + 1
-	local cd = nil
+	local cd
 	if stage == 1 then
 		cd = self:Mythic() and 25 or 26.6
 	elseif stage == 2 then
@@ -227,16 +227,15 @@ function mod:MadnessBombRemoved(args)
 end
 
 function mod:AdaptiveMembrane(args)
-	local barText = nil
 	if self:Mythic() and stage == 4 then
-		barText = adaptiveMembraneCount % 2 == 0 and L.player_membrane or L.boss_membrane
+		local barText = adaptiveMembraneCount % 2 == 0 and L.player_membrane or L.boss_membrane
 		self:Message(args.spellId, "orange", CL.count:format(barText, adaptiveMembraneCount))
 	else
 		self:Message(args.spellId, "orange", CL.count:format(args.spellName, adaptiveMembraneCount))
 	end
 	self:PlaySound(args.spellId, "alarm")
 	adaptiveMembraneCount = adaptiveMembraneCount + 1
-	local cd = nil
+	local cd
 	if stage == 1 then
 		if self:Mythic() then
 			cd = adaptiveMembraneCount % 2 == 0 and 10 or 21.8 -- 21.7-22.0
@@ -255,7 +254,7 @@ function mod:AdaptiveMembrane(args)
 		cd = self:Mythic() and (adaptiveMembraneCount % 2 == 0 and 10 or 44) or 31.8
 	end
 	if self:Mythic() and stage == 4 then
-		barText = adaptiveMembraneCount % 2 == 0 and L.player_membrane or L.boss_membrane
+		local barText = adaptiveMembraneCount % 2 == 0 and L.player_membrane or L.boss_membrane
 		self:Bar(args.spellId, cd, CL.count:format(barText, adaptiveMembraneCount))
 	else
 		self:Bar(args.spellId, cd, CL.count:format(args.spellName, adaptiveMembraneCount))

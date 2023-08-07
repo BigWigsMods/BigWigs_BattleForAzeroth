@@ -432,7 +432,7 @@ function mod:OblivionTear(args)
 	self:Message(args.spellId, "orange")
 	self:PlaySound(args.spellId, "alarm")
 	oblivionTearCount = oblivionTearCount + 1
-	local tearCooldown = 0
+	local tearCooldown
 	if self:Mythic() then
 		local nextUnstableResonanceTimer = nextUnstableResonance - GetTime()
 		tearCooldown = stage == 3 and 12.1 or 16.5

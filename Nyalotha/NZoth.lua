@@ -498,7 +498,7 @@ do
 		paranoiaCount = paranoiaCount + 1
 		if not shatteredEgo then -- Dont start bars while the boss is stunned
 			if self:Mythic() then
-				local t = nil
+				local t
 				if stage == 3 then
 					t = paranoiaTimersMythicStageTwo[paranoiaCount]
 				else

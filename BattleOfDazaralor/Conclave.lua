@@ -24,10 +24,10 @@ local lastWrathBar = {}
 
 -- Offset between aspect spawn time and wrath
 local wrathOffset = {
-	 [282155] = 1,  -- Gonk
-	 [282107] = 13,  -- Paku
-	 [286811] = 1,  -- Kimbul
-	 [282447] = 1,  -- Akunda
+	[282155] = 1, -- Gonk
+	[282107] = 13, -- Paku
+	[286811] = 1, -- Kimbul
+	[282447] = 1, -- Akunda
  }
 
 --------------------------------------------------------------------------------
@@ -143,11 +143,11 @@ function mod:OnEngage()
 	lastBossKillSpawnCooldown = 0
 	lastBossKillNextAspect = 0
 	lastWrathBarTime = 0
-	lastWrathBar = { 
-		[282155] = GetTime(),  -- Gonk
-		[282107] = 0,  -- Paku
-		[282447] = 0,  -- Kimbul
-		[286811] = 0,  -- Akunda 
+	lastWrathBar = {
+		[282155] = GetTime(), -- Gonk
+		[282107] = 0, -- Paku
+		[282447] = 0, -- Kimbul
+		[286811] = 0, -- Akunda
 	}
 
 	self:Bar(282098, 5) -- Gift of Wind
@@ -183,9 +183,9 @@ function mod:NextAspect()
 		end
 	end
 	if bossesKilled >= 2 then
-		if lastWrathBar[286811] < last then -- Akunda 
+		if lastWrathBar[286811] < last then -- Akunda
 			aspect = 286811
-			last = lastWrathBar[286811]
+			--last = lastWrathBar[286811]
 		end
 	end
 	return aspect
@@ -197,7 +197,7 @@ function mod:NextWrathCDBar(spellId)
 	lastWrathBarTime = now
 	local offset = -wrathOffset[spellId]
 	if lastBossKillTime > now + offset then
-		-- If the last boss was killed between the aspect spawn and the wrath, 
+		-- If the last boss was killed between the aspect spawn and the wrath,
 		-- reconstruct the situation at spawn time.
 		offset = offset + wrathOffset[lastBossKillNextAspect]
 		self:CDBar(lastBossKillNextAspect, lastBossKillSpawnCooldown + offset) -- SetOption:282107,282155,282447,286811:::
@@ -220,7 +220,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellId)
 		lastBossKillTime = GetTime()
 		lastBossKillSpawnCooldown = spawnCooldown
 		lastBossKillNextAspect = self:NextAspect()
-		
+
 		bossesKilled = bossesKilled + 1
 		self:Message("stages", "cyan", L.killed:format(self:UnitName(unit)), false)
 		self:PlaySound("stages", "info")
@@ -232,7 +232,7 @@ function mod:UNIT_SPELLCAST_SUCCEEDED(_, unit, _, spellId)
 		elseif mobId == 144767 then -- Gonk's Aspect
 			self:StopBar(282135) -- Crawling Hex
 			self:StopBar(285893) -- Wild Maul
-		elseif mobId == 144963 then -- Kimbul's Aspect
+		--elseif mobId == 144963 then -- Kimbul's Aspect
 			-- soon?
 		elseif mobId == 144941 then -- Akunda's Aspect
 			self:StopBar(285879) -- Mind Wipe

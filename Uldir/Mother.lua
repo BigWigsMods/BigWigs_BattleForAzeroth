@@ -187,7 +187,7 @@ function mod:WindTunnel(args)
 end
 
 function mod:UldirDefensiveBeam(args)
-	local beamType, castTime, timer = nil, nil, nil
+	local beamType, castTime, timer
 	if self:Easy() then
 		beamType = L.sideLaser
 		castTime = 4
