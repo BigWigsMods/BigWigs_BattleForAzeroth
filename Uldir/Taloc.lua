@@ -29,7 +29,7 @@ function mod:GetOptions()
 		"stages",
 		{271224, "SAY", "SAY_COUNTDOWN"}, -- Plasma Discharge
 		270290, -- Blood Storm
-		271296, -- Cudgel of Gore
+		{271296, "CASTBAR"}, -- Cudgel of Gore
 		271728, -- Retrieve Cudgel
 		{271895, "SAY"}, -- Sanguine Static
 		275270, -- Fixate

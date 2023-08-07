@@ -12,16 +12,6 @@ if L then
 	L.witness = "%s проткнул %s %s!"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "ruRU")
-if L then
-	L.disorient_desc = "Полоса для |cff71d5ff[Слепящей веры]|r.\nВозможно, это полоса, которую вы хотите отслеживать." -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "ruRU")
-if L then
-	L.disorient_desc = "Полоса для |cff71d5ff[Слепящей веры]|r.\nВозможно, это полоса, которую вы хотите отслеживать." -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "ruRU")
 if L then
 	L.custom_on_fixate_plates = "Иконка Преследования на Полосах Здоровья противников"

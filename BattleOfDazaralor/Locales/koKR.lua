@@ -12,16 +12,6 @@ if L then
 	L.witness = "%s 가 %s 를 %s 로 찌름!"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "koKR")
-if L then
-	L.disorient_desc = " |cff71d5ff[눈부신 신념]|r 바 표시.\n주로 신념 카운트 해주는 바를 이걸로 쓰는 것이 편할 것입니다." -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "koKR")
-if L then
-	L.disorient_desc = "|cff71d5ff[눈부신 신념]|r 바 표시.\n주로 카운트 해주는 바를 이걸로 쓰는 것이 편할 것입니다." -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "koKR")
 if L then
 	L.custom_on_fixate_plates = "적 네임플레이트에 추적 아이콘 표시"

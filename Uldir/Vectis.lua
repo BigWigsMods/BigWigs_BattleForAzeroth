@@ -44,7 +44,7 @@ function mod:GetOptions()
 		267242, -- Contagion
 		{265212, "SAY", "ICON"}, -- Gestate
 		265206, -- Immunosuppression
-		265217, -- Liquefy
+		{265217, "CASTBAR"}, -- Liquefy
 		266459, -- Plague Bomb
 		-- Mythic
 		{274990, "FLASH", "PROXIMITY"}, -- Bursting Lesions

@@ -56,24 +56,24 @@ function mod:GetOptions()
 		-- Relics of Power
 		{-18970, "INFOBOX"},
 		282741, -- Umbral Shell
-		282886, -- Abyssal Collapse
-		282742, -- Storm of Annihilation
+		{282886, "CASTBAR"}, -- Abyssal Collapse
+		{282742, "CASTBAR"}, -- Storm of Annihilation
 		282914, -- Power Overwhelming
 		-- General
-		282675, -- Pact of the Restless
+		{282675, "CASTBAR"}, -- Pact of the Restless
 		"berserk",
 		-- Zaxasj the Speaker
 		282386, -- Aphotic Blast
 		282540, -- Agent of Demise
-		282589, -- Cerebral Assault
+		{282589, "CASTBAR"}, -- Cerebral Assault
 		282561, -- Dark Herald
 		282566, -- Promises of Power
 		282515, -- Visage from Beyond
-		282517, -- Terrifying Echo
+		{282517, "CASTBAR"}, -- Terrifying Echo
 		-- Fa'thuul the Feared
 		{282384, "TANK"}, -- Shear Mind
 		282407, -- Void Crash
-		{282432, "SAY", "SAY_COUNTDOWN", "FLASH", "ME_ONLY_EMPHASIZE"}, -- Crushing Doubt
+		{282432, "SAY", "SAY_COUNTDOWN", "FLASH", "ME_ONLY_EMPHASIZE", "CASTBAR"}, -- Crushing Doubt
 		crushingDoubtMarker,
 		eldritchAbominationMarker,
 		287876, -- Enveloping Darkness

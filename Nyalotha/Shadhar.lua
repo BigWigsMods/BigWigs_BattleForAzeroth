@@ -52,18 +52,18 @@ function mod:GetOptions()
 
 		--[[ Crush and Dissolve ]]--
 		{-21311, "TANK_HEALER"}, -- Crush and Dissolve
-		{307471, "TANK"}, -- Crush
-		{307472, "TANK_HEALER"}, -- Dissolve
+		{307471, "TANK", "CASTBAR"}, -- Crush
+		{307472, "TANK_HEALER", "CASTBAR"}, -- Dissolve
 
 		--[[ Stage One: Shadowy Carapace ]]--
 		{306448, "HEALER"}, -- Umbral Mantle
-		306928, -- Umbral Breath
+		{306928, "CASTBAR"}, -- Umbral Breath
 
 		--[[ Stage Two: Void-tinged Carapace ]]--
-		306930, -- Entropic Breath
+		{306930, "CASTBAR"}, -- Entropic Breath
 
 		--[[ Stage Three: Noxious Carapace ]]--
-		306929, -- Bubbling Breath
+		{306929, "CASTBAR"}, -- Bubbling Breath
 		314736, -- Bubbling Overflow
 		306942, -- Frenzy
 	}, {

@@ -59,7 +59,7 @@ function mod:GetOptions()
 		-- Tek'ris
 		307637, -- Accelerated Evolution
 		307968, -- Nullification Blast
-		{307232, "PROXIMITY"}, -- Echoing Void
+		{307232, "PROXIMITY", "CASTBAR"}, -- Echoing Void
 	},{
 		[307201] = "general",
 		[314583] = self:SpellName(-20710), -- Ka'zir

@@ -82,20 +82,20 @@ function mod:GetOptions()
 		relicMarker,
 		284722, -- Umbral Shell
 		284804, -- Custody of the Deep
-		284809, -- Abyssal Collapse
-		284583, -- Storm of Annihilation
+		{284809, "CASTBAR"}, -- Abyssal Collapse
+		{284583, "CASTBAR"}, -- Storm of Annihilation
 		{284851, "TANK"}, -- Touch of the End
 		285185, -- Oblivion Tear
 		285416, -- Void Crash
 		285376, -- Eyes of N'Zoth
-		285345, -- Maddening Eyes of N'Zoth
+		{285345, "CASTBAR"}, -- Maddening Eyes of N'Zoth
 		285453, -- Gift of N'Zoth: Obscurity
 		285820, -- Call Undying Guardian
 		285638, -- Gift of N'Zoth: Hysteria
 		-19118, -- Primordial Mindbender
 		285427, -- Consume Essence
 		mindbenderMarker,
-		285562, -- Unknowable Terror
+		{285562, "CASTBAR"}, -- Unknowable Terror
 		{285652, "SAY"}, -- Insatiable Torment
 		285685, -- Gift of N'Zoth: Lunacy
 		{293653, "FLASH", "PULSE"}, -- Unstable Resonance

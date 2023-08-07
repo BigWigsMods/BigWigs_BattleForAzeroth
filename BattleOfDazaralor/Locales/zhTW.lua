@@ -12,16 +12,6 @@ if L then
 	L.witness = "%1$s的%3$s刺中了%2$s！"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "zhTW")
-if L then
-	L.disorient_desc = "為|cff71d5ff[盲信]|r顯示施法條，如果你需要顯示精確的施法進度。" -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "zhTW")
-if L then
-	L.disorient_desc = "為|cff71d5ff[盲信]|r顯示施法條，如果你需要顯示精確的施法進度。" -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "zhTW")
 if L then
 	L.custom_on_fixate_plates = "在敵方名條顯示追獵圖示"

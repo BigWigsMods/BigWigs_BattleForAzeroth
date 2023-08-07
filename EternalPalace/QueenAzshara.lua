@@ -89,21 +89,21 @@ function mod:GetOptions()
 		-20408, -- Azshara's Devoted
 		-20410, -- Azshara's Indomitable
 		{304475, "TANK"}, -- Arcane Jolt
-		300519, -- Arcane Detonation
-		297371, -- Reversal of Fortune
+		{300519, "CASTBAR"}, -- Arcane Detonation
+		{297371, "CASTBAR"}, -- Reversal of Fortune
 		{303657, "SAY", "SAY_COUNTDOWN"}, -- Arcane Burst
 		arcaneBurstMarker,
 		-20355, -- Loyal Myrmidon
 		{300492, "SAY", "FLASH"}, -- Static Shock
 		300620, -- Crystalline Shield
-		297372, -- Greater Reversal of Fortune
+		{297372, "CASTBAR"}, -- Greater Reversal of Fortune
 		300768, -- Piercing Gaze
 		{300743, "TANK"}, -- Void Touched
 		303986, -- Nether Portal
 		301431, -- Overload
 		{300866, "ME_ONLY", "FLASH", "COUNTDOWN"}, -- Essence of Azeroth
 		300877, -- System Shock
-		300478, -- Divide and Conquer
+		{300478, "CASTBAR"}, -- Divide and Conquer
 	},{
 		["stages"] = "general",
 		[297937] = -20250, -- Stage One: Cursed Lovers

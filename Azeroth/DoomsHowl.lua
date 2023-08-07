@@ -27,7 +27,7 @@ function mod:GetOptions()
 		271163, -- Shattering Pulse
 		{271164, "PROXIMITY"}, -- Mortar Shot
 		271120, -- Flame Exhausts
-		271223, -- Siege Up
+		{271223, "CASTBAR"}, -- Siege Up
 		271800, -- Battle Field Repair
 		engineerMarker,
 		--271789, -- Sentry Protection
@@ -120,11 +120,11 @@ end
 
 
 --function mod:SentryProtection(args)
---	
+--
 --end
 
 --function mod:SentryProtectionRemoved(args)
---	
+--
 --end
 
 do

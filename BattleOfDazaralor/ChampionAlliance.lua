@@ -18,17 +18,6 @@ local waveofLightCounter = 0
 local faithCaster = nil
 
 --------------------------------------------------------------------------------
--- Localization
---
-
-local L = mod:GetLocale()
-if L then
-	L.disorient = 156266 -- Disorient
-	L.disorient_desc = "Bar for the |cff71d5ff[Blinding Faith]|r cast.\nThis is probably the bar you want to have the countdown on." -- Blinding Faith = 283650
-	L.disorient_icon = 156266 -- Some swirl
-end
-
---------------------------------------------------------------------------------
 -- Initialization
 --
 
@@ -44,8 +33,7 @@ function mod:GetOptions()
 		282113, -- Avenging Wrath
 		284595, -- Penance
 		283628, -- Heal
-		283650, -- Blinding Faith
-		{"disorient", "COUNTDOWN"},
+		{283650, "CASTBAR", "CASTBAR_COUNTDOWN"}, -- Blinding Faith
 		283582, -- Consecration
 		-- Mythic
 		287469, -- Prayer for the Fallen
@@ -162,13 +150,13 @@ function mod:BlindingFaith(args)
 	faithCaster = args.sourceGUID
 	self:Message(args.spellId, "orange")
 	self:PlaySound(args.spellId, "warning")
-	self:CastBar("disorient", 4, L.disorient, L.disorient_icon)
+	self:CastBar(args.spellId, 4)
 	self:CDBar(args.spellId, 15)
 end
 
 function mod:CrusaderDeath(args)
 	if args.destGUID == faithCaster then
-		self:StopBar(L.disorient)
+		self:StopBar(CL.cast:format(self:SpellName(283650))) -- Blinding Faith
 	end
 end
 

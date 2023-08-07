@@ -12,16 +12,6 @@ if L then
 	L.witness = "%s a poignardé %s avec %s!"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "frFR")
-if L then
-	L.disorient_desc = "Barre d'incantation de |cff71d5ff[Foi aveuglante]|r.\nProbablement la barre dont vous voulez avoir le décompte." -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "frFR")
-if L then
-	L.disorient_desc = "Barre d'incantation de |cff71d5ff[Foi aveuglante]|r.\nProbablement la barre dont vous voulez avoir le décompte." -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "frFR")
 if L then
 	L.custom_on_fixate_plates = "Icône de poursuite sur la barre de vie de l'ennemi"

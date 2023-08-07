@@ -22,10 +22,10 @@ local chargeCounter = 1
 function mod:GetOptions()
 	return {
 		-- General
-		300088, -- Desperate Measures
+		{300088, "CASTBAR"}, -- Desperate Measures
 		296716, -- Separation of Power
 		"berserk",
-		298050, -- Form Rank
+		{298050, "CASTBAR"}, -- Form Rank
 		301244, -- Repeat Performance
 		{297656, "PROXIMITY"}, -- Stand Alone
 		297566, -- Deferred Sentence
@@ -34,7 +34,7 @@ function mod:GetOptions()
 		-- Silivaz the Zealous
 		{299914, "ICON", "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Frenetic Charge
 		300545, -- Mighty Rupture
-		301807, -- Zealous Eruption
+		{301807, "CASTBAR"}, -- Zealous Eruption
 
 		-- Pashmar the Fanatical
 		{301830, "TANK"}, -- Pashmar's Touch

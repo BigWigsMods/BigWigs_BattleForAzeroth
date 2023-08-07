@@ -89,7 +89,7 @@ function mod:GetOptions()
 		{288374, "ICON", "SAY", "SAY_COUNTDOWN"}, -- Siegebreaker Blast
 		{288345, "EMPHASIZE"}, -- Glacial Ray
 		288441, -- Icefall
-		288221, -- Burning Explosion
+		{288221, "CASTBAR"}, -- Burning Explosion
 		-- Intermission
 		{289220, "FLASH"}, -- Heart of Frost
 		289219, -- Frost Nova

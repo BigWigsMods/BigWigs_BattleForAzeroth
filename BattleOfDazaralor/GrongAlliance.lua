@@ -32,7 +32,7 @@ local deathKnellCount = 1
 function mod:GetOptions()
 	return {
 		--[[ Grong ]]--
-		282399, -- Death Knel
+		{282399, "CASTBAR"}, -- Death Knel
 		286450, -- Necrotic Combo
 		{285671, "TANK"}, -- Crushed
 		{285875, "TANK"}, -- Rending Bite

@@ -62,13 +62,13 @@ function mod:GetOptions()
 		-- Stage 1
 		283606, -- Crush
 		"custom_on_fade_out_bars",
-		289383, -- Chaotic Displacement
+		{289383, "CASTBAR"}, -- Chaotic Displacement
 		-- The Hand of In'zashi
 		"custom_on_hand_timers",
 		{283507, "SAY", "SAY_COUNTDOWN"}, -- Volatile Charge
 		-- Yalat's Bulwark
 		"custom_on_bulwark_timers",
-		282939, -- Flames of Punishment
+		{282939, "CASTBAR"}, -- Flames of Punishment
 		-- Traps
 		285479, -- Flame Jet
 		284424, -- Scorching Ground
@@ -83,10 +83,10 @@ function mod:GetOptions()
 		285995, -- Spirits of Gold
 		286026, -- Channel Gold
 		{285014, "ICON", "SAY", "SAY_COUNTDOWN"}, -- Coin Shower
-		284941, -- Wail of Greed
+		{284941, "CASTBAR"}, -- Wail of Greed
 		{287037, "TANK"}, -- Coin Sweep
 		-- Mythic
-		289155, -- Surging Gold
+		{289155, "CASTBAR"}, -- Surging Gold
 	}, {
 		["stages"] = CL.general,
 		[-19494] = -19494, -- Crown Jewels

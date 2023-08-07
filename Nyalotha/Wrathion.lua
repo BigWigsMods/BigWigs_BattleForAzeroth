@@ -32,8 +32,8 @@ function mod:GetOptions()
 		305978, -- Searing Breath
 		{306163, "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Incineration
 		306289, -- Gale Blast
-		306735, -- Burning Cataclysm
-		307013, -- Burning Madness
+		{306735, "CASTBAR"}, -- Burning Cataclysm
+		{307013, "CASTBAR"}, -- Burning Madness
 		313250, -- Creeping Madness
 		{313255, "FLASH"}, -- Slow
 	}, {

@@ -30,9 +30,9 @@ function mod:GetOptions()
 		292138, -- Radiant Biomass
 		{298428, "TANK"}, -- Feeding Frenzy
 		292159, -- Toxic Spine
-		292270, -- Shock Pulse
+		{292270, "CASTBAR"}, -- Shock Pulse
 		{301494, "SAY", "SAY_COUNTDOWN", "FLASH", "ICON"}, -- Piercing Barb
-		292083, -- Cavitation
+		{292083, "CASTBAR"}, -- Cavitation
 		301180, -- Slipstream
 	}
 end

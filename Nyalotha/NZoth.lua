@@ -96,13 +96,13 @@ function mod:GetOptions()
 		310184, -- Creeping Anquish
 		309991, -- Anguish
 		313184, -- Synaptic Shock
-		312155, -- Shattered Ego
+		{312155, "CASTBAR"}, -- Shattered Ego
 		-- Stage 2
-		315772, -- Mindgrasp
+		{315772, "CASTBAR"}, -- Mindgrasp
 		{315927, "SAY", "PROXIMITY"}, -- Paranoia
 		"custom_on_repeating_paranoia_say",
 		318449, -- Eternal Torment
-		316463, -- Mindgate
+		{316463, "CASTBAR"}, -- Mindgate
 		312866, -- Cataclysmic Flames
 		313960, -- Black Volley
 		-21286, -- Basher Tentacle
@@ -111,13 +111,13 @@ function mod:GetOptions()
 		313400, -- Corrupted Mind
 		-- Stage 3
 		318976, -- Stupefying Glare
-		317102, -- Evoke Anguish
+		{317102, "CASTBAR"}, -- Evoke Anguish
 		-21491, -- Thought Harvester
 		harvesterMarker,
 		{317066, "NAMEPLATEBAR"}, -- Harvest Thoughts
 		318091, -- Summon Gateway
 		318196, -- Event Horizon
-		316970, -- Cleansing Protocol
+		{316970, "CASTBAR"}, -- Cleansing Protocol
 		318971, -- Dark Matter
 		{318459, "SAY", "SAY_COUNTDOWN"}, -- Annihilate
 	}, {

@@ -38,11 +38,11 @@ function mod:GetOptions()
 	return {
 		"stages",
 		-- Stage 1
-		284831, -- Scorching Detonation
+		{284831, "CASTBAR"}, -- Scorching Detonation
 		284933, -- Plague of Toads
 		285172, -- Greater Serpent Totem
 		{290450, "SAY", "FLASH"}, -- Seal of Purification
-		{284686, "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Meteor Leap
+		{284686, "SAY", "SAY_COUNTDOWN", "FLASH", "CASTBAR"}, -- Meteor Leap
 		284719, -- Crushing Leap
 		284781, -- Grievous Axe
 		-- Stage 2
@@ -52,7 +52,7 @@ function mod:GetOptions()
 		{285213, "TANK_HEALER"}, -- Caress of Death
 		{288449, "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Death's Door
 		-- Stage 3
-		287333, -- Inevitable End
+		{287333, "CASTBAR"}, -- Inevitable End
 		286742, -- Necrotic Smash
 	}
 end

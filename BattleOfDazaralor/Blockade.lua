@@ -50,7 +50,7 @@ function mod:GetOptions()
 		284383, -- Sea's Temptation XXX Rename bar to "Add"?
 		284405, -- Tempting Song
 		-- Stage 2
-		288696, -- Catastrophic Tides
+		{288696, "CASTBAR"}, -- Catastrophic Tides
 		{285000, "TANK", "SAY_COUNTDOWN"}, -- Kelp-Wrapped
 		285118, -- Sea Swell
 		285017, -- Ire of the Deep

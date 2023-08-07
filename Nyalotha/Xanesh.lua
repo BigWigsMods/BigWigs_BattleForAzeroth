@@ -27,11 +27,11 @@ local tormentCount = 1
 local awakenedTerrorMarker = mod:AddMarkerOption(false, "npc", 3, -21227, 2, 3, 1) -- Awakened Terror // In order of marking
 function mod:GetOptions()
 	return {
-		312336, -- Void Ritual
+		{312336, "CASTBAR"}, -- Void Ritual
 		312406, -- Voidwoken
 		313264, -- Dark Ascension
 		{311551, "TANK"}, -- Abyssal Strike
-		306319, -- Soul Flay
+		{306319, "CASTBAR"}, -- Soul Flay
 		306208, -- Torment
 		305575, -- Ritual Field
 		awakenedTerrorMarker,

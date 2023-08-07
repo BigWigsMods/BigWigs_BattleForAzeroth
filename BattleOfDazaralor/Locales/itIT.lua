@@ -12,16 +12,6 @@ if L then
 	L.witness = "%s pugnala %s con %s!"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "itIT")
-if L then
-	L.disorient_desc = "Barra per il lancio di |cff71d5ff[Fede Accecante]|r.\nQuesta è l'unica barra di cui vuoi sapere sempre il cooldown." -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "itIT")
-if L then
-	L.disorient_desc = "Barra per il lancio di |cff71d5ff[Fede Accecante]|r.\nQuesta è l'unica barra di cui vuoi sapere sempre il cooldown." -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "itIT")
 if L then
 	L.custom_on_fixate_plates = "Icona Inseguimento su nameplate nemico"

@@ -34,7 +34,7 @@ end
 function mod:GetOptions()
 	return {
 		{262277, "TANK"}, -- Thrashing Terror
-		"breath", -- Rotting Regurgitation
+		{"breath", "CASTBAR"}, -- Rotting Regurgitation
 		262288, -- Shockwave Stomp
 		{262313, "ME_ONLY", "SAY", "SAY_COUNTDOWN"}, -- Malodorous Miasma
 		{262314, "ME_ONLY", "FLASH", "SAY", "SAY_COUNTDOWN"}, -- Putrid Paroxysm

@@ -38,8 +38,8 @@ function mod:GetOptions()
 		269051, -- Cleansing Purge
 		267787, -- Sanitizing Strike
 		267795, -- Purifying Flame
-		267878, -- Wind Tunnel
-		268253, -- Uldir Defensive Beam
+		{267878, "CASTBAR"}, -- Wind Tunnel
+		{268253, "CASTBAR"}, -- Uldir Defensive Beam
 		-- Mythic
 		{279662, "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Endemic Virus
 	},{

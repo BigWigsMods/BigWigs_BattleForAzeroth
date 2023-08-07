@@ -29,7 +29,7 @@ function mod:GetOptions()
 		"stages",
 		{308059, "TANK"}, -- Shadow Shock
 		{307950, "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Shred Psyche
-		309687, -- Psychic Outburst
+		{309687, "CASTBAR"}, -- Psychic Outburst
 		313239, -- Images of Absolution
 		307725, -- Illusionary Projection
 	}

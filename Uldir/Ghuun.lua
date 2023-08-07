@@ -50,7 +50,7 @@ local burstingMarker = mod:AddMarkerOption(false, "player", 1, 277007, 1, 2, 3, 
 function mod:GetOptions()
 	return {
 		"custom_on_stop_timers",
-		"stages",
+		{"stages", "CASTBAR"},
 		-18109, -- Power Matrix
 		263482, -- Reorigination Blast
 		-- Stage 1
@@ -71,7 +71,7 @@ function mod:GetOptions()
 		{275160, "EMPHASIZE"}, -- Gaze of G'huun
 		263321, -- Undulating Mass
 		-- Mythic
-		277007, -- Bursting Boil
+		{277007, "CASTBAR"}, -- Bursting Boil
 		burstingMarker,
 		{268074, "FLASH"}, -- Fixate
 		"custom_on_fixate_plates",

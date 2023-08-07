@@ -12,16 +12,6 @@ if L then
 	--L.witness = "%s stabbed %s with %s!"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "ptBR")
-if L then
-	--L.disorient_desc = "Bar for the |cff71d5ff[Blinding Faith]|r cast.\nThis is probably the bar you want to have the countdown on." -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "ptBR")
-if L then
-	--L.disorient_desc = "Bar for the |cff71d5ff[Blinding Faith]|r cast.\nThis is probably the bar you want to have the countdown on." -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "ptBR")
 if L then
 	--L.custom_on_fixate_plates = "Stalking icon on Enemy Nameplate"

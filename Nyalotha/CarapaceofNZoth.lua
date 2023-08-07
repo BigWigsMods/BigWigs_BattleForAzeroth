@@ -70,8 +70,8 @@ function mod:GetOptions()
 
 		--[[  Stage Three: Locus of Infinite Truths ]]--
 		{306984, "SAY", "SAY_COUNTDOWN", "PROXIMITY"}, -- Insanity Bomb
-		-21069, -- Thrashing Tentacle
-		313039, -- Infinite Darkness
+		{-21069, "CASTBAR"}, -- Thrashing Tentacle
+		{313039, "CASTBAR"}, -- Infinite Darkness
 
 		--[[  General ]]--
 		"stages",

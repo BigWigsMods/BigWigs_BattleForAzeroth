@@ -48,12 +48,12 @@ function mod:GetOptions()
 		{273282, "TANK"}, -- Essence Shear
 		273538, -- Obliteration Blast
 		{272404, "PROXIMITY"}, -- Oblivion Sphere
-		{272536, "SAY", "SAY_COUNTDOWN"}, -- Imminent Ruin
+		{272536, "SAY", "SAY_COUNTDOWN", "CASTBAR"}, -- Imminent Ruin
 		imminentRuinMarker,
 		279013, -- Essence Shatter
-		273810, -- Xalzaix's Awakening
+		{273810, "CASTBAR"}, -- Xalzaix's Awakening
 		274230, -- Oblivion's Veil
-		272115, -- Obliteration Beam
+		{272115, "CASTBAR"}, -- Obliteration Beam
 		273949, -- Visions of Madness
 		visionMarker,
 		276922, -- Living Weapon

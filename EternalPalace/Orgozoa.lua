@@ -29,10 +29,10 @@ function mod:GetOptions()
 		298242, -- Incubation Fluid
 		{305048, "SAY"}, -- Arcing Current
 		298465, -- Amniotic Splatter
-		298548, -- Massive Incubator
+		{298548, "CASTBAR"}, -- Massive Incubator
 		{295779, "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Aqua Lance
 		295822, -- Conductive Pulse
-		296691, -- Powerful Stomp
+		{296691, "CASTBAR"}, -- Powerful Stomp
 		305057, -- Call of the Tender
 	}
 end

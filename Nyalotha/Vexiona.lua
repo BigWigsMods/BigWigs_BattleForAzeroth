@@ -44,11 +44,11 @@ function mod:GetOptions()
 		307403, -- Annihilation
 		307057, -- Dark Gateway
 		307729, -- Fanatical Ascension
-		{315762, "FLASH", "EMPHASIZE"}, -- Twilight Decimator
+		{315762, "FLASH", "EMPHASIZE", "CASTBAR"}, -- Twilight Decimator
 		307116, -- Power of the Chosen
-		307639, -- Heart of Darkness
+		{307639, "CASTBAR"}, -- Heart of Darkness
 		{310323, "SAY", "SAY_COUNTDOWN"}, -- Desolation
-		315932, -- Brutal Smash
+		{315932, "CASTBAR"}, -- Brutal Smash
 	},{
 		["stages"] = "general",
 		[307314] = CL.stage:format(1),

@@ -12,16 +12,6 @@ if L then
 	L.witness = "¡%s ha apuñalado a %s con %s!"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "esES") or BigWigs:NewBossLocale("Champion of the Light Horde", "esMX")
-if L then
-	L.disorient_desc = "Barra para el lanzamiento de |cff71d5ff[Fe cegadora]|r.\nEsta es probablemente la barra que querrás tener con la cuenta atrás activada." -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "esES") or BigWigs:NewBossLocale("Champion of the Light Alliance", "esMX")
-if L then
-	L.disorient_desc = "Barra para el lanzamiento de |cff71d5ff[Fe cegadora]|r.\nEsta es probablemente la barra que querrás tener con la cuenta atrás activada." -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "esES") or BigWigs:NewBossLocale("Jadefire Masters Horde", "esMX")
 if L then
 	L.custom_on_fixate_plates = "Fija un icono en la placa de nombre enemiga"

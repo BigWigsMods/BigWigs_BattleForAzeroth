@@ -32,7 +32,7 @@ local tantrumCount = 1
 function mod:GetOptions()
 	return {
 		--[[ Grong ]]--
-		281936, -- Tantrum
+		{281936, "CASTBAR"}, -- Tantrum
 		282082, -- Bestial Combo
 		{285671, "TANK"}, -- Crushed
 		{285875, "TANK"}, -- Rending Bite

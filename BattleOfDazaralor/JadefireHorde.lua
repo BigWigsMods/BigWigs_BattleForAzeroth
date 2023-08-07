@@ -51,7 +51,7 @@ function mod:GetOptions()
 		"custom_on_fixate_plates",
 		-- Manceroy Flamefist
 		282037, -- Rising Flames
-		286379, -- Pyroblast
+		{286379, "CASTBAR"}, -- Pyroblast
 		{286425, "INFOBOX"}, -- Fire Shield
 		286988, -- Searing Embers
 		searingEmbersMarker,

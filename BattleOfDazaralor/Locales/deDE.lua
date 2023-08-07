@@ -11,16 +11,6 @@ if L then
 	L.witness = "%s hat %s mit %s gestochen!"
 end
 
-L = BigWigs:NewBossLocale("Champion of the Light Horde", "deDE")
-if L then
-	L.disorient_desc = "Leiste für den Zauber |cff71d5ff[Blendender Glaube]|r.\nDas ist wahrscheinlich die Leiste, auf welcher du den Countdown möchtest." -- Blinding Faith = 283650
-end
-
-L = BigWigs:NewBossLocale("Champion of the Light Alliance", "deDE")
-if L then
-	L.disorient_desc = "Leiste für den Zauber |cff71d5ff[Blendender Glaube]|r.\nDas ist wahrscheinlich die Leiste, auf welcher du den Countdown möchtest." -- Blinding Faith = 283650
-end
-
 L = BigWigs:NewBossLocale("Jadefire Masters Horde", "deDE")
 if L then
 	L.custom_on_fixate_plates = "Fixieren-Symbol über gegnerischen Namensplaketten"

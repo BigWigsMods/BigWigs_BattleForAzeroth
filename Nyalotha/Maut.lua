@@ -37,12 +37,12 @@ function mod:GetOptions()
 		{308872, "TANK"}, -- Dark Offering
 		{307806, "SAY", "SAY_COUNTDOWN"}, -- Devour Magic
 		307586, -- Devoured Abyss
-		308044, -- Stygian Annihilation
+		{308044, "CASTBAR"}, -- Stygian Annihilation
 		308903, -- Dark Manifestation
 		305663, -- Black Wings
 		{314337, "FLASH"}, -- Ancient Curse
 		-- Stage 2
-		305722, -- Obsidian Destruction
+		{305722, "CASTBAR"}, -- Obsidian Destruction
 		{314993, "SAY"}, -- Drain Essence
 	}, {
 		[310129] = CL.stage:format(1),
