@@ -51,9 +51,6 @@ if L then
 
 	L.custom_on_fixate_plates = "敌对姓名板凝视图标"
 	L.custom_on_fixate_plates_desc = "当你被凝视时在目标姓名板上显示一个图标。\n需要使用敌对姓名板。此功能目前只支持 KuiNameplates。"
-
-	L.custom_on_stop_timers = "总是显示技能条"
-	L.custom_on_stop_timers_desc = "戈霍恩可以延迟它的技能。当此选项开启时，这些技能条将会保留在屏幕上。"
 end
 
 L = BigWigs:NewBossLocale("Uldir Trash", "zhCN")
