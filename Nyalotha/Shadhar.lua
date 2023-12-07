@@ -172,7 +172,7 @@ do
 	local playerList = mod:NewTargetList()
 	function mod:DebilitatingSpit(args)
 		playerList[#playerList+1] = args.destName
-		if (self:Healer() and #playerList == 1) or (not self:Healer() and self:Me(args.destName)) then
+		if (self:Healer() and #playerList == 1) or (not self:Healer() and self:Me(args.destGUID)) then
 			self:PlaySound(args.spellId, "info")
 		end
 		self:TargetsMessageOld(args.spellId, "yellow", playerList, nil, CL.count:format(args.spellName, spitCount))

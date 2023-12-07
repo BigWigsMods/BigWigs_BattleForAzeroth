@@ -199,7 +199,7 @@ function mod:AquaLance(args)
 end
 
 function mod:AquaLanceRemoved(args)
-	if self:Me(args.spellId) then
+	if self:Me(args.destGUID) then
 		self:CancelSayCountdown(args.spellId)
 	end
 end

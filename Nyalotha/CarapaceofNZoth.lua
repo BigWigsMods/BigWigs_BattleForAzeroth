@@ -75,14 +75,14 @@ function mod:GetOptions()
 
 		--[[  General ]]--
 		"stages",
-		"berserk",
+		--"berserk",
 		307064, -- Cyst Genesis
 	}, {
 		["altpower"] = -21056, -- Sanity
 		[306973] = -20558, -- Stage One: Exterior Carapace
 		[307079] = -20566, -- Stage Two: Subcutaneous Tunnel
 		[306984] = -20569, -- Stage Three: Locus of Infinite Truths
-		["berserk"] = "general",
+		["stages"] = "general",
 	}
 end
 

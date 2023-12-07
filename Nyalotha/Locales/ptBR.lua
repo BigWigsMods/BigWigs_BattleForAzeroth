@@ -49,7 +49,6 @@ if L then
 
 	L.custom_on_repeating_paranoia_say = "Dizer repetitivamente a paranoia"
 	L.custom_on_repeating_paranoia_say_desc = "Spama uma mensagem no chat para ser evitado enquanto estiver com paranoia."
-	L.custom_on_repeating_paranoia_say_icon = 315927
 
 	L.gateway_yell = "Alerta: Câmara do Coração comprometida. Forças hostis se aproximando." -- Yelled by MOTHER to trigger mythic only stage
 	L.gateway_open = "Portão Aberto!"

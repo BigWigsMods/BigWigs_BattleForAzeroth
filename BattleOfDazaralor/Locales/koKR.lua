@@ -48,7 +48,7 @@ if L then
 
 	L.custom_on_hand_timers = "인자쉬의 손"
 	L.custom_on_hand_timers_desc = "인자쉬의 손의 능력들에 대한 경보와 바 표시."
-	--hand_cast = "Hand: %s"
+	--L.hand_cast = "Hand: %s"
 
 	L.custom_on_bulwark_timers = "얄랏의 보루"
 	L.custom_on_bulwark_timers_desc = "얄랏의 보루의 능력들에 대한 경보와 바 표시."

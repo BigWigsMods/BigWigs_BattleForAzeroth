@@ -37,9 +37,6 @@ if L then
 	L.custom_on_fixate_plates = "Fixate icon on Enemy Nameplate"
 	L.custom_on_fixate_plates_desc = "Show an icon on the target nameplate that is fixating on you.\nRequires the use of Enemy Nameplates. This feature is currently only supported by KuiNameplates."
 	L.custom_on_fixate_plates_icon = 268074
-
-	L.custom_on_stop_timers = "Always show ability bars"
-	L.custom_on_stop_timers_desc = "G'huun can delay his abilities. When this option is enabled, the bars for those abilities will stay on your screen."
 end
 
 --------------------------------------------------------------------------------
@@ -49,7 +46,6 @@ end
 local burstingMarker = mod:AddMarkerOption(false, "player", 1, 277007, 1, 2, 3, 4, 5, 6) -- Bursting Boil
 function mod:GetOptions()
 	return {
-		"custom_on_stop_timers",
 		{"stages", "CASTBAR"},
 		-18109, -- Power Matrix
 		263482, -- Reorigination Blast
@@ -85,7 +81,6 @@ function mod:GetOptions()
 end
 
 function mod:OnBossEnable()
-	self:RegisterMessage("BigWigs_BarCreated", "BarCreated")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_SUCCEEDED", nil, "boss1")
 
 	-- Stage 1
@@ -156,34 +151,6 @@ end
 -- Event Handlers
 --
 
-do
-	local abilitysToPause = {
-		[272506] = true, -- Explosive Corruption
-		[277007] = true, -- Summon Bursting Boil
-		[270373] = true, -- Wave of Corruption
-		[263235] = true, -- Blood Feast
-		[274582] = true, -- Malignant Growth
-		[275160] = true, -- Gaze of G'huun
-	}
-
-	local castPattern = CL.cast:gsub("%%s", ".+")
-
-	local function stopAtZeroSec(bar)
-		if bar.remaining < 0.15 then -- Pause at 0.0
-			bar:SetDuration(0.01) -- Make the bar look full
-			bar:Start()
-			bar:Pause()
-			bar:SetTimeVisibility(false)
-		end
-	end
-
-	function mod:BarCreated(_, _, bar, _, key, text)
-		if self:GetOption("custom_on_stop_timers") and abilitysToPause[key] and not text:match(castPattern) then
-			bar:AddUpdateFunction(stopAtZeroSec)
-		end
-	end
-end
-
 function mod:UNIT_POWER_FREQUENT(event, unit)
 	if self:MobId(self:UnitGUID(unit)) == 134118 then
 		local power = UnitPower(unit)
@@ -233,15 +200,15 @@ function mod:CorruptingBiteApplied()
 	waveOfCorruptionCount = 1
 	burstingBoilCount = 1
 	if self:Mythic() then
-		self:Bar(277007, 14.3, CL.count:format(self:SpellName(277007), burstingBoilCount)) -- Bursting Boil
+		self:CDBar(277007, 14.3, CL.count:format(self:SpellName(277007), burstingBoilCount)) -- Bursting Boil
 	else
-		self:Bar(272506, 9) -- Explosive Corruption
+		self:CDBar(272506, 9) -- Explosive Corruption
 	end
-	self:Bar(270373, 15.5, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Wave of Corruption
+	self:CDBar(270373, 15.5, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Wave of Corruption
 	if not self:Easy() then
 		self:OpenProximity(270373, 5)
 	end
-	self:Bar(263235, self:Mythic() and 32 or 47) -- Blood Feast
+	self:CDBar(263235, self:Mythic() and 32 or 47) -- Blood Feast
 end
 
 do
@@ -347,27 +314,27 @@ function mod:ReoriginationBlast(args)
 	end
 end
 
-do
-	local function CustomResumeBar(key, barText) -- We don't want to remove bars that are stopped with custom_on_stop_timers
-		local checkText = barText or mod:SpellName(key)
-		if mod:BarTimeLeft(checkText) > 0.15 then
-			mod:ResumeBar(key, barText)
+function mod:ReoriginationBlastRemoved(args)
+	orbsCounter = 0
+	if stage == 2 then -- These bars don't exist in stage 1, no stun happens in stage 3
+		if self:BarTimeLeft(272506) > 0.15 then
+			self:ResumeBar(272506) -- Explosive Corruption
 		end
-	end
-
-	function mod:ReoriginationBlastRemoved(args)
-		orbsCounter = 0
-		if stage == 2 then -- These bars don't exist in stage 1, no stun happens in stage 3
-			CustomResumeBar(272506) -- Explosive Corruption
-			CustomResumeBar(270373, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Wave of Corruption
-			CustomResumeBar(263235) -- Blood Feast
-			CustomResumeBar(277007, CL.count:format(self:SpellName(277007), burstingBoilCount)) -- Bursting Boil
-			if not self:Easy() then
-				self:OpenProximity(270373, 5)
-			end
+		if self:BarTimeLeft(CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) > 0.15 then
+			self:ResumeBar(270373, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Wave of Corruption
+		end
+		if self:BarTimeLeft(263235) > 0.15 then
+			self:ResumeBar(263235) -- Blood Feast
+		end
+		if self:BarTimeLeft(CL.count:format(self:SpellName(277007), burstingBoilCount)) > 0.15 then
+			self:ResumeBar(277007, CL.count:format(self:SpellName(277007), burstingBoilCount)) -- Bursting Boil
+		end
+		if not self:Easy() then
+			self:OpenProximity(270373, 5)
 		end
 	end
 end
+
 -- Stage 2
 function mod:GrowingCorruption(args)
 	local amount = args.amount or 1
@@ -382,9 +349,9 @@ function mod:WaveofCorruption(args)
 	self:PlaySound(args.spellId, "alarm")
 	self:StopBar(CL.count:format(args.spellName, waveOfCorruptionCount))
 	waveOfCorruptionCount = waveOfCorruptionCount + 1
-	self:Bar(args.spellId, stage == 3 and (self:Mythic() and 15.9 or 25.5) or waveOfCorruptionCount % 2 == 0 and 15 or 31, CL.count:format(args.spellName, waveOfCorruptionCount))
+	self:CDBar(args.spellId, stage == 3 and (self:Mythic() and 15.9 or 25.5) or waveOfCorruptionCount % 2 == 0 and 15 or 31, CL.count:format(args.spellName, waveOfCorruptionCount))
 	if stage == 2 and waveOfCorruptionCount % 2 == 1 then -- Update Blood feast timer
-		self:Bar(263235, 15) -- Blood Feast
+		self:CDBar(263235, 15) -- Blood Feast
 	end
 end
 
@@ -397,7 +364,7 @@ function mod:BloodFeastSuccess(args)
 		self:YellCountdown(args.spellId, self:Mythic() and 6 or 10)
 	end
 	self:CDBar(args.spellId, 46.3)
-	self:Bar(270373, 15.5, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Update Wave of corruption timer
+	self:CDBar(270373, 15.5, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Update Wave of corruption timer
 	self:CDBar(263307, self:Mythic() and 12.9 or 20) -- Mind-Numbing Chatter
 end
 
@@ -434,12 +401,12 @@ function mod:Collapse(args)
 	burstingBoilCount = 1
 
 	self:CastBar("stages", 20, args.spellName, args.spellId) -- Collapse
-	self:Bar(272506, self:Mythic() and 48.3 or 30) -- Explosive Corruption
+	self:CDBar(272506, self:Mythic() and 48.3 or 30) -- Explosive Corruption
 	if not self:Easy() then
-		self:Bar(274582, self:Mythic() and 35 or 34) -- Malignant Growth
+		self:CDBar(274582, self:Mythic() and 35 or 34) -- Malignant Growth
 	end
-	self:Bar(275160, self:Mythic() and 43.8 or self:Heroic() and 47.2 or 52.3) -- Gaze of G'huun
-	self:Bar(270373, self:Mythic() and 39 or 50.5, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Wave of Corruption
+	self:CDBar(275160, self:Mythic() and 43.8 or self:Heroic() and 47.2 or 52.3) -- Gaze of G'huun
+	self:CDBar(270373, self:Mythic() and 39 or 50.5, CL.count:format(self:SpellName(270373), waveOfCorruptionCount)) -- Wave of Corruption
 	if self:Mythic() then
 		self:CDBar(277007, 28, CL.count:format(self:SpellName(277007), burstingBoilCount)) -- Bursting Boil
 	end
@@ -448,15 +415,13 @@ end
 function mod:MalignantGrowth(args)
 	self:Message(args.spellId, "red")
 	self:PlaySound(args.spellId, "alarm")
-	self:StopBar(args.spellId)
-	self:Bar(args.spellId, 25.5)
+	self:CDBar(args.spellId, 25.5)
 end
 
 function mod:GazeofGhuun(args)
 	self:Message(args.spellId, "orange")
 	self:PlaySound(args.spellId, "warning")
-	self:StopBar(args.spellId)
-	self:Bar(args.spellId, self:Mythic() and 23 or self:Heroic() and 25.9 or 31.6)
+	self:CDBar(args.spellId, self:Mythic() and 23 or self:Heroic() and 25.9 or 31.6)
 end
 
 do

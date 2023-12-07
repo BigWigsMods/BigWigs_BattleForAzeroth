@@ -49,7 +49,6 @@ if L then
 
 	L.custom_on_repeating_paranoia_say = "重覆妄想喊話"
 	L.custom_on_repeating_paranoia_say_desc = "當你中了妄念時每秒重覆喊話，避免你的搭擋以外的人靠近你。"
-	-- L.custom_on_repeating_paranoia_say_icon = 315927
 
 	L.gateway_yell = "警告：心之室已遭到入侵。敵對勢力出現。" -- Yelled by MOTHER to trigger mythic only stage
 	L.gateway_open = "傳送門開啟！"

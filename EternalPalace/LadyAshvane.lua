@@ -56,7 +56,7 @@ function mod:GetOptions()
 		{-20096, "FLASH", "SAY", "ME_ONLY_EMPHASIZE"}, -- Arcing Azerite
 		arcingAzeriteMarker,
 	},{
-		[296569] = CL.stage:format(1),
+		[296662] = CL.stage:format(1),
 		[-20096] = CL.stage:format(2),
 	}
 end

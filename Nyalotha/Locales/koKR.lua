@@ -49,7 +49,6 @@ if L then
 
 	-- L.custom_on_repeating_paranoia_say = "Repeating Paranoia Say"
 	-- L.custom_on_repeating_paranoia_say_desc = "Spam a say message in chat to be avoided while you have paranoia."
-	-- L.custom_on_repeating_paranoia_say_icon = 315927
 
 	-- L.gateway_yell = "Warning: Chamber of Heart compromised. Hostile forces inbound." -- Yelled by MOTHER to trigger mythic only stage
 	-- L.gateway_open = "Gateway Open!"

@@ -49,7 +49,6 @@ if L then
 
 	L.custom_on_repeating_paranoia_say = "Spamming paranoia dire"
 	L.custom_on_repeating_paranoia_say_desc = "Spam un message en dire pour pour signaler que vous avez la paranoia."
-	-- L.custom_on_repeating_paranoia_say_icon = 315927
 
 	L.gateway_yell = "Alerte. Des entités hostiles approchent de la chambre du Cœur." -- Yelled by MOTHER to trigger mythic only stage
 	L.gateway_open = "Portail ouvert !"

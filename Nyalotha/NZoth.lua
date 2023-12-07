@@ -314,7 +314,7 @@ do
 	end
 
 	function mod:GiftofNzothRemoved(args)
-		if self:Me(args.spellId) then
+		if self:Me(args.destGUID) then
 			self:CancelSayCountdown(args.spellId)
 		end
 	end
@@ -821,7 +821,7 @@ do
 	end
 
 	function mod:AnnihilateRemoved(args)
-		if self:Me(args.spellId) then
+		if self:Me(args.destGUID) then
 			self:CancelSayCountdown(args.spellId)
 		end
 	end

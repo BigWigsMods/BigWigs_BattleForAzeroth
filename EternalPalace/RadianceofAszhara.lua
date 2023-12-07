@@ -32,7 +32,7 @@ function mod:GetOptions()
 		295916, -- Ancient Tempest
 		296701, -- Gale Buffet
 	},{
-		[296546] = -20076, -- Rising Fury
+		[296566] = -20076, -- Rising Fury
 		[295916] = -20078, -- Raging Storm
 	}
 end

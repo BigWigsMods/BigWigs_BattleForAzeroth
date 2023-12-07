@@ -49,7 +49,6 @@ if L then
 
 	L.custom_on_repeating_paranoia_say = "Оповещение /сказать о паранойе"
 	L.custom_on_repeating_paranoia_say_desc = "Спам сообщение в канал /сказать, чтобы другие игроки избегали вас во время паранойи на вас."
-	-- L.custom_on_repeating_paranoia_say_icon = 315927
 
 	L.gateway_yell = "Тревога: периметр нарушен. Зал Сердца атакован." -- Yelled by MOTHER to trigger mythic only stage
 	L.gateway_open = "Врата открыты!"

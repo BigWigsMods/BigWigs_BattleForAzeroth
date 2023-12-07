@@ -55,7 +55,6 @@ end
 local hexOfLethargyMarker = mod:AddMarkerOption(false, "player", 1, 284470, 1, 2, 3, 4) -- Hex of Lethargy
 function mod:GetOptions()
 	return {
-		"stages",
 		286541, -- Consuming Flame
 		{-19494, "INFOBOX"}, -- The Zandalari Crown Jewels
 		{284645, "SAY", "INFOBOX"}, -- Topaz of Brilliant Sunlight
@@ -88,7 +87,7 @@ function mod:GetOptions()
 		-- Mythic
 		{289155, "CASTBAR"}, -- Surging Gold
 	}, {
-		["stages"] = CL.general,
+		[286541] = CL.general,
 		[-19494] = -19494, -- Crown Jewels
 		[283606] = CL.stage:format(1),
 		["custom_on_hand_timers"] = -19497, -- The Hand of In'zashi
