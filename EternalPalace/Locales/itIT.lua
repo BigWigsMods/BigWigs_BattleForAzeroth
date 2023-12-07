@@ -26,8 +26,6 @@ if L then
 	L.fails_message = "%s (%d Accumuli di Sanzione)"
 	L.reversal = "Rovesciamento"
 	L.greater_reversal = "Rovesciamento (Superiore)"
-	L.you_die = "Tu muori"
-	L.you_die_message = "Morirai in %d secondi"
 
 	L.custom_off_repeating_decree_chat = "Ripetizione Decreti"
 	L.custom_off_repeating_decree_chat_desc = "Spamma 'ABBRACCIA me' urlando, or 'EVITA me' in chat, mentrei sei sotto l'effetto |cff71d5ff[Decreto della Regina]|r. Forse sarà utile se vedono i fumetti della chat."

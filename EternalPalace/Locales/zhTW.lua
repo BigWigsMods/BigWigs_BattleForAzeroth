@@ -26,8 +26,6 @@ if L then
 	L.fails_message = "%s（%d制裁堆疊失誤）"
 	L.reversal = "命運逆轉"
 	L.greater_reversal = "強效命運逆轉"
-	L.you_die = "你將死亡"
-	L.you_die_message = "你將在%d秒後死亡"
 
 	L.custom_off_repeating_decree_chat = "重覆赦令喊話"
 	L.custom_off_repeating_decree_chat_desc = "當你中了|cff71d5ff[女王赦令]|r時重覆喊話「靠近我」、「避開我」，也許其他人看到聊天氣泡後會幫助你應對赦令。"

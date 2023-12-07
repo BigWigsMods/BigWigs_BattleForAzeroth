@@ -26,8 +26,6 @@ if L then
 	L.fails_message = "%s (%d Sanktion Fehler-Stapel)"
 	L.reversal = "Wendung"
 	L.greater_reversal = "Große Wendung"
-	L.you_die = "Du stirbst"
-	L.you_die_message = "Du stirbst in %d Sek"
 
 	L.custom_off_repeating_decree_chat = "Wiederholte Erlass Ansage"
 	L.custom_off_repeating_decree_chat_desc = "Spammt während |cff71d5ff[Erlass der Königin]|r 'UMARME mich' im Schreien-Chat, oder 'MEIDE mich' im Sagen-Chat. So können Mitspieler besser helfen."

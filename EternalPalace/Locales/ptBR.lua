@@ -26,8 +26,6 @@ if L then
 	--L.fails_message = "%s (%d Sanction stack fails)"
 	--L.reversal = "Reversal"
 	--L.greater_reversal = "Reversal (Greater)"
-	--L.you_die = "You die"
-	--L.you_die_message = "You will die in %d sec"
 
 	--L.custom_off_repeating_decree_chat = "Repeating Decree Chat"
 	--L.custom_off_repeating_decree_chat_desc = "Spam the words 'HUG me' in yell chat, or 'AVOID me' in say chat, while you have |cff71d5ff[Queen's Decree]|r. Maybe they'll help you if they see the chat bubble."

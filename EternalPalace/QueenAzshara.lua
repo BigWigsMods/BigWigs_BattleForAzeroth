@@ -49,8 +49,6 @@ if L then
 	L.fails_message = "%s (%d Sanction stack fails)"
 	L.reversal = "Reversal"
 	L.greater_reversal = "Reversal (Greater)"
-	L.you_die = "You die"
-	L.you_die_message = "You will die in %s sec"
 
 	L.custom_off_repeating_decree_chat = "Repeating Decree Chat"
 	L.custom_off_repeating_decree_chat_desc = "Spam the words 'HUG me' in yell chat, or 'AVOID me' in say chat, while you have |cff71d5ff[Queen's Decree]|r. Maybe they'll help you if they see the chat bubble."
@@ -119,7 +117,7 @@ function mod:GetOptions()
 	},{
 		[297371] = L.reversal, -- Reversal of Fortune (Reversal)
 		[297372] = L.greater_reversal, -- Greater Reversal of Fortune (Reversal (Greater))
-		[300866] = L.you_die, -- Essence of Azeroth (You die)
+		[300866] = CL.you_die, -- Essence of Azeroth (You die)
 	}
 end
 
@@ -778,10 +776,10 @@ function mod:EssenceofAzerothApplied(args)
 	if self:Me(args.destGUID) then
 		local _, _, duration = self:UnitDebuff("player", args.spellId)
 		local t = type(duration) == "number" and duration or self:Mythic() and 25 or 40
-		self:PersonalMessage(args.spellId, false, L.you_die_message:format(t))
+		self:PersonalMessage(args.spellId, false, CL.you_die_sec:format(t))
 		self:PlaySound(args.spellId, "alert", nil, args.destName)
 		self:Flash(args.spellId)
-		self:Bar(args.spellId, t, L.you_die)
+		self:Bar(args.spellId, t, CL.you_die)
 	else
 		self:TargetMessage(args.spellId, "yellow", args.destName)
 	end
@@ -789,7 +787,7 @@ end
 
 function mod:EssenceofAzerothRemoved(args)
 	if self:Me(args.destGUID) then
-		self:StopBar(L.you_die)
+		self:StopBar(CL.you_die)
 	end
 end
 
