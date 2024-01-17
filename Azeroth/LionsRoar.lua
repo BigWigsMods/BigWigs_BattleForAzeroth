@@ -97,8 +97,12 @@ end
 do
 	local prev = 0
 	function mod:BattleFieldRepair(args)
-		local raidIcon = CombatLog_String_GetIcon(args.sourceRaidFlags)
-		self:Message(args.spellId, "red", raidIcon .. args.spellName)
+		local raidIcon = self:GetIconTexture(self:GetIcon(args.sourceRaidFlags))
+		if raidIcon then
+			self:Message(args.spellId, "red", raidIcon .. args.spellName)
+		else
+			self:Message(args.spellId, "red")
+		end
 		local t = args.time
 		if t-prev > 0.5 then
 			prev = t
