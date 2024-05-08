@@ -340,7 +340,7 @@ do
 			self:CustomIcon(false, args.destName)
 		end
 
-		tDeleteItem(proxList, args.destName)
+		self:DeleteFromTable(proxList, args.destName)
 
 		if not isOnMe then -- Don't change proximity if it's on you and expired on someone else
 			if #proxList == 0 then
@@ -398,21 +398,15 @@ function mod:LaceratingClawsApplied(args)
 end
 
 do
-	local scheduled, isOnMe, isNearMe, count = nil, nil, nil, 0
+	local scheduled, isOnMe, count = nil, nil, 0
 
 	local function leapWarn(self)
 		if not isOnMe and not mod:CheckOption(282447, "ME_ONLY") then
-			if isNearMe then
-				self:Message(282447, "orange", CL.near:format(L.leap))
-				self:PlaySound(282447, "alert")
-			else
-				self:Message(282447, "yellow", L.leap)
-			end
+			self:Message(282447, "yellow", L.leap)
 		end
 		self:NextWrathCDBar(286811)
 		scheduled = nil
 		isOnMe = nil
-		isNearMe = nil
 		count = 0
 	end
 
@@ -431,7 +425,6 @@ do
 		if not scheduled then
 			scheduled = self:ScheduleTimer(leapWarn, 0.1, self)
 		end
-		isNearMe = isNearMe or IsItemInRange(37727, args.destName) -- 5yd
 	end
 
 	function mod:KimbulsWrathRemoved(args)

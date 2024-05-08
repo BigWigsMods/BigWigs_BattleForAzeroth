@@ -570,7 +570,7 @@ do
 			end
 		end
 
-		tDeleteItem(proxList, args.destName)
+		self:DeleteFromTable(proxList, args.destName)
 
 		updateProximity(self)
 	end

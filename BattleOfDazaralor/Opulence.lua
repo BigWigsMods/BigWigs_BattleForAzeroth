@@ -177,14 +177,14 @@ end
 function mod:IsHandOnPlatform()
 	local unit = self:GetUnitIdByGUID(145273)
 	if unit then
-		return IsItemInRange(116139, unit) -- 50yd
+		return self:UnitWithinRange(unit, 60)
 	end
 end
 
 function mod:IsBulwarkOnPlatform()
 	local unit = self:GetUnitIdByGUID(145274)
 	if unit then
-		return IsItemInRange(116139, unit) -- 50yd
+		return self:UnitWithinRange(unit, 60)
 	end
 end
 

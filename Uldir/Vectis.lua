@@ -130,7 +130,7 @@ do
 			local result = lingeringInfectionList[n]
 			if i % 2 == 0 then
 				if result then
-					local icon = GetRaidTargetIndex(n)
+					local icon = mod:GetIcon(n)
 					mod:SetInfo(265127, i+19, (icon and ("  |T13700%d:0|t"):format(icon) or "  ") .. mod:ColorName(n))
 					mod:SetInfo(265127, i+20, result)
 					local vector = omegaList[n] and omegaList[n][1]
@@ -139,11 +139,7 @@ do
 						local elap = t - vector
 						local duration = omegaVectorDuration or 10
 						local remaining = duration - elap
-						if IsItemInRange(37727, n) then -- Ruby Acorn, 5yd
-							mod:SetInfoBar(265127, i+19, remaining/duration, 0, 0, 1)
-						else
-							mod:SetInfoBar(265127, i+19, remaining/duration)
-						end
+						mod:SetInfoBar(265127, i+19, remaining/duration)
 					else
 						mod:SetInfoBar(265127, i+19, 0)
 					end
@@ -154,7 +150,7 @@ do
 				end
 			else
 				if result then
-					local icon = GetRaidTargetIndex(n)
+					local icon = mod:GetIcon(n)
 					mod:SetInfo(265127, i, (icon and ("|T13700%d:0|t"):format(icon) or "") .. mod:ColorName(n))
 					mod:SetInfo(265127, i+1, result)
 					local vector = omegaList[n] and omegaList[n][1]
@@ -163,11 +159,7 @@ do
 						local elap = t - vector
 						local duration = omegaVectorDuration or 10
 						local remaining = duration - elap
-						if IsItemInRange(37727, n) then -- Ruby Acorn, 5yd
-							mod:SetInfoBar(265127, i, remaining/duration, 0, 0, 1)
-						else
-							mod:SetInfoBar(265127, i, remaining/duration)
-						end
+						mod:SetInfoBar(265127, i, remaining/duration)
 					else
 						mod:SetInfoBar(265127, i, 0)
 					end

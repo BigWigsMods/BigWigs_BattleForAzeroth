@@ -130,14 +130,14 @@ end
 function mod:IsSisterOnPlatform()
 	local unit = self:GetUnitIdByGUID(146251)
 	if unit then
-		return IsItemInRange(116139, unit) -- 50yd
+		return self:UnitWithinRange(unit, 60)
 	end
 end
 
 function mod:IsBrotherOnPlatform()
 	local unit = self:GetUnitIdByGUID(146253)
 	if unit then
-		return IsItemInRange(116139, unit) -- 50yd
+		return self:UnitWithinRange(unit, 60)
 	end
 end
 
