@@ -241,10 +241,10 @@ do
 				if playerListGreen[2] then
 					local player1 = ("|T13700%d:0|t%s"):format(playerListGreen[1][2], self:ColorName(playerListGreen[1][1]))
 					local player2 = ("|T13700%d:0|t%s"):format(playerListGreen[2][2], self:ColorName(playerListGreen[2][1]))
-					messageText = messageText .. L.linkText:format(self:SpellIcon(296938), player1, player2)
+					messageText = messageText .. L.linkText:format(self:SpellTexture(296938), player1, player2)
 				else
 					local player1 = ("|T13700%d:0|t%s"):format(playerListGreen[1][2], self:ColorName(playerListGreen[1][1]))
-					messageText = messageText .. L.linkText:format(self:SpellIcon(296938), player1, "")
+					messageText = messageText .. L.linkText:format(self:SpellTexture(296938), player1, "")
 				end
 			end
 
@@ -253,10 +253,10 @@ do
 				if playerListOrange[2] then
 					local player1 = ("|T13700%d:0|t%s"):format(playerListOrange[1][2], self:ColorName(playerListOrange[1][1]))
 					local player2 = ("|T13700%d:0|t%s"):format(playerListOrange[2][2], self:ColorName(playerListOrange[2][1]))
-					messageText = messageText .. L.linkText:format(self:SpellIcon(296939), player1, player2)
+					messageText = messageText .. L.linkText:format(self:SpellTexture(296939), player1, player2)
 				else
 					local player1 = ("|T13700%d:0|t%s"):format(playerListOrange[1][2], self:ColorName(playerListOrange[1][1]))
-					messageText = messageText .. L.linkText:format(self:SpellIcon(296939), player1, "")
+					messageText = messageText .. L.linkText:format(self:SpellTexture(296939), player1, "")
 				end
 			end
 
@@ -265,10 +265,10 @@ do
 				if playerListPurple[2] then
 					local player1 = ("|T13700%d:0|t%s"):format(playerListPurple[1][2], self:ColorName(playerListPurple[1][1]))
 					local player2 = ("|T13700%d:0|t%s"):format(playerListPurple[2][2], self:ColorName(playerListPurple[2][1]))
-					messageText = messageText .. L.linkText:format(self:SpellIcon(296940), player1, player2)
+					messageText = messageText .. L.linkText:format(self:SpellTexture(296940), player1, player2)
 				else
 					local player1 = ("|T13700%d:0|t%s"):format(playerListPurple[1][2], self:ColorName(playerListPurple[1][1]))
-					messageText = messageText .. L.linkText:format(self:SpellIcon(296940), player1, "")
+					messageText = messageText .. L.linkText:format(self:SpellTexture(296940), player1, "")
 				end
 			end
 
