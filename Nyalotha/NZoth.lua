@@ -270,9 +270,9 @@ do
 				self:Bar(310184, 12.1, CL.count:format(self:SpellName(310184), creepingAnguishCount)) -- Creeping Anquish
 			elseif mobId == 162933 and not mobCollector[guid] then -- Thought Harvester
 				mobCollector[guid] = true
-				self:NameplateBar(317066, 8.5, guid) -- Harvest Thoughts
+				self:Nameplate(317066, 8.5, guid) -- Harvest Thoughts
 				if self:Tank() then
-					self:NameplateBar(316711, 3, guid) -- Mindwrack
+					self:Nameplate(316711, 3, guid) -- Mindwrack
 				end
 				local t = GetTime()
 				if t-prev > 2 then -- 2 Spawn at the same in Mythic
@@ -341,7 +341,7 @@ do
 				prev = t
 				self:Message(args.spellId, "red")
 				self:PlaySound(args.spellId, "alarm")
-				self:NameplateBar(args.spellId, 8.5, args.sourceGUID)
+				self:Nameplate(args.spellId, 8.5, args.sourceGUID)
 			end
 		end
 	end
@@ -749,7 +749,7 @@ do
 			self:Message(args.spellId, "orange")
 			self:PlaySound(args.spellId, "alarm")
 		end
-		self:NameplateBar(args.spellId, self:Mythic() and 30 or 23, args.sourceGUID)
+		self:Nameplate(args.spellId, self:Mythic() and 30 or 23, args.sourceGUID)
 	end
 end
 
