@@ -92,7 +92,7 @@ function mod:GetOptions()
 		"altpower",
 		{313609, "SAY_COUNTDOWN"}, -- Gift of N'zoth
 		-- Stage 1
-		{316711, "NAMEPLATEBAR"}, -- Mindwrack
+		{316711, "NAMEPLATE"}, -- Mindwrack
 		310184, -- Creeping Anquish
 		309991, -- Anguish
 		313184, -- Synaptic Shock
@@ -114,7 +114,7 @@ function mod:GetOptions()
 		{317102, "CASTBAR"}, -- Evoke Anguish
 		-21491, -- Thought Harvester
 		harvesterMarker,
-		{317066, "NAMEPLATEBAR"}, -- Harvest Thoughts
+		{317066, "NAMEPLATE"}, -- Harvest Thoughts
 		318091, -- Summon Gateway
 		318196, -- Event Horizon
 		{316970, "CASTBAR"}, -- Cleansing Protocol
