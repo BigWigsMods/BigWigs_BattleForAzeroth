@@ -142,7 +142,7 @@ function mod:IsBrotherOnPlatform()
 end
 
 do
-	local normalAnchor, emphasizeAnchor, colors = BigWigsAnchor, BigWigsEmphasizeAnchor, nil
+	local normalAnchor, emphasizeAnchor, colors
 
 	local brotherAbilities = {
 		[284362] = true, -- Sea Storm
@@ -204,21 +204,30 @@ do
 
 	function mod:CheckBossPlatforms()
 		if not self:GetOption("custom_on_fade_out_bars") then return end
-		if not normalAnchor then return end
-		for k in next, normalAnchor.bars do
-			if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
-				handleBarColor(self, k)
+		if normalAnchor then
+			for k in next, normalAnchor.bars do
+				if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
+					handleBarColor(self, k)
+				end
 			end
 		end
-		for k in next, emphasizeAnchor.bars do
-			if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
-				handleBarColor(self, k)
+		if emphasizeAnchor then
+			for k in next, emphasizeAnchor.bars do
+				if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
+					handleBarColor(self, k)
+				end
 			end
 		end
 	end
 
 	function mod:BarCreated(_, _, bar, _, key, text)
 		if not self:GetOption("custom_on_fade_out_bars") or stage ~= 1 then return end
+		local anchor = bar:Get("bigwigs:anchor")
+		if anchor.position == "normalPosition" then
+			normalAnchor = anchor
+		else
+			emphasizeAnchor = anchor
+		end
 		if sisterAbilities[key] then
 			if not self:IsSisterOnPlatform() then
 				fadeOutBar(self, bar)
@@ -232,6 +241,12 @@ do
 
 	function mod:BarEmphasized(_, _, bar)
 		if not self:GetOption("custom_on_fade_out_bars") then return end
+		local anchor = bar:Get("bigwigs:anchor")
+		if anchor.position == "normalPosition" then
+			normalAnchor = anchor
+		else
+			emphasizeAnchor = anchor
+		end
 		if bar:Get("bigwigs:module") == self and bar:Get("bigwigs:option") then
 			handleBarColor(self, bar)
 		end
