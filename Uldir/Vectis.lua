@@ -336,7 +336,7 @@ function mod:Gestate(args)
 		self:CDBar(265212, timer)
 	end
 	if self:Me(args.destGUID) then
-		self:Say(265212)
+		self:Say(265212, nil, nil, "Gestate")
 	end
 	self:TargetMessage(265212, "orange", args.destName)
 	self:PlaySound(265212, "alert", nil, args.destName)
