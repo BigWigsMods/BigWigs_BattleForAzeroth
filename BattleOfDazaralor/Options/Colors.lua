@@ -128,7 +128,7 @@ BigWigs:AddColors("Conclave of the Chosen", {
 	[282209] = "blue",
 	[282411] = "red",
 	[282444] = {"blue","purple"},
-	[282447] = {"blue","orange","yellow"},
+	[282447] = {"blue","yellow"},
 	[285879] = {"blue","green","yellow"},
 	[285893] = "yellow",
 	[285945] = {"blue","purple"},

@@ -125,7 +125,7 @@ BigWigs:AddSounds("Conclave of the Chosen", {
 	[282209] = "warning",
 	[282411] = "alarm",
 	[282444] = "alarm",
-	[282447] = {"alert","warning"},
+	[282447] = "warning",
 	[285879] = {"alert","info"},
 	[285893] = "alert",
 	[285945] = "alarm",
