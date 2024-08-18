@@ -120,7 +120,7 @@ end
 
 function mod:IncinerationApplied(args)
 	if self:Me(args.destGUID) then
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Incineration")
 		self:SayCountdown(args.spellId, 6)
 		self:Flash(args.spellId)
 		self:PlaySound(args.spellId, "warning")

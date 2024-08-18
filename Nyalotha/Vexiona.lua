@@ -156,7 +156,7 @@ do
 	function mod:EncroachingShadowsApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Encroaching Shadows")
 			self:SayCountdown(args.spellId, 8)
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
@@ -254,7 +254,7 @@ function mod:DesolationApplied(args)
 	self:PlaySound(args.spellId, "warning", nil, args.destName)
 	self:Bar(args.spellId, self:Mythic() and 33 or 32.5)
 	if self:Me(args.destGUID) then
-		self:Yell(args.spellId)
+		self:Yell(args.spellId, nil, nil, "Desolation")
 		self:YellCountdown(args.spellId, 5)
 	end
 end

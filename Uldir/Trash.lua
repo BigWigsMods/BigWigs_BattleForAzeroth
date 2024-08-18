@@ -55,7 +55,7 @@ end
 do
 	local function printTarget(self, player, guid)
 		if self:Me(guid) then
-			self:Say(277047)
+			self:Say(277047, nil, nil, "Corrupting Gaze")
 			self:PlaySound(277047, "warning")
 		end
 		self:TargetMessage(277047, "yellow", player)

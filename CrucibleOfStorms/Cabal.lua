@@ -432,7 +432,7 @@ do
 			self:CustomIcon(false, args.destName, #playerList)
 		end
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId, CL.count_rticon:format(args.spellName, #playerList, #playerList))
+			self:Say(args.spellId, CL.count_rticon:format(args.spellName, #playerList, #playerList), nil, ("Crushing Doubt (%d{rt%d})"):format(#playerList, #playerList))
 			self:SayCountdown(args.spellId, 12)
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "alert")

@@ -189,7 +189,7 @@ function mod:Fixate(args)
 	self:TargetMessage(args.spellId, "red", args.destName, CL.count:format(args.spellName, fixateCount))
 	if self:Me(args.destGUID) then
 		self:PlaySound(args.spellId, "warning")
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Fixate")
 	end
 	fixateCount = fixateCount + 1
 	self:Bar(args.spellId, self:Mythic() and 16 or 31, CL.count:format(args.spellName, fixateCount))

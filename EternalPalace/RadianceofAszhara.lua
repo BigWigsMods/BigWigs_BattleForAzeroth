@@ -120,7 +120,7 @@ do
 		playerList[count] = args.destName
 		playerIcons[count] = count
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId, CL.count_rticon:format(args.spellName, count, count))
+			self:Say(args.spellId, CL.count_rticon:format(args.spellName, count, count), nil, ("Arcane Bomb (%d{rt%d})"):format(count, count))
 			self:SayCountdown(args.spellId, self:Mythic() and 4 or 10, count)
 			self:PlaySound(args.spellId, "alert")
 		end

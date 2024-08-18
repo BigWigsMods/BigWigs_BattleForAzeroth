@@ -101,7 +101,7 @@ end
 do
 	local function printTarget(self, player, guid)
 		if self:Me(guid) then
-			self:Say(288959)
+			self:Say(288959, nil, nil, "Spectral Charge")
 			self:PlaySound(288959, "warning")
 		end
 		self:TargetMessage(288959, "yellow", player)
@@ -113,7 +113,7 @@ end
 
 function mod:Impale(args)
 	if self:Me(args.destGUID) then
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Impale")
 	end
 	self:PlaySound(args.spellId, "long")
 	self:TargetMessage(args.spellId, "red", args.destName)

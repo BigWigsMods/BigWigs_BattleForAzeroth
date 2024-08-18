@@ -87,7 +87,7 @@ function mod:ConsumingSpirits(args)
 	self:TargetsMessageOld(args.spellId, "orange", playerList, 2)
 	if self:Me(args.destGUID) then
 		self:PlaySound(args.spellId, "alarm")
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Consuming Spirits")
 		self:OpenProximity(args.spellId, 8)
 	end
 	if #playerList == 1 then -- No SUCCESS event

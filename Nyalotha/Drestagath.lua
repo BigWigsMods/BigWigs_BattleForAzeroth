@@ -160,7 +160,7 @@ do
 	function mod:MutteringsofInsanityApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Mutterings of Insanity")
 			self:SayCountdown(args.spellId, 5)
 			self:PlaySound(args.spellId, "warning")
 		end
@@ -193,7 +193,7 @@ do
 		if self:Me(guid) then
 			self:PersonalMessage(310580, "underyou")
 			self:PlaySound(310580, "alarm")
-			self:Say(310580)
+			self:Say(310580, nil, nil, "Acid Splash")
 		end
 	end
 

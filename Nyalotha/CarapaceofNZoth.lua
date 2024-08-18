@@ -212,7 +212,7 @@ do
 		end
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "warning")
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Madness Bomb")
 			self:SayCountdown(args.spellId, 12)
 			self:OpenProximity(args.spellId, 10)
 		end
@@ -332,7 +332,7 @@ end
 function mod:InsanityBombApplied(args)
 	if self:Me(args.destGUID) then
 		self:PlaySound(args.spellId, "warning")
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Insanity Bomb")
 		self:SayCountdown(args.spellId, 12)
 		self:OpenProximity(args.spellId, 10)
 	end

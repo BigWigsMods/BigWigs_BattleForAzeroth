@@ -41,7 +41,6 @@ if L then
 	L.custom_on_fixate_plates_icon = 282209
 	L.killed = "%s killed!"
 	L.count_of = "%s (%d/%d)"
-	L.leap = mod:SpellName(192553) -- Leap, replacement for Kimbul's Wrath
 end
 
 --------------------------------------------------------------------------------
@@ -310,7 +309,7 @@ do
 			isOnMe = true
 			self:TargetMessage(282135, "blue", args.destName, CL.count_icon:format(args.spellName, count, count))
 			self:PlaySound(282135, "warning")
-			self:Say(282135, CL.count_rticon:format(args.spellName, count, count))
+			self:Say(282135, CL.count_rticon:format(args.spellName, count, count), nil, ("Crawling Hex (%d{rt%d})"):format(count, count))
 			self:Flash(282135, count)
 			self:SayCountdown(282135, 5, count)
 			self:OpenProximity(282135, 8)
@@ -374,7 +373,7 @@ do
 			self:PersonalMessage(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 			self:Flash(args.spellId)
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Mark of Prey")
 			if self:GetOption("custom_on_fixate_plates") then
 				self:AddPlateIcon(args.spellId, args.sourceGUID)
 			end
@@ -402,7 +401,7 @@ do
 
 	local function leapWarn(self)
 		if not isOnMe and not mod:CheckOption(282447, "ME_ONLY") then
-			self:Message(282447, "yellow", L.leap)
+			self:Message(282447, "yellow", CL.leap)
 		end
 		self:NextWrathCDBar(286811)
 		scheduled = nil
@@ -413,10 +412,10 @@ do
 	function mod:KimbulsWrathApplied(args)
 		if self:Me(args.destGUID) then
 			isOnMe = true
-			self:Message(282447, "blue", CL.you:format(L.leap))
+			self:Message(282447, "blue", CL.you:format(CL.leap))
 			self:PlaySound(282447, "warning")
 			self:Flash(282447)
-			self:Say(282447, L.leap)
+			self:Say(282447, CL.leap, nil, "Leap")
 		end
 		count = count + 1
 		if self:GetOption(kimbulsWrathMarker) and count < 5 then
@@ -483,7 +482,7 @@ function mod:AkundasWrathApplied(args)
 	if self:Me(args.destGUID) then
 		self:PersonalMessage(args.spellId)
 		self:PlaySound(args.spellId, "warning")
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Akunda's Wrath")
 		self:SayCountdown(args.spellId, 6)
 	end
 end

@@ -172,7 +172,7 @@ function mod:PiercingBarbApplied(args)
 	self:PrimaryIcon(args.spellId, args.destName)
 	if self:Me(args.destGUID) then
 		self:Flash(args.spellId)
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Piercing Barb")
 		self:SayCountdown(args.spellId, 6)
 	end
 end

@@ -148,10 +148,11 @@ do
 	function mod:OverflowApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
-			self:PlaySound(-20006, "alarm")
-			self:Say(-20006, args.spellName)
+			local englishText = args.spellId == 295348 and "Overflowing Chill" or "Overflowing Venom"
+			self:Say(-20006, args.spellName, nil, englishText)
 			self:SayCountdown(-20006, self:Mythic() and 6 or 7)
 			self:Flash(-20006)
+			self:PlaySound(-20006, "alarm")
 		end
 		if #playerList == 1 then
 			self:CDBar(-20006, self:Mythic() and 40 or 30) -- XXX Check if this is always the case: 16.8, 33, 40, 40, 30, 30, 35, 30
@@ -182,8 +183,9 @@ function mod:CHAT_MSG_RAID_BOSS_EMOTE(_, msg, _, _, _, destName)
 	self:TargetMessage(295601, "orange", destName, spellId, spellId)
 	local guid = self:UnitGUID(destName)
 	if self:Me(guid) then
+		local englishText = spellId == 295607 and "Toxic Javelin" or "Frost Javelin"
+		self:Say(295601, spellId, nil, englishText)
 		self:PlaySound(295601, "alarm")
-		self:Say(295601, spellId)
 	end
 end
 
@@ -196,7 +198,7 @@ end
 function mod:InversionSicknessApplied(args)
 	if self:Me(args.destGUID) then
 		self:PersonalMessage(295791)
-		self:Say(295791, 295791)
+		self:Say(295791, nil, nil, "Inversion")
 		self:SayCountdown(295791, 4)
 	end
 end

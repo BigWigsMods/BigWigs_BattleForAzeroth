@@ -188,7 +188,7 @@ function mod:FreneticChargeApplied(args)
 	self:PrimaryIcon(args.spellId, args.destName)
 	if self:Me(args.destGUID) then
 		self:PlaySound(args.spellId, "warning")
-		self:Say(args.spellId, 100) -- Charge
+		self:Say(args.spellId, CL.charge, nil, "Charge")
 		self:SayCountdown(args.spellId, 6)
 		self:Flash(args.spellId)
 	end
@@ -229,7 +229,7 @@ do
 		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "alert")
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Fanatical Verdict")
 			self:SayCountdown(args.spellId, 8)
 			self:Flash(args.spellId)
 		end

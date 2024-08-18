@@ -518,7 +518,7 @@ function mod:ChargedSpearApplied(args)
 	self:PlaySound(args.spellId, "alert", nil, args.destName)
 	if self:Me(args.destGUID) then
 		self:Flash(args.spellId)
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Charged Spear")
 		self:SayCountdown(args.spellId, self:Mythic() and 3 or 5)
 	end
 end
@@ -545,7 +545,7 @@ function mod:RAID_BOSS_WHISPER(_, msg)
 		self:PersonalMessage(299094)
 		self:PlaySound(299094, "alarm")
 		self:Flash(299094)
-		self:Say(299094)
+		self:Say(299094, nil, nil, "Beckon")
 	end
 end
 
@@ -587,26 +587,26 @@ do
 				self:SimpleTimer(announce, 0.1)
 			end
 			if args.spellId == 299254 then -- Stand Together!
-				self:Yell(299250, args.spellName)
+				self:Yell(299250, args.spellName, nil, "Stand Together!")
 				if #debuffs == 1 then
 					if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then
-						decreeTimer = self:ScheduleRepeatingTimer("Yell", 2, false, L.hugSay:format(args.destName), true)
+						decreeTimer = self:ScheduleRepeatingTimer("Yell", 2, false, L.hugSay:format(args.destName), true, ("HUG %s"):format(args.destName))
 					end
 				elseif debuffs[1] == L[299253] then -- Stay!
 					if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then -- Stand Together! & Stay!
 						if decreeTimer then self:CancelTimer(decreeTimer) end
-						decreeTimer = self:ScheduleRepeatingTimer("Yell", 2, false, L.hugNoMoveSay:format(args.destName), true)
+						decreeTimer = self:ScheduleRepeatingTimer("Yell", 2, false, L.hugNoMoveSay:format(args.destName), true, ("HUG %s, I can't move"):format(args.destName))
 					end
 				end
 			elseif args.spellId == 299255 then -- Stand Alone!
-				self:Say(299250, args.spellName)
+				self:Say(299250, args.spellName, nil, "Stand Alone!")
 				if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then
-					decreeTimer = self:ScheduleRepeatingTimer("Say", 2, false, L.avoidSay:format(args.destName), true)
+					decreeTimer = self:ScheduleRepeatingTimer("Say", 2, false, L.avoidSay:format(args.destName), true, ("AVOID %s"):format(args.destName))
 				end
 			elseif args.spellId == 299253 and debuffs[1] == L[299254] then -- Stay! & Stand Together!
 				if self:GetOption("custom_off_repeating_decree_chat") and not self:LFR() then
 					if decreeTimer then self:CancelTimer(decreeTimer) end
-					decreeTimer = self:ScheduleRepeatingTimer("Say", 2, false, L.hugNoMoveSay:format(args.destName), true)
+					decreeTimer = self:ScheduleRepeatingTimer("Say", 2, false, L.hugNoMoveSay:format(args.destName), true, ("HUG %s, I can't move"):format(args.destName))
 				end
 			end
 		end
@@ -691,7 +691,7 @@ do
 			self:Bar(303657, self:Mythic() and (burstCount == 3 and 60 or 45) or 70)
 		end
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Arcane Burst")
 			self:SayCountdown(args.spellId, self:Mythic() and 15 or 30)
 			self:PlaySound(args.spellId, "warning")
 		end
@@ -717,7 +717,7 @@ function mod:StaticShock(args)
 	if self:Me(args.destGUID) then
 		self:PlaySound(args.spellId, "alert", nil, args.destName)
 		self:Flash(args.spellId)
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Static Shock")
 	end
 end
 

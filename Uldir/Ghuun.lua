@@ -234,7 +234,7 @@ do
 					self:PersonalMessage(272506)
 				end
 				self:PlaySound(272506, "alarm")
-				self:Say(272506)
+				self:Say(272506, nil, nil, "Explosive Corruption")
 				self:SayCountdown(272506, 4)
 			end
 			if not self:Mythic() then
@@ -248,7 +248,7 @@ do
 				self:PersonalMessage(272506)
 			end
 			self:PlaySound(272506, "alarm")
-			self:Say(272506)
+			self:Say(272506, nil, nil, "Explosive Corruption")
 			self:SayCountdown(272506, 4)
 		end
 	end
@@ -360,7 +360,7 @@ function mod:BloodFeastSuccess(args)
 	self:TargetMessage(args.spellId, "red", args.destName)
 	self:StopBar(args.spellId)
 	if self:Me(args.destGUID) then
-		self:Yell(args.spellId)
+		self:Yell(args.spellId, nil, nil, "Blood Feast")
 		self:YellCountdown(args.spellId, self:Mythic() and 6 or 10)
 	end
 	self:CDBar(args.spellId, 46.3)

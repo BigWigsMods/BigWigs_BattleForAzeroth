@@ -222,7 +222,7 @@ do
 		self:PrimaryIcon(264382, name)
 		if self:Me(guid) then
 			self:PlaySound(264382, "warning")
-			self:Say(264382, count)
+			self:Say(264382, count, nil, ("Eye Beam (%d)"):format(eyeBeamCount))
 		else
 			self:PlaySound(264382, "alert", nil, name)
 		end
@@ -260,7 +260,7 @@ do
 		self:TargetMessage(265360, "yellow", name, count)
 		if self:Me(guid) then
 			self:PlaySound(265360, "warning")
-			self:Say(265360, count)
+			self:Say(265360, count, nil, ("Roiling Deceit (%d)"):format(roilingDeceitCount))
 		end
 	end
 	function mod:RoilingDeceit(args)
@@ -279,7 +279,7 @@ do
 			if self:Me(args.destGUID) then
 				self:PlaySound(args.spellId, "warning")
 				self:SayCountdown(args.spellId, 12)
-				self:Say(args.spellId)
+				self:Say(args.spellId, nil, nil, "Roiling Deceit")
 			end
 		else
 			roilingDeceitTargets[args.destGUID] = nil

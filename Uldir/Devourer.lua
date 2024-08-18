@@ -111,7 +111,7 @@ function mod:MalodorousMiasmaApplied(args)
 	self:PlaySound(args.spellId, self:Mythic() and "warning" or "info", nil, args.destName) -- spread in Mythic
 	if self:Mythic() and self:Me(args.destGUID) then
 		if amount == 1 then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Malodorous Miasma")
 		end
 		self:CancelSayCountdown(args.spellId)
 		self:SayCountdown(args.spellId, 18)
@@ -136,7 +136,7 @@ function mod:PutridParoxysmApplied(args)
 		self:Flash(args.spellId)
 		if self:Mythic() then
 			if amount == 1 then
-				self:Say(args.spellId)
+				self:Say(args.spellId, nil, nil, "Putrid Paroxysm")
 			end
 			self:CancelSayCountdown(args.spellId)
 			self:SayCountdown(args.spellId, 6)

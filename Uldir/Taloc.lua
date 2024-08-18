@@ -112,7 +112,7 @@ do
 		self:PlaySound(271224, "warning", nil, playerList)
 		self:TargetsMessageOld(271224, "yellow", playerList)
 		if self:Me(args.destGUID) then
-			self:Say(271224)
+			self:Say(271224, nil, nil, "Plasma Discharge")
 			self:SayCountdown(271224, 3.5)
 		end
 	end
@@ -149,7 +149,7 @@ do
 		self:PlaySound(271895, "alert", nil, name)
 		self:TargetMessage(271895, "yellow", name)
 		if self:Me(guid) then
-			self:Say(271895)
+			self:Say(271895, nil, nil, "Sanguine Static")
 		end
 	end
 

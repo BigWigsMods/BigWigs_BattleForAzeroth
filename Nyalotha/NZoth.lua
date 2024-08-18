@@ -517,7 +517,7 @@ do
 		isCasting = false
 		if self:Me(args.destGUID) then
 			isOnMe = true
-			self:Say(315927, args.spellName, true)
+			self:Say(315927, args.spellName, true, "Paranoia")
 			self:PlaySound(315927, "warning")
 			if self:GetOption("custom_on_repeating_paranoia_say") then
 				sayTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.spellName, true)
@@ -813,7 +813,7 @@ do
 	function mod:AnnihilateApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Annihilate")
 			self:SayCountdown(args.spellId, 8)
 			self:PlaySound(args.spellId, "warning")
 		end

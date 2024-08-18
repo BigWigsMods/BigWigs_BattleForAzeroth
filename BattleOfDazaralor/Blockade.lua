@@ -313,7 +313,7 @@ function mod:CracklingLightningApplied(args)
 	if self:Me(args.destGUID) then
 		self:TargetMessage(args.spellId, "yellow", args.destName)
 		self:PlaySound(args.spellId, "warning")
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Crackling Lightning")
 		self:SayCountdown(args.spellId, 4)
 		self:OpenProximity(args.spellId, 6)
 	elseif self:IsSisterOnPlatform() then
@@ -356,7 +356,7 @@ do
 		if self:IsBrotherOnPlatform() then
 			playerList[#playerList+1] = args.destName
 			if self:Me(args.destGUID) then
-				self:Say(284362)
+				self:Say(284362, nil, nil, "Sea Storm")
 				self:Flash(284362)
 			end
 			self:PlaySound(284362, "alert", nil, playerList)

@@ -195,7 +195,7 @@ do
 	local function printTarget(self, name, guid)
 		tarGuid = guid
 		if self:Me(guid) then
-			self:Yell(306881)
+			self:Yell(306881, nil, nil, "Void Collapse")
 			self:YellCountdown(306881, 3.5, nil, 2)
 		end
 		self:TargetMessage(306881, "red", name)
@@ -264,7 +264,7 @@ do
 	function mod:ChargedBondsApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Charged Bonds")
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 		end
@@ -291,7 +291,7 @@ function mod:UnstableNightmareApplied(args)
 	self:StackMessageOld(args.spellId, args.destName, stacks, "red")
 	self:TargetBar(args.spellId, 6, args.destName, CL.count:format(args.spellName, stacks))
 	if self:Me(args.destGUID) then
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Unstable Nightmare")
 		self:Flash(args.spellId)
 		self:PlaySound(args.spellId, "warning", nil, args.destName)
 	end
@@ -304,7 +304,7 @@ end
 
 function mod:DreadInfernoFixate(args)
 	if self:Me(args.destGUID) then
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Dread Inferno")
 		self:PersonalMessage(args.spellId)
 		self:PlaySound(args.spellId, "alarm", nil, args.destName)
 	end

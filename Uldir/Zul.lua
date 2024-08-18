@@ -192,7 +192,7 @@ do
 		if self:Me(args.destGUID) then
 			isOnMe = true
 			self:PlaySound(args.spellId, "warning")
-			self:Say(args.spellId, CL.count_rticon:format(args.spellName, playerIconsCount, playerIconsCount))
+			self:Say(args.spellId, CL.count_rticon:format(args.spellName, playerIconsCount, playerIconsCount), nil, ("Dark Revelation (%d{rt%d})"):format(playerIconsCount, playerIconsCount))
 			self:SayCountdown(args.spellId, 10)
 			self:TargetBar(args.spellId, 10, args.destName)
 		end

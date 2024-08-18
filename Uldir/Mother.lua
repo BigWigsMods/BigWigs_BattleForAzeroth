@@ -243,7 +243,7 @@ do
 		self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		if self:Me(args.destGUID) then
 			self:Flash(args.spellId)
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Endemic Virus")
 			self:SayCountdown(args.spellId, 20)
 		end
 	end

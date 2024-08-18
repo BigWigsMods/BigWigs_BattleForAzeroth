@@ -116,7 +116,7 @@ do
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
 			self:PlaySound(297397, "warning")
-			self:Say(297397, args.spellName)
+			self:Say(297397, args.spellName, nil, "Briny Bubble")
 			self:SayCountdown(297397, 6)
 			self:Flash(297397)
 		end
@@ -199,7 +199,7 @@ do
 				if playerListGreen[i][1] ~= playerName then
 					linkedPlayer = ("|T13700%d:0|t%s"):format(playerListGreen[i][2], self:ColorName(playerListGreen[i][1]))
 				else
-					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListGreen[i][2]))
+					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListGreen[i][2]), nil, ("Arcing Azerite (%d{rt%d})"):format(self:SpellName(-20096), isOnMe, playerListGreen[i][2]))
 				end
 			end
 			self:PersonalMessage(-20096, false, CL.link_with:format(linkedPlayer), 296938)
@@ -213,7 +213,7 @@ do
 				if playerListOrange[i][1] ~= playerName then
 					linkedPlayer = ("|T13700%d:0|t%s"):format(playerListOrange[i][2], self:ColorName(playerListOrange[i][1]))
 				else
-					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListOrange[i][2]))
+					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListOrange[i][2]), nil, ("Arcing Azerite (%d{rt%d})"):format(self:SpellName(-20096), isOnMe, playerListOrange[i][2]))
 				end
 			end
 			self:PersonalMessage(-20096, false, CL.link_with:format(linkedPlayer), 296939)
@@ -227,7 +227,7 @@ do
 				if playerListPurple[i][1] ~= playerName then
 					linkedPlayer = ("|T13700%d:0|t%s"):format(playerListPurple[i][2], self:ColorName(playerListPurple[i][1]))
 				else
-					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListPurple[i][2]))
+					self:Say(-20096, CL.count_rticon:format(self:SpellName(-20096), isOnMe, playerListPurple[i][2]), nil, ("Arcing Azerite (%d{rt%d})"):format(self:SpellName(-20096), isOnMe, playerListPurple[i][2]))
 				end
 			end
 			self:PersonalMessage(-20096, false, CL.link_with:format(linkedPlayer), 296940)

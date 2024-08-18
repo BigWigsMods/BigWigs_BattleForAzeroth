@@ -173,7 +173,7 @@ do
 			if self:Me(args.destGUID) then
 				self:PlaySound(290450, "warning")
 				self:Flash(290450)
-				self:Say(290450)
+				self:Say(290450, nil, nil, "Seal of Purification")
 			end
 		end
 	end
@@ -184,7 +184,7 @@ do
 		if self:Me(guid) then
 			self:PlaySound(290450, "warning")
 			self:Flash(290450)
-			self:Say(290450)
+			self:Say(290450, nil, nil, "Seal of Purification")
 		end
 	end
 
@@ -202,7 +202,7 @@ do
 		self:PlaySound(284686, "alarm")
 		if self:Me(guid) then
 			self:Flash(284686)
-			self:Yell(284686)
+			self:Yell(284686, nil, nil, "Meteor Leap")
 			self:YellCountdown(284686, 5)
 		end
 	end
@@ -317,7 +317,7 @@ do
 			prev = t
 			self:PersonalMessage(285346)
 			self:PlaySound(285346, "warning")
-			self:Say(285346, self:SpellName(177849)) -- Fire on X
+			self:Say(285346, CL.fire, nil, "Fire") -- Fire on X
 		end
 	end
 end

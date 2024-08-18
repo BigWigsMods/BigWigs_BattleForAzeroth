@@ -255,7 +255,7 @@ do
 		end
 		self:TargetsMessageOld(args.spellId, "yellow", playerList, 2)
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId, CL.count_rticon:format(args.spellName, ruinCount, ruinCount))
+			self:Say(args.spellId, CL.count_rticon:format(args.spellName, ruinCount, ruinCount), nil, ("Imminent Ruin (%d{rt%d})"):format(ruinCount, ruinCount))
 			self:SayCountdown(args.spellId, 12)
 			self:PlaySound(args.spellId, "alert")
 		end

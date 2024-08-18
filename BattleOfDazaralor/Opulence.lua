@@ -467,7 +467,7 @@ do
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
 			self:PlaySound(283507, "warning")
-			self:Say(283507)
+			self:Say(283507, nil, nil, "Volatile Charge")
 			self:SayCountdown(283507, 8)
 		end
 		if #playerList == 1 and self:GetOption("custom_on_hand_timers") then
@@ -574,7 +574,7 @@ function mod:CritBuffApplied(args)
 
 	self:TargetMessage(284645, "green", args.destName, args.spellName, args.spellId)
 	if self:Me(args.destGUID) then
-		self:Say(284645, args.spellId)
+		self:Say(284645, args.spellId, nil, "Grossly Incandescent!")
 	end
 	self:UpdateTopazInfoBox()
 end
@@ -623,7 +623,7 @@ do
 		end
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "warning")
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Liquid Gold")
 			self:SayCountdown(args.spellId, 12)
 		end
 		self:TargetsMessageOld(args.spellId, "yellow", playerList)
@@ -664,7 +664,7 @@ function mod:CoinShowerApplied(args)
 	self:TargetBar(args.spellId, 10, args.destName)
 	self:CDBar(args.spellId, 30.5)
 	if self:Me(args.destGUID) then
-		self:Yell(args.spellId)
+		self:Yell(args.spellId, nil, nil, "Coin Shower")
 		self:YellCountdown(args.spellId, 10)
 	end
 end

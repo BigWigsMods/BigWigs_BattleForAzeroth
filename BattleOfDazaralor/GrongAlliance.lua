@@ -134,7 +134,7 @@ function mod:BestialThrowTarget(args)
 	self:TargetMessage(289401, "purple", args.destName)
 	self:PlaySound(289401, "alarm", nil, args.destName)
 	if self:Me(args.destGUID) then
-		self:Say(289401)
+		self:Say(289401, nil, nil, "Bestial Throw")
 		self:Flash(289401)
 	end
 end

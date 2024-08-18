@@ -217,7 +217,7 @@ do
 	function mod:ManifestNightmaresApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Manifest Nightmares")
 			self:SayCountdown(args.spellId, 6)
 			self:PlaySound(args.spellId, "alert")
 		end

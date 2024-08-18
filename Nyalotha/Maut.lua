@@ -110,7 +110,7 @@ function mod:DevourMagic(args)
 	self:Bar(args.spellId, 24.3)
 	if self:Me(args.destGUID) then
 		self:PersonalMessage(args.spellId)
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Devour Magic")
 		self:TargetBar(args.spellId, 6, args.destName)
 		self:SayCountdown(args.spellId, 6)
 		self:PlaySound(args.spellId, "warning", nil, args.destName)
@@ -218,7 +218,7 @@ function mod:DrainEssence(args)
 	self:CDBar(args.spellId, 13.3)
 	if self:Me(args.destGUID) then
 		self:PersonalMessage(args.spellId)
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Drain Essence")
 		--self:TargetBar(args.spellId, 6, args.destName)
 		self:PlaySound(args.spellId, "warning", nil, args.destName)
 	end

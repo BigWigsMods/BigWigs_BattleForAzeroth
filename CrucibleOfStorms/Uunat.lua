@@ -628,7 +628,7 @@ end
 function mod:InsatiableTormentApplied(args)
 	self:TargetMessage(args.spellId, "yellow", args.destName, CL.count:format(args.spellName, insatiableTormentCount-1)) -- count-1 due to Success being before applied
 	if self:Me(args.destGUID) then
-		self:Say(args.spellId, 143924) -- Leech
+		self:Say(args.spellId, 143924, nil, "Leech") -- Leech
 		self:PlaySound(args.spellId, "warning")
 	end
 end
@@ -686,8 +686,8 @@ do
 			self:PlaySound(293653, "alarm")
 			if self:GetOption("custom_off_repeating_resonance_say") then
 				local sayText = "{rt"..debuffMarks[args.spellId].."}"
-				self:Say(false, sayText, true)
-				sayTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, sayText, true)
+				self:Say(false, sayText, true, sayText)
+				sayTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, sayText, true, sayText)
 			end
 		end
 	end
@@ -696,18 +696,21 @@ do
 		if self:GetOption("custom_on_repeating_resonance_yell") then
 			if buffOnMe == 284684 then -- Void
 				local sayText = "{rt3} "..L.void.." {rt3}"
-				self:Yell(false, sayText, true)
-				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true)
+				local sayTextEnglish = "{rt3} Void {rt3}"
+				self:Yell(false, sayText, true, sayTextEnglish)
+				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true, sayTextEnglish)
 				self:ScheduleTimer("CancelTimer", 15, sayTimer)
 			elseif buffOnMe == 284768 then -- Trident
 				local sayText = "{rt5} "..L.ocean.." {rt5}"
-				self:Yell(false, sayText, true)
-				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true)
+				local sayTextEnglish = "{rt5} Ocean {rt5}"
+				self:Yell(false, sayText, true, sayTextEnglish)
+				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true, sayTextEnglish)
 				self:ScheduleTimer("CancelTimer", 15, sayTimer)
 			elseif buffOnMe == 284569 then -- Tempest
 				local sayText = "{rt6} "..L.storm.." {rt6}"
-				self:Yell(false, sayText, true)
-				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true)
+				local sayTextEnglish = "{rt6} Storm {rt6}"
+				self:Yell(false, sayText, true, sayTextEnglish)
+				sayTimer = self:ScheduleRepeatingTimer("Yell", 1.5, false, sayText, true, sayTextEnglish)
 				self:ScheduleTimer("CancelTimer", 15, sayTimer)
 			end
 		end

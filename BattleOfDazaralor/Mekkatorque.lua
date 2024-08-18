@@ -281,7 +281,7 @@ do
 		playerIcons[playerListCount] = playerListCount
 		if self:Me(args.destGUID) then
 			self:PlaySound(args.spellId, "warning")
-			self:Say(args.spellId, CL.count_rticon:format(L.gigavolt_alt_text, playerListCount, playerListCount))
+			self:Say(args.spellId, CL.count_rticon:format(L.gigavolt_alt_text, playerListCount, playerListCount), nil, ("Bomb (%d{rt%d})"):format(playerListCount, playerListCount))
 			self:SayCountdown(args.spellId, 15)
 			self:TargetBar(args.spellId, 15, args.destName, L.gigavolt_alt_text)
 		end
@@ -381,8 +381,8 @@ do
 			self:TargetMessage(args.spellId, "blue", args.destName)
 			self:PlaySound(args.spellId, "alert")
 			if not shrunkTimer and self:GetOption("custom_on_repeating_shrunk_say") and not self:LFR() then
-				self:Say(false, args.spellName, true)
-				shrunkTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.spellName, true)
+				self:Say(false, args.spellName, true, "Shrunk")
+				shrunkTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.spellName, true, "Shrunk")
 			end
 		end
 
@@ -407,8 +407,8 @@ do
 	function mod:TamperingApplied(args)
 		if self:Me(args.destGUID) then
 			if not tamperTimer and self:GetOption("custom_off_repeating_tampering_say") then
-				self:Say(false, args.destName, true)
-				tamperTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.destName, true)
+				self:Say(false, args.destName, true, "Tampering")
+				tamperTimer = self:ScheduleRepeatingTimer("Say", 1.5, false, args.destName, true, "Tampering")
 			end
 		end
 		tamperCount = tamperCount + 1

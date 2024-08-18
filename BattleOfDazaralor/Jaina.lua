@@ -354,7 +354,7 @@ do
 			playerList[count] = args.destName
 			self:TargetsMessageOld(args.spellId, "yellow", playerList, 3)
 			if self:Me(args.destGUID) then
-				self:Say(args.spellId, CL.count_rticon:format(args.spellName, count, count))
+				self:Say(args.spellId, CL.count_rticon:format(args.spellName, count, count), nil, ("Avalanche (%d{rt%d})"):format(count, count))
 				self:PlaySound(args.spellId, "warning")
 				self:Flash(args.spellId)
 			end
@@ -365,7 +365,7 @@ do
 			self:TargetMessage(args.spellId, "yellow", args.destName)
 			self:PrimaryIcon(args.spellId, args.destName)
 			if self:Me(args.destGUID) then
-				self:Say(args.spellId)
+				self:Say(args.spellId, nil, nil, "Avalanche")
 				self:PlaySound(args.spellId, "warning")
 				self:Flash(args.spellId)
 			end
@@ -449,7 +449,7 @@ do
 		playerList[#playerList+1] = args.destName
 		self:TargetsMessageOld(args.spellId, "yellow", playerList, 3)
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId, CL.count_rticon:format(args.spellName, broadsideCount, broadsideCount))
+			self:Say(args.spellId, CL.count_rticon:format(args.spellName, broadsideCount, broadsideCount), nil, ("Broadside (%d{rt%d})"):format(broadsideCount, broadsideCount))
 			self:SayCountdown(args.spellId, 6)
 			self:PlaySound(args.spellId, "warning")
 		end
@@ -478,7 +478,7 @@ function mod:SiegebreakerBlastApplied(args)
 	self:PrimaryIcon(args.spellId, args.destName)
 	self:TargetBar(args.spellId, 8, args.destName)
 	if self:Me(args.destGUID) then
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Siegebreaker Blast")
 		self:SayCountdown(args.spellId, 8)
 	end
 end

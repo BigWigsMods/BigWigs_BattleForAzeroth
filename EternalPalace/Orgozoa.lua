@@ -151,7 +151,7 @@ function mod:RAID_BOSS_WHISPER(_, msg)
 		self:PersonalMessage(305048)
 		if not self:Mythic() or incubationAppliedCount < 11 then
 			self:PlaySound(305048, "warning")
-			self:Say(305048)
+			self:Say(305048, nil, nil, "Arcing Current")
 		end
 	end
 end
@@ -193,7 +193,7 @@ function mod:AquaLance(args)
 	if self:Me(args.destGUID) then
 		self:PlaySound(args.spellId, "alert", nil, args.destName)
 		self:Flash(args.spellId)
-		self:Say(args.spellId)
+		self:Say(args.spellId, nil, nil, "Aqua Lance")
 		self:SayCountdown(args.spellId, 4)
 	end
 end

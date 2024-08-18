@@ -194,7 +194,7 @@ do
 	function mod:CursedBloodApplied(args)
 		playerList[#playerList+1] = args.destName
 		if self:Me(args.destGUID) then
-			self:Say(args.spellId)
+			self:Say(args.spellId, nil, nil, "Cursed Blood")
 			self:Flash(args.spellId)
 			self:PlaySound(args.spellId, "warning")
 		end
@@ -215,7 +215,7 @@ do
 	local function printTarget(self, name, guid)
 		if self:Me(guid) then
 			self:PersonalMessage(318383)
-			self:Say(318383)
+			self:Say(318383, nil, nil, "Absorbing Charge")
 			self:PlaySound(318383, "alarm")
 		else
 			self:TargetMessage(318383, "red", name)
