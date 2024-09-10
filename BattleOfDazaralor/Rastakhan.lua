@@ -50,7 +50,7 @@ function mod:GetOptions()
 		{285346, "SAY"}, -- Plague of Fire
 		285003, -- Zombie Dust Totem
 		{285213, "TANK_HEALER"}, -- Caress of Death
-		{288449, "SAY", "SAY_COUNTDOWN", "FLASH"}, -- Death's Door
+		{288449, "SAY_COUNTDOWN", "FLASH"}, -- Death's Door
 		-- Stage 3
 		{287333, "CASTBAR"}, -- Inevitable End
 		286742, -- Necrotic Smash

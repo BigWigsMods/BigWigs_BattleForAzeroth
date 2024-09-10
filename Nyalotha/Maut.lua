@@ -40,7 +40,7 @@ function mod:GetOptions()
 		{308044, "CASTBAR"}, -- Stygian Annihilation
 		308903, -- Dark Manifestation
 		305663, -- Black Wings
-		{314337, "FLASH"}, -- Ancient Curse
+		314337, -- Ancient Curse
 		-- Stage 2
 		{305722, "CASTBAR"}, -- Obsidian Destruction
 		{314993, "SAY"}, -- Drain Essence
