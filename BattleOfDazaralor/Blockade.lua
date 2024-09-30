@@ -18,6 +18,7 @@ local cracklingLightningCount = 1
 local stage = 1
 local sirenCount = 1
 local mobCollector = {}
+local bars = {}
 
 --------------------------------------------------------------------------------
 -- Localization
@@ -112,6 +113,7 @@ function mod:OnEngage()
 	cracklingLightningCount = 1
 	sirenCount = 1
 	mobCollector = {}
+	bars = {}
 
 	self:CDBar(284362, 7) -- Sea Storm
 	self:CDBar(288205, 10.5) -- Crackling Lightning
@@ -142,7 +144,7 @@ function mod:IsBrotherOnPlatform()
 end
 
 do
-	local normalAnchor, emphasizeAnchor, colors
+	local colors
 
 	local brotherAbilities = {
 		[284362] = true, -- Sea Storm
@@ -204,30 +206,16 @@ do
 
 	function mod:CheckBossPlatforms()
 		if not self:GetOption("custom_on_fade_out_bars") then return end
-		if normalAnchor then
-			for k in next, normalAnchor.bars do
-				if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
-					handleBarColor(self, k)
-				end
-			end
-		end
-		if emphasizeAnchor then
-			for k in next, emphasizeAnchor.bars do
-				if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
-					handleBarColor(self, k)
-				end
+		for k in next, bars do
+			if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
+				handleBarColor(self, k)
 			end
 		end
 	end
 
-	function mod:BarCreated(_, _, bar, _, key, text)
+	function mod:BarCreated(_, _, bar, _, key)
 		if not self:GetOption("custom_on_fade_out_bars") or stage ~= 1 then return end
-		local anchor = bar:Get("bigwigs:anchor")
-		if anchor.position == "normalPosition" then
-			normalAnchor = anchor
-		else
-			emphasizeAnchor = anchor
-		end
+		bars[bar] = true
 		if sisterAbilities[key] then
 			if not self:IsSisterOnPlatform() then
 				fadeOutBar(self, bar)
@@ -241,12 +229,7 @@ do
 
 	function mod:BarEmphasized(_, _, bar)
 		if not self:GetOption("custom_on_fade_out_bars") then return end
-		local anchor = bar:Get("bigwigs:anchor")
-		if anchor.position == "normalPosition" then
-			normalAnchor = anchor
-		else
-			emphasizeAnchor = anchor
-		end
+		bars[bar] = true
 		if bar:Get("bigwigs:module") == self and bar:Get("bigwigs:option") then
 			handleBarColor(self, bar)
 		end

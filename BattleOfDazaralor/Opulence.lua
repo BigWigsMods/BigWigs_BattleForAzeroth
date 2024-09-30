@@ -24,6 +24,7 @@ local topazStackTracker = {} -- Stacks
 local critBuffTracker = {} -- Time on crit buff
 local gemInfoBoxOpen = nil
 local hexCounter = 0
+local bars = {}
 
 --------------------------------------------------------------------------------
 -- Localization
@@ -157,6 +158,7 @@ function mod:OnEngage()
 	topazStackTracker = {}
 	critBuffTracker = {}
 	gemInfoBoxOpen = nil
+	bars = {}
 	if self:Mythic() then
 		self:Bar(289383, 30, self:SpellName(L.swap), 289383) -- Chaotic Displacement
 	end
@@ -189,7 +191,7 @@ function mod:IsBulwarkOnPlatform()
 end
 
 do
-	local normalAnchor, emphasizeAnchor, colors
+	local colors
 
 	local bulwarkAbilities = {
 		[282939] = true, -- Flames of Punishment
@@ -250,30 +252,16 @@ do
 
 	function mod:CheckBossPlatforms()
 		if not self:GetOption("custom_on_fade_out_bars") then return end
-		if normalAnchor then
-			for k in next, normalAnchor.bars do
-				if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
-					handleBarColor(self, k)
-				end
-			end
-		end
-		if emphasizeAnchor then
-			for k in next, emphasizeAnchor.bars do
-				if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
-					handleBarColor(self, k)
-				end
+		for k in next, bars do
+			if k:Get("bigwigs:module") == self and k:Get("bigwigs:option") then
+				handleBarColor(self, k)
 			end
 		end
 	end
 
 	function mod:BarCreated(_, _, bar, _, key, text)
 		if not self:GetOption("custom_on_fade_out_bars") then return end
-		local anchor = bar:Get("bigwigs:anchor")
-		if anchor.position == "normalPosition" then
-			normalAnchor = anchor
-		else
-			emphasizeAnchor = anchor
-		end
+		bars[bar] = true
 		if bulwarkAbilities[key] or text:match(bulwarkPattern) then
 			if not self:IsBulwarkOnPlatform() then
 				fadeOutBar(self, bar)
@@ -287,12 +275,7 @@ do
 
 	function mod:BarEmphasized(_, _, bar)
 		if not self:GetOption("custom_on_fade_out_bars") then return end
-		local anchor = bar:Get("bigwigs:anchor")
-		if anchor.position == "normalPosition" then
-			normalAnchor = anchor
-		else
-			emphasizeAnchor = anchor
-		end
+		bars[bar] = true
 		if bar:Get("bigwigs:module") == self and bar:Get("bigwigs:option") then
 			handleBarColor(self, bar)
 		end
