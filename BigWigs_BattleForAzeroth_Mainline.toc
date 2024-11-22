@@ -1,4 +1,4 @@
-## Interface: 110005, 110000, 110002
+## Interface: 110005, 110007, 110002
 
 ## Title: BigWigs [|cffeda55fBattle for Azeroth|r]
 ## Title-zhCN: BigWigs [|cffeda55f争霸艾泽拉斯|r]
