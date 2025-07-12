@@ -9,4 +9,5 @@ A collection of BigWigs modules from the **Battle for Azeroth** era, including:
 * World Bosses
 
 ## Download
-<https://www.curseforge.com/wow/addons/bigwigs_battleforazeroth>
+* <https://www.curseforge.com/wow/addons/bigwigs_battleforazeroth>
+* <https://addons.wago.io/addons/bigwigs-battleforazeroth>
