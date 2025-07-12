@@ -206,7 +206,7 @@ end
 do
 	local playerList = mod:NewTargetList()
 	function mod:MadnessBombApplied(args)
-		if UnitIsPlayer(args.destName) then
+		if self:Player(args.destFlags) then
 			playerList[#playerList+1] = args.destName
 			self:TargetsMessageOld(args.spellId, "yellow", playerList)
 		end
