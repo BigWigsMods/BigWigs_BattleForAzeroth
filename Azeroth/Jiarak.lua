@@ -7,7 +7,7 @@ local mod = BigWigs:NewBoss("Ji'arak", -862, 2141)
 if not mod then return end
 mod:RegisterEnableMob(132253)
 mod.otherMenu = -947
-mod.worldBoss = 132253
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Locals

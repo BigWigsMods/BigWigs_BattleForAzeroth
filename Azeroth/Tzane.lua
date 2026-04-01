@@ -7,7 +7,7 @@ local mod, CL = BigWigs:NewBoss("T'zane", -863, 2139)
 if not mod then return end
 mod:RegisterEnableMob(132701)
 mod.otherMenu = -947
-mod.worldBoss = 132701
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Locals

@@ -7,7 +7,7 @@ local mod = BigWigs:NewBoss("Azurethos, The Winged Typhoon", -895, 2199)
 if not mod then return end
 mod:RegisterEnableMob(136385)
 mod.otherMenu = -947
-mod.worldBoss = 136385
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Initialization

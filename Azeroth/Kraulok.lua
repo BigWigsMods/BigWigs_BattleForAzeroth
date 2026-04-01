@@ -7,7 +7,7 @@ local mod = BigWigs:NewBoss("Dunegorger Kraulok", -864, 2210)
 if not mod then return end
 mod:RegisterEnableMob(138794)
 mod.otherMenu = -947
-mod.worldBoss = 138794
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Locals

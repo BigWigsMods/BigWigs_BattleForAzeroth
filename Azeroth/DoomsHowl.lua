@@ -8,7 +8,7 @@ local mod, CL = BigWigs:NewBoss("Doom's Howl", -14, 2213)
 if not mod then return end
 mod:RegisterEnableMob(138122)
 mod.otherMenu = -947
-mod.worldBoss = 138122
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Locals

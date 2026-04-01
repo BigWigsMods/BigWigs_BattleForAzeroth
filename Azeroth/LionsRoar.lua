@@ -8,7 +8,7 @@ local mod, CL = BigWigs:NewBoss("The Lion's Roar", -14, 2212)
 if not mod then return end
 mod:RegisterEnableMob(137374)
 mod.otherMenu = -947
-mod.worldBoss = 137374
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Locals

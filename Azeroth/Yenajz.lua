@@ -7,7 +7,7 @@ local mod = BigWigs:NewBoss("Warbringer Yenajz", -942, 2198)
 if not mod then return end
 mod:RegisterEnableMob(140163)
 mod.otherMenu = -947
-mod.worldBoss = 140163
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Localization

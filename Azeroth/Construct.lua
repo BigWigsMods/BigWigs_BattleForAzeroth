@@ -7,7 +7,7 @@ local mod = BigWigs:NewBoss("Hailstone Construct", -896, 2197)
 if not mod then return end
 mod:RegisterEnableMob(140252)
 mod.otherMenu = -947
-mod.worldBoss = 140252
+mod:SetWorldModule(true)
 
 --------------------------------------------------------------------------------
 -- Initialization
