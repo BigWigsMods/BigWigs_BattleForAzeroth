@@ -5,7 +5,7 @@
 
 local mod, CL = BigWigs:NewBoss("Battle of Dazar'alor Trash", 2070)
 if not mod then return end
-mod.displayName = CL.trash
+mod:SetTrashModule(true)
 mod:RegisterEnableMob(
 	147497, -- Prelate Akk'al
 	147830, -- Rastari Flamespeaker
