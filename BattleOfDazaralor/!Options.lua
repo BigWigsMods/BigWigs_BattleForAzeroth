@@ -392,6 +392,7 @@ BigWigs:AddColors("Lady Jaina Proudmoore", {
 	[289488] = "yellow",
 	[289940] = "yellow",
 	[290084] = "yellow",
+	["berserk"] = {"orange","red","yellow"},
 	["stages"] = {"cyan","green"},
 })
 
@@ -424,6 +425,7 @@ BigWigs:AddSounds("Lady Jaina Proudmoore", {
 	[289488] = "alert",
 	[289940] = "alert",
 	[290084] = "alert",
+	["berserk"] = "alarm",
 	["stages"] = "long",
 })
 

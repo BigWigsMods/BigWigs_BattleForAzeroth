@@ -8,6 +8,7 @@ BigWigs:AddColors("Abyssal Commander Sivara", {
 	[295601] = {"blue","orange"},
 	[295791] = {"blue","orange"},
 	[296551] = "red",
+	["berserk"] = {"orange","red","yellow"},
 })
 
 BigWigs:AddSounds("Abyssal Commander Sivara", {
@@ -18,6 +19,7 @@ BigWigs:AddSounds("Abyssal Commander Sivara", {
 	[295601] = "alarm",
 	[295791] = "long",
 	[296551] = "warning",
+	["berserk"] = "alarm",
 })
 
 BigWigs:AddColors("Radiance of Azshara", {
@@ -28,6 +30,7 @@ BigWigs:AddColors("Radiance of Azshara", {
 	[296701] = "orange",
 	[296737] = {"blue","green","yellow"},
 	[296894] = "yellow",
+	["berserk"] = {"orange","red","yellow"},
 })
 
 BigWigs:AddSounds("Radiance of Azshara", {
@@ -38,6 +41,7 @@ BigWigs:AddSounds("Radiance of Azshara", {
 	[296701] = "warning",
 	[296737] = "alert",
 	[296894] = "alert",
+	["berserk"] = "alarm",
 })
 
 BigWigs:AddColors("Blackwater Behemoth", {
@@ -52,6 +56,7 @@ BigWigs:AddColors("Blackwater Behemoth", {
 	[298428] = {"blue","purple"},
 	[301180] = "blue",
 	[301494] = {"blue","red"},
+	["berserk"] = {"orange","red","yellow"},
 	["stages"] = {"cyan","green"},
 })
 
@@ -67,6 +72,7 @@ BigWigs:AddSounds("Blackwater Behemoth", {
 	[298428] = "alert",
 	[301180] = "info",
 	[301494] = "warning",
+	["berserk"] = "alarm",
 	["stages"] = "long",
 })
 
@@ -133,6 +139,7 @@ BigWigs:AddColors("The Queen's Court", {
 	[301807] = "red",
 	[301830] = {"blue","purple"},
 	[301947] = "yellow",
+	["berserk"] = {"orange","red","yellow"},
 })
 
 BigWigs:AddSounds("The Queen's Court", {
@@ -150,6 +157,7 @@ BigWigs:AddSounds("The Queen's Court", {
 	[301807] = "warning",
 	[301830] = "alarm",
 	[301947] = "long",
+	["berserk"] = "alarm",
 })
 
 BigWigs:AddColors("Za'qul, Herald of Ny'alotha", {
@@ -167,6 +175,7 @@ BigWigs:AddColors("Za'qul, Herald of Ny'alotha", {
 	[301141] = "orange",
 	[303971] = "red",
 	[304733] = "orange",
+	["berserk"] = {"orange","red","yellow"},
 	["stages"] = "cyan",
 })
 
@@ -185,6 +194,7 @@ BigWigs:AddSounds("Za'qul, Herald of Ny'alotha", {
 	[301141] = "warning",
 	[303971] = "warning",
 	[304733] = "long",
+	["berserk"] = "alarm",
 	["stages"] = "long",
 })
 
@@ -225,6 +235,7 @@ BigWigs:AddColors("Queen Azshara", {
 	[303657] = {"blue","yellow"},
 	[303986] = {"blue","yellow"},
 	[304475] = "cyan",
+	["berserk"] = {"orange","red","yellow"},
 	["stages"] = {"cyan","green"},
 })
 
@@ -265,5 +276,6 @@ BigWigs:AddSounds("Queen Azshara", {
 	[303657] = "warning",
 	[303986] = {"alarm","alert"},
 	[304475] = "info",
+	["berserk"] = "alarm",
 	["stages"] = "long",
 })

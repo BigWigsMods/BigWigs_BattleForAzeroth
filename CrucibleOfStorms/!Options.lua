@@ -16,6 +16,7 @@ BigWigs:AddColors("The Restless Cabal", {
 	[282886] = {"cyan","orange"},
 	[282914] = {"blue","red"},
 	[287876] = "blue",
+	["berserk"] = {"orange","red","yellow"},
 })
 
 BigWigs:AddSounds("The Restless Cabal", {
@@ -34,6 +35,7 @@ BigWigs:AddSounds("The Restless Cabal", {
 	[282886] = {"alarm","info"},
 	[282914] = "warning",
 	[287876] = "alarm",
+	["berserk"] = "alarm",
 })
 
 BigWigs:AddColors("Uu'nat, Harbinger of the Void", {
@@ -55,6 +57,7 @@ BigWigs:AddColors("Uu'nat, Harbinger of the Void", {
 	[285685] = "orange",
 	[285820] = "cyan",
 	[293653] = {"blue","green","red"},
+	["berserk"] = {"orange","red","yellow"},
 	["stages"] = {"cyan","green"},
 })
 
@@ -77,5 +80,6 @@ BigWigs:AddSounds("Uu'nat, Harbinger of the Void", {
 	[285685] = "warning",
 	[285820] = "info",
 	[293653] = {"alarm","info","warning"},
+	["berserk"] = "alarm",
 	["stages"] = "long",
 })

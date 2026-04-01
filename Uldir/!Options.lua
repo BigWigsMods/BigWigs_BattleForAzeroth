@@ -55,6 +55,7 @@ BigWigs:AddColors("Fetid Devourer", {
 	[262314] = {"blue","orange"},
 	[262364] = {"cyan","red"},
 	[262378] = "cyan",
+	["berserk"] = {"orange","red","yellow"},
 	["breath"] = "yellow",
 })
 
@@ -65,6 +66,7 @@ BigWigs:AddSounds("Fetid Devourer", {
 	[262314] = "warning",
 	[262364] = {"long","warning"},
 	[262378] = "info",
+	["berserk"] = "alarm",
 	["breath"] = "alert",
 })
 

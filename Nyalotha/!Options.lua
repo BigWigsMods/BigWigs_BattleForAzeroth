@@ -246,6 +246,7 @@ BigWigs:AddColors("Il'gynoth, Corruption Reborn", {
 	[311401] = "yellow",
 	[313759] = {"blue","yellow"},
 	[318383] = {"blue","red"},
+	["berserk"] = {"orange","red","yellow"},
 	["stages"] = "cyan",
 })
 
@@ -256,6 +257,7 @@ BigWigs:AddSounds("Il'gynoth, Corruption Reborn", {
 	[311401] = "long",
 	[313759] = "warning",
 	[318383] = "alarm",
+	["berserk"] = "alarm",
 	["stages"] = "long",
 })
 
@@ -318,6 +320,7 @@ BigWigs:AddColors("N'Zoth, the Corruptor", {
 	[318459] = {"blue","orange"},
 	[318971] = "orange",
 	[318976] = "yellow",
+	["berserk"] = {"orange","red","yellow"},
 	["stages"] = {"cyan","green"},
 })
 
@@ -347,5 +350,6 @@ BigWigs:AddSounds("N'Zoth, the Corruptor", {
 	[318459] = "warning",
 	[318971] = "alarm",
 	[318976] = "long",
+	["berserk"] = "alarm",
 	["stages"] = {"info","long"},
 })
