@@ -235,7 +235,7 @@ function mod:HarvesterMarker(event, unit, guid)
 end
 
 function mod:CHAT_MSG_MONSTER_YELL(event, msg)
-	if msg:find(L.gateway_yell, nil, true) then
+	if not self:IsSecret(msg) and msg:find(L.gateway_yell, nil, true) then
 		self:Message(318091, "cyan", self:SpellName(318091))
 		self:PlaySound(318091, "long")
 		voidspawnKilled = nil
