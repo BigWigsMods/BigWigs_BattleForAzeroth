@@ -20,7 +20,6 @@ mod.respawnTime = 30
 
 local stage = 1
 local nextStageWarning = 68
-local lastPower = 0
 local eyeBeamCount = 0
 local roilingDeceitCount = 0
 local roilingDeceitTargets = {}
@@ -106,7 +105,6 @@ end
 function mod:OnEngage()
 	stage = 1
 	nextStageWarning = self:Mythic() and 43 or 68
-	lastPower = 0
 	eyeBeamCount = 0
 	roilingDeceitCount = 0
 	roilingDeceitTargets = {}

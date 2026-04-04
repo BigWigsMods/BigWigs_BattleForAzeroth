@@ -10,14 +10,14 @@
 local mod, CL = BigWigs:NewBoss("Wrathion", 2217, 2368)
 if not mod then return end
 mod:RegisterEnableMob(156818) -- Wrathion
-mod.engageId = 2329
-mod.respawnTime = 30
+mod:SetEncounterID(2329)
+mod:SetRespawnTime(30)
+mod:SetStage(1)
 
 --------------------------------------------------------------------------------
 -- Locals
 --
 
-local stage = 1
 local nextCataclysm = 0
 local incinerationCount = 1
 local cataclysmCount = 1
@@ -62,10 +62,10 @@ function mod:OnBossEnable()
 end
 
 function mod:OnEngage()
-	stage = 1
 	nextCataclysm = GetTime() + 60
 	incinerationCount = 1
 	cataclysmCount = 1
+	self:SetStage(1)
 
 	self:Bar(305978, 7.1) -- Searing Breath
 	self:CDBar(306163, self:Mythic() and 28 or 8, CL.count:format(self:SpellName(306163), incinerationCount)) -- Incineration, this can vary (a lot)
@@ -149,13 +149,13 @@ function mod:BurningCataclysm(args)
 end
 
 function mod:SmokeandMirrors(args)
-	stage = 2
+	self:SetStage(2)
 	self:Message("stages", "cyan", CL.stage:format(2), false)
 	self:PlaySound("stages", "long")
 end
 
 function mod:SmokeandMirrorsRemoved(args)
-	stage = 1
+	self:SetStage(1)
 	self:Message("stages", "cyan", CL.stage:format(1), false)
 	self:PlaySound("stages", "long")
 	incinerationCount = 1
