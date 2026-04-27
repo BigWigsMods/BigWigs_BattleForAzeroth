@@ -87,7 +87,7 @@ function mod:GetOptions()
 end
 
 function mod:OnBossEnable()
-	self:RegisterEvent("CHAT_MSG_RAID_BOSS_EMOTE")
+	self:RegisterEvent("RAID_BOSS_EMOTE")
 	self:RegisterUnitEvent("UNIT_SPELLCAST_SUCCEEDED", nil, "boss1")
 
 	--[[  Stage One: Exterior Carapace ]]--
@@ -135,7 +135,7 @@ end
 -- Event Handlers
 --
 
-function mod:CHAT_MSG_RAID_BOSS_EMOTE(_, msg)
+function mod:RAID_BOSS_EMOTE(_, msg)
 	if msg:find("INV_MISC_MONSTERHORN_04", nil, true) then -- Growth-Covered Tentacle -- xxx event for mythic??
 		self:Message(-20560, "red", CL.count:format(self:SpellName(-20560), tentacleCount), "INV_MISC_MONSTERHORN_04")
 		self:PlaySound(-20560, "info")
