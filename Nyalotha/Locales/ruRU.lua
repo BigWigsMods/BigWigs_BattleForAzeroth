@@ -1,5 +1,4 @@
 local L = BigWigs:NewBossLocale("Maut", "ruRU")
-if not L then return end
 if L then
 	L.stage2_over = "Фаза 2 закончена - %.1f сек"
 end

@@ -1,15 +1,15 @@
-local L = BigWigs:NewBossLocale("Maut", "esES")
+local L = BigWigs:NewBossLocale("Maut", "esMX")
 if L then
 	-- L.stage2_over = "Stage 2 Over - %.1f sec"
 end
 
-L = BigWigs:NewBossLocale("Shad'har the Insatiable", "esES")
+L = BigWigs:NewBossLocale("Shad'har the Insatiable", "esMX")
 if L then
 	-- L.custom_on_stop_timers = "Always show ability bars"
 	-- L.custom_on_stop_timers_desc = "Shad'har randomizes which off-cooldown ability she uses next. When this option is enabled, the bars for those abilities will stay on your screen."
 end
 
-L = BigWigs:NewBossLocale("Drest'agath", "esES")
+L = BigWigs:NewBossLocale("Drest'agath", "esMX")
 if L then
 	-- L.adds_desc = "Warnings and Messages for the Eye, Tentacle and Maw of Drest'agath."
 	-- L.adds_icon = "achievement_nzothraid_drestagath"
@@ -19,30 +19,30 @@ if L then
 	-- L.maw_killed = "Maw Killed!"
 end
 
-L = BigWigs:NewBossLocale("Il'gynoth, Corruption Reborn", "esES")
+L = BigWigs:NewBossLocale("Il'gynoth, Corruption Reborn", "esMX")
 if L then
 	-- L.custom_on_fixate_plates = "Fixate icon on Enemy Nameplate"
 	-- L.custom_on_fixate_plates_desc = "Show an icon on the target nameplate that is fixating on you.\nRequires the use of Enemy Nameplates. This feature is currently only supported by KuiNameplates."
 end
 
-L = BigWigs:NewBossLocale("Vexiona", "esES")
+L = BigWigs:NewBossLocale("Vexiona", "esMX")
 if L then
 	-- L.killed = "%s killed"
 end
 
-L = BigWigs:NewBossLocale("Ra-den the Despoiled", "esES")
+L = BigWigs:NewBossLocale("Ra-den the Despoiled", "esMX")
 if L then
 	-- L.essences = "Essences"
 	-- L.essences_desc = "Ra-den periodically draws essences from other realms. Essences that reach Ra-den empower him with energy of that type."
 end
 
-L = BigWigs:NewBossLocale("Carapace of N'Zoth", "esES")
+L = BigWigs:NewBossLocale("Carapace of N'Zoth", "esMX")
 if L then
 	-- L.player_membrane = "Player Membrane" -- In stage 3
 	-- L.boss_membrane = "Boss Membrane" -- In stage 3
 end
 
-L = BigWigs:NewBossLocale("N'Zoth, the Corruptor", "esES")
+L = BigWigs:NewBossLocale("N'Zoth, the Corruptor", "esMX")
 if L then
 	-- L.realm_switch = "Realm Switched" -- When you leave the Mind of N'zoth
 

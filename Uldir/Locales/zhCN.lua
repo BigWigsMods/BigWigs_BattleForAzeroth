@@ -1,5 +1,4 @@
 local L = BigWigs:NewBossLocale("MOTHER", "zhCN")
-if not L then return end
 if L then
 	L.sideLaser = "侧面射线" -- short for: (location) Uldir Defensive Beam
 	L.upLaser = "顶部射线"

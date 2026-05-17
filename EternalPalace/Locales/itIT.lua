@@ -1,5 +1,4 @@
 local L = BigWigs:NewBossLocale("Za'qul, Herald of Ny'alotha", "itIT")
-if not L then return end
 if L then
 	L.stage3_early = "Gli squarci di Za'qul aprono l'ascesa per il Regno del Delirio!"  -- Yell is 14.5s before the actual cast start
 end

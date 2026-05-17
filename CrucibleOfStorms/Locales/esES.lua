@@ -1,5 +1,4 @@
-local L = BigWigs:NewBossLocale("The Restless Cabal", "esES") or BigWigs:NewBossLocale("The Restless Cabal", "esMX")
-if not L then return end
+local L = BigWigs:NewBossLocale("The Restless Cabal", "esES")
 if L then
 	L.absorb = "Absorbido"
 	--L.absorb_text = "%s (|cff%s%.0f%%|r)"
@@ -8,7 +7,7 @@ if L then
 	--L.cast_text = "%.1fs (|cff%s%.0f%%|r)"
 end
 
-L = BigWigs:NewBossLocale("Uu'nat, Harbinger of the Void", "esES") or BigWigs:NewBossLocale("Uu'nat, Harbinger of the Void", "esMX")
+L = BigWigs:NewBossLocale("Uu'nat, Harbinger of the Void", "esES")
 if L then
 	--L.custom_on_stop_timers = "Always show ability bars"
 	--L.custom_on_stop_timers_desc = "Uunat can delay some of his abilities. When this option is enabled, the bars for those abilities will stay on your screen."

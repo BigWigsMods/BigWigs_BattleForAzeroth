@@ -1,22 +1,22 @@
-local L = BigWigs:NewBossLocale("The Restless Cabal", "frFR")
+local L = BigWigs:NewBossLocale("The Restless Cabal", "esMX")
 if L then
-	L.absorb = "Absorption"
-	L.absorb_text = "%s (|cff%s%.0f%%|r)"
+	L.absorb = "Absorbido"
+	--L.absorb_text = "%s (|cff%s%.0f%%|r)"
 	--L.bubble = "Bubble" -- Custody of the Deep Bubble
-	L.cast = "Incantation"
-	L.cast_text = "%.1fs (|cff%s%.0f%%|r)"
+	L.cast = "Lanzando"
+	--L.cast_text = "%.1fs (|cff%s%.0f%%|r)"
 end
 
-L = BigWigs:NewBossLocale("Uu'nat, Harbinger of the Void", "frFR")
+L = BigWigs:NewBossLocale("Uu'nat, Harbinger of the Void", "esMX")
 if L then
 	--L.custom_on_stop_timers = "Always show ability bars"
 	--L.custom_on_stop_timers_desc = "Uunat can delay some of his abilities. When this option is enabled, the bars for those abilities will stay on your screen."
 
-	L.absorb = "Absorption"
-	L.absorb_text = "%s (|cff%s%.0f%%|r)"
+	L.absorb = "Absorbido"
+	--L.absorb_text = "%s (|cff%s%.0f%%|r)"
 	--L.bubble = "Bubble" -- Custody of the Deep Bubble
-	L.cast = "Incantation"
-	L.cast_text = "%.1fs (|cff%s%.0f%%|r)"
+	L.cast = "Lanzando"
+	--L.cast_text = "%.1fs (|cff%s%.0f%%|r)"
 
 	--L.void = "Void" -- Unstable Resonance: Void
 	--L.ocean = "Ocean" -- Unstable Resonance: Ocean

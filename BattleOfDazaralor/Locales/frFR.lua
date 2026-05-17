@@ -1,5 +1,4 @@
 local L = BigWigs:NewBossLocale("Battle of Dazar'alor Trash", "frFR")
-if not L then return end
 if L then
 	L.prelate = "Prélat Akk'al"
 	L.flamespeaker = "Parleflamme rastari"

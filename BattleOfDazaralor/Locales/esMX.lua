@@ -1,4 +1,4 @@
-local L = BigWigs:NewBossLocale("Battle of Dazar'alor Trash", "esES")
+local L = BigWigs:NewBossLocale("Battle of Dazar'alor Trash", "esMX")
 if L then
 	L.prelate = "Prelado Akk'al"
 	L.flamespeaker = "Hablallamas Rastari"
@@ -11,7 +11,7 @@ if L then
 	L.witness = "¡%s ha apuñalado a %s con %s!"
 end
 
-L = BigWigs:NewBossLocale("Jadefire Masters Horde", "esES")
+L = BigWigs:NewBossLocale("Jadefire Masters Horde", "esMX")
 if L then
 	L.custom_on_fixate_plates = "Fija un icono en la placa de nombre enemiga"
 	L.custom_on_fixate_plates_desc = "Muestra un ícono en la placa de identificación del objetivo que te tiene fijado.\nRequiere el uso de placas de identificación enemigas. Esta característica actualmente solo es compatible con KuiNameplates."
@@ -24,7 +24,7 @@ if L then
 	L.interrupted_after = "%s interrumpido por %s (%.1f segundos restantes)"
 end
 
-L = BigWigs:NewBossLocale("Jadefire Masters Alliance", "esES")
+L = BigWigs:NewBossLocale("Jadefire Masters Alliance", "esMX")
 if L then
 	L.custom_on_fixate_plates = "Fija un icono en la placa de nombre enemiga"
 	L.custom_on_fixate_plates_desc = "Muestra un ícono en la placa de identificación del objetivo que te tiene fijado.\nRequiere el uso de placas de identificación enemigas. Esta característica actualmente solo es compatible con KuiNameplates."
@@ -37,7 +37,7 @@ if L then
 	L.interrupted_after = "%s interrumpido por %s (%.1f segundos restantes)"
 end
 
-L = BigWigs:NewBossLocale("Opulence", "esES")
+L = BigWigs:NewBossLocale("Opulence", "esMX")
 if L then
 	L.room = "Cámara  (%d/8)"
 	L.no_jewel = "Sin Gemas:"
@@ -54,7 +54,7 @@ if L then
 	L.bulwark_cast = "Baluarte: %s"
 end
 
-L = BigWigs:NewBossLocale("Conclave of the Chosen", "esES")
+L = BigWigs:NewBossLocale("Conclave of the Chosen", "esMX")
 if L then
 	L.custom_on_fixate_plates = "Fija un icono en la placa de nombre enemiga"
 	L.custom_on_fixate_plates_desc = "Muestra un ícono en la placa de identificación del objetivo que te tiene fijado.\nRequiere el uso de placas de identificación enemigas. Esta característica actualmente solo es compatible con KuiNameplates."
@@ -62,12 +62,12 @@ if L then
 	--L.count_of = "%s (%d/%d)"
 end
 
-L = BigWigs:NewBossLocale("King Rastakhan", "esES")
+L = BigWigs:NewBossLocale("King Rastakhan", "esMX")
 if L then
 	L.leap_cancelled = "Salto Cancelado"
 end
 
-L = BigWigs:NewBossLocale("High Tinker Mekkatorque", "esES")
+L = BigWigs:NewBossLocale("High Tinker Mekkatorque", "esMX")
 if L then
 	L.gigavolt_alt_text = "Bomba"
 
@@ -81,7 +81,7 @@ if L then
 	L.custom_off_repeating_tampering_say_desc = "Dices repetidamente tu nombre cuando estás controlando un Chispabot."
 end
 
-L = BigWigs:NewBossLocale("Stormwall Blockade", "esES")
+L = BigWigs:NewBossLocale("Stormwall Blockade", "esMX")
 if L then
 	L.killed = "¡%s muerto!"
 
@@ -89,7 +89,7 @@ if L then
 	L.custom_on_fade_out_bars_desc = "Elimina las barras del jefe que no se encuentra activo en tu barco durante la fase 1"
 end
 
-L = BigWigs:NewBossLocale("Lady Jaina Proudmoore", "esES")
+L = BigWigs:NewBossLocale("Lady Jaina Proudmoore", "esMX")
 if L then
 	L.starbord_ship_emote = "¡Un corsario de Kul Tiran se acerca en el lado de estribor!"
 	L.port_side_ship_emote = "¡Un corsario de Kul Tiran se acerca en el lado de babor!"

@@ -1,5 +1,4 @@
 local L = BigWigs:NewBossLocale("Za'qul, Herald of Ny'alotha", "zhTW")
-if not L then return end
 if L then
 	L.stage3_early = "札奎爾撕開了一條通往狂亂領域的通道！"  -- Yell is 14.5s before the actual cast start
 end

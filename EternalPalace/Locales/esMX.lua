@@ -1,14 +1,14 @@
-local L = BigWigs:NewBossLocale("Za'qul, Herald of Ny'alotha", "koKR")
+local L = BigWigs:NewBossLocale("Za'qul, Herald of Ny'alotha", "esMX")
 if L then
 	--L.stage3_early = "Za'qul tears open the pathway to Delirium Realm!"  -- Yell is 14.5s before the actual cast start
 end
 
-L = BigWigs:NewBossLocale("Lady Ashvane", "koKR")
+L = BigWigs:NewBossLocale("Lady Ashvane", "esMX")
 if L then
 	L.linkText = "|T%d:15:15:0:0:64:64:4:60:4:60|t(%s+%s) "
 end
 
-L = BigWigs:NewBossLocale("Queen Azshara", "koKR")
+L = BigWigs:NewBossLocale("Queen Azshara", "esMX")
 if L then
 	--L[299249] = "SOAK Orbs"
 	--L[299251] = "AVOID Orbs"
