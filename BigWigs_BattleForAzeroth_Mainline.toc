@@ -47,7 +47,6 @@ Azeroth\DoomsHowl.lua
 Azeroth\LionsRoar.lua
 Azeroth\Yenajz.lua
 Azeroth\Kraulok.lua
-
 BattleOfDazaralor\ChampionAlliance.lua
 BattleOfDazaralor\ChampionHorde.lua
 BattleOfDazaralor\JadefireAlliance.lua
@@ -61,10 +60,8 @@ BattleOfDazaralor\Mekkatorque.lua
 BattleOfDazaralor\Blockade.lua
 BattleOfDazaralor\Jaina.lua
 BattleOfDazaralor\Trash.lua
-
 CrucibleOfStorms\Cabal.lua
 CrucibleOfStorms\Uunat.lua
-
 EternalPalace\AbyssalCommander.lua
 EternalPalace\RadianceofAszhara.lua
 EternalPalace\BlackwaterBehemoth.lua
@@ -73,7 +70,6 @@ EternalPalace\Orgozoa.lua
 EternalPalace\TheQueensCourt.lua
 EternalPalace\Zaqul.lua
 EternalPalace\QueenAzshara.lua
-
 Nyalotha\Wrathion.lua
 Nyalotha\Maut.lua
 Nyalotha\Skitra.lua
@@ -86,7 +82,6 @@ Nyalotha\Raden.lua
 Nyalotha\Ilgynoth.lua
 Nyalotha\CarapaceofNZoth.lua
 Nyalotha\NZoth.lua
-
 Uldir\Taloc.lua
 Uldir\Mother.lua
 Uldir\Devourer.lua
