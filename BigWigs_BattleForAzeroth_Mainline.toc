@@ -47,7 +47,6 @@ Azeroth\DoomsHowl.lua
 Azeroth\LionsRoar.lua
 Azeroth\Yenajz.lua
 Azeroth\Kraulok.lua
-Azeroth\Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 
 BattleOfDazaralor\ChampionAlliance.lua
 BattleOfDazaralor\ChampionHorde.lua
@@ -62,11 +61,9 @@ BattleOfDazaralor\Mekkatorque.lua
 BattleOfDazaralor\Blockade.lua
 BattleOfDazaralor\Jaina.lua
 BattleOfDazaralor\Trash.lua
-BattleOfDazaralor\Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 
 CrucibleOfStorms\Cabal.lua
 CrucibleOfStorms\Uunat.lua
-CrucibleOfStorms\Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 
 EternalPalace\AbyssalCommander.lua
 EternalPalace\RadianceofAszhara.lua
@@ -76,7 +73,6 @@ EternalPalace\Orgozoa.lua
 EternalPalace\TheQueensCourt.lua
 EternalPalace\Zaqul.lua
 EternalPalace\QueenAzshara.lua
-EternalPalace\Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 
 Nyalotha\Wrathion.lua
 Nyalotha\Maut.lua
@@ -90,7 +86,6 @@ Nyalotha\Raden.lua
 Nyalotha\Ilgynoth.lua
 Nyalotha\CarapaceofNZoth.lua
 Nyalotha\NZoth.lua
-Nyalotha\Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 
 Uldir\Taloc.lua
 Uldir\Mother.lua
@@ -101,6 +96,6 @@ Uldir\Zul.lua
 Uldir\Mythrax.lua
 Uldir\Ghuun.lua
 Uldir\Trash.lua
-Uldir\Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 
+!Locales\[TextLocale].lua [AllowLoadTextLocale deDE, esES, esMX, frFR, itIT, koKR, ptBR, ruRU, zhCN, zhTW]
 !Options.lua
